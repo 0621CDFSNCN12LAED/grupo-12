@@ -28,11 +28,11 @@ Podemos dividir a nuestra audiencia en 2 grandes grupos: <br>
 
 ## 3. Referentes de mercado
 
-#### E-commerce de productos similares
+#### E-commerce de productos similares:
 - https://tu-aventura.com.ar/ → Variedad de productos, sub rubros y filtros utilizados para la comercialización de los productos, excelente imagen de carro de compras y presentación de los productos agregados en el mismo.
 - https://www.basspro.com/shop→ Segmentación de rubros y sub-rubros de artículos seleccionados por nuestra web.
 
-#### E-commerce con funcionalidades interesantes
+#### E-commerce con funcionalidades interesantes:
 - https://webbssportinggoods.com → Diseño de NavBar.
 - https://demo1.leotheme.com/leo_huntor_demo/en/ → Animación de compra y diseño de Header y Footer.
 - https://hikez-theme.myshopify.com/ → Excelente estética, gama de colores e imágenes. Buenas animaciones.
@@ -43,4 +43,4 @@ Podemos dividir a nuestra audiencia en 2 grandes grupos: <br>
 
 ## 4. Wireframes del sitio
 
-Incluidos en directorio Wifreframes.
+Incluidos en directorio /wireframes.
