@@ -27,3 +27,22 @@ body {
 
 /* ------------------- Colores ---------------------------*/
 
+.color-primario {
+    color: #023E73
+}
+
+.color-secundario {
+    color: #2b5f8c
+}
+
+.color-tercero {
+    color: #365946
+}
+
+.color-cuarto {
+    color: #D9D7C5
+}
+
+.color-quinto {
+    color: #F2C49B
+}
