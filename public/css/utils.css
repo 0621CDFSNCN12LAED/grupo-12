@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+/* -------------------- Globales ------------------ */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+
+}
+
+
+/* ----------------- Clases genéricas --------------------*/
+.align-center {
+    text-align: center
+}
+
+.icono-grande {
+    font-size:2em;
+    margin-bottom: 10px
+}
+.magin-0 {
+    margin: 0;
+}
+
+
+/* ------------------- Colores ---------------------------*/
+
