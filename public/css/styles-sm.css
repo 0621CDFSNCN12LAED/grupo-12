@@ -13,8 +13,63 @@
 
 
 /*--------------- Principal ------------- */
+main {
+    background: #d9d7c5;
+    padding: 5px;
+}
 
+.text-titles {
+    text-align: center;
+    font-weight: 500;
+}
 
+.categories {
+    background-color: darkgray;
+    margin: 2px;
+    border: solid 2px black;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sub-flex {
+    flex-direction: column;
+    width: 58%;
+}
+
+.camping {
+
+    height: 75px;
+    background-image: url("/img/categories/camping.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.ski {
+    width: 40%;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.montanismo {
+    width: 100%;
+}
+
+article {
+    background-color: #f2c49b;
+    margin: 5px 0px;
+}
+
+article img {
+    max-width: 100%;
+}
 
 
 /*--------------- Footer ------------- */
