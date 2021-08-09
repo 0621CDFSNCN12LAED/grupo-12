@@ -8,8 +8,33 @@
 /*--------------- Nav ------------- */
 
 
+
 /*--------------- Header ------------- */
 
+header {
+    background-color: #365946;
+}
+.logo{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+.search-bar{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 10px;
+    color: #D9D7C5;
+    height: 30px;
+    border: none;
+
+}
+
+.container{
+    height: 40px;
+    display: flex;
+    justify-content: space-between
+}
 
 
 /*--------------- Principal ------------- */
