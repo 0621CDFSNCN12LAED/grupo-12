@@ -14,11 +14,39 @@
 header {
     background-color: #365946;
 }
-.logo{
-    display: block;
-    margin: 0 auto;
-    width: 50%;
+.container{
+    height: 70px;
+    display: flex;
+    padding: 10px 5px;
+    align-items: center;
+
 }
+.container i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+    color: #D9D7C5;
+
+}
+.menu {
+    width: 10%;
+}
+.logo{
+    margin: 0 auto;
+    height: 200%;
+    justify-content: flex-start;
+}
+.iconos-derecha{
+    width: 10%;
+}
+
+.container-searchbar {
+    padding-bottom: 10px;
+}
+
+
 .search-bar{
     display: block;
     margin: 0 auto;
@@ -29,11 +57,11 @@ header {
     border: none;
 }
 
-.container{
-    height: 40px;
-    display: flex;
-    justify-content: space-between
+.navegacion {
+    display: none;
 }
+
+
 
 
 /*--------------- Main ------------- */
