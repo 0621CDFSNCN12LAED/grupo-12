@@ -28,3 +28,7 @@ app.get("/productDetail", (req, res) => {
     res.sendFile(path.resolve(__dirname, "views/productDetail.html"));
 });
 
+app.get("/fullpage", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "views/fullpage.html"));
+});
+
