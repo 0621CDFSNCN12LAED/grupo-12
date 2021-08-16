@@ -1,0 +1,38 @@
+.container .menu {
+    display: none;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 200px;
+}
+.container .logo {
+    margin: 0;
+}
+.navegacion {
+    border-top: 0.5px solid #D9D7C5;
+    display: flex;
+}
+.navegacion ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 20px;
+    padding: 0;
+}
+.navegacion a {
+    text-decoration: none;
+    color: #D9D7C5;
+    font-size: 20px;
+    position: relative;
+    top: 0;
+
+}
+
+.navegacion li a:hover {
+    top: -6px;
+}

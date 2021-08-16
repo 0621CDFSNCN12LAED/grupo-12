@@ -33,11 +33,17 @@ header {
 .menu {
     width: 10%;
 }
-.logo{
+
+.container-logo{
     margin: 0 auto;
-    height: 200%;
-    justify-content: flex-start;
+    height: 100%;
+    width: 70%;
 }
+.container .logo{
+    width: 200px;
+    align-items: center;
+}
+
 .iconos-derecha{
     width: 10%;
 }
