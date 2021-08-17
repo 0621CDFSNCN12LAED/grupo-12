@@ -7,9 +7,11 @@
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0 auto;
-
 }
 
+header {
+    background-color: #365946;
+}
 
 /* ----------------- Clases genéricas --------------------*/
 .align-center {
@@ -28,25 +30,28 @@ body {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+.align-center {
+    text-align: center;
+}
 
 /* ------------------- Colores ---------------------------*/
 
 .color-primario {
-    background-color: #023E73
+    background-color: #023E73;
 }
 
 .color-secundario {
-    background-color: #2b5f8c
+    background-color: #2b5f8c;
 }
 
-.color-tercero {
-    color: #365946
+.color-terciario {
+    background-color: #365946;
 }
 
 .color-cuarto {
-    color: #D9D7C5
+    color: #D9D7C5;
 }
 
 .color-quinto {
-    color: #F2C49B
+    color: #F2C49B;
 }

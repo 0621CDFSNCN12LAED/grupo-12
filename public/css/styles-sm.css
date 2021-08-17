@@ -11,9 +11,6 @@
 
 /*--------------- Header ------------- */
 
-header {
-    background-color: #365946;
-}
 .container{
     height: 70px;
     display: flex;
@@ -21,6 +18,7 @@ header {
     align-items: center;
 
 }
+
 .container i {
     display: flex;
     justify-content: center;
@@ -30,6 +28,7 @@ header {
     color: #D9D7C5;
 
 }
+
 .menu {
     width: 10%;
 }
@@ -39,6 +38,7 @@ header {
     height: 100%;
     width: 70%;
 }
+
 .container .logo{
     width: 200px;
     align-items: center;
@@ -51,7 +51,6 @@ header {
 .container-searchbar {
     padding-bottom: 10px;
 }
-
 
 .search-bar{
     display: block;
@@ -215,6 +214,8 @@ main {
 /*--------------- Footer ------------- */
 
 
+
+
 /*----------------- Product Cart ------------------------*/
 
 .container-cart {
@@ -225,12 +226,13 @@ main {
     align-items: center;
     border: 1px solid black;
 }
+
 .container-cart img {
     /*Aca tengo un problema porque se me agranda la imagen*/
     height: 100%;
     width: 25%;
-    
 }
+
 .titulos-cart {
     display: block;
     width: 100%;
@@ -248,29 +250,29 @@ main {
     margin: 0;
     color: #365946
 }
+
 .container-endcart {
     display: block;
     margin: 10px;
 }
+
 .subtotal-cart {
     border-top: 1.5px solid grey;
     height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    padding: 20px 0;
 }
+
 .subtotal-price {
     font-size : 24px
 }
-.botones-cart {
-    margin: 15px;
-}
-.boton-pago {
+
+.boton-ppal {
     display: inline-block;
     width: 100%;
     height: 40px;
-    margin: 5px 0;
     align-items: center;
     border: none;
     color: #ffffff;
@@ -281,13 +283,82 @@ main {
 }
 
 
+/*----------------- REGISTER ------------------------*/
+
+.form-div {
+    padding: 10px;
+    margin: 0 5%;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.2rem;
+    max-width: 100%;
+}
+
+.form-div input {
+    width: 100%;
+    height: 35px;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+
+.form-div p {
+    color: red;
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.form-bases {
+    font-size: 0.75rem;
+    font-style: italic;
+    font-weight: normal;
+}
+
+
+/*------------------- LOGIN ----------------------*/
+
+.remember-me {
+    display: inline-block;
+}
+
+.remember-me input {
+    width: 20px;
+    height: 20px;
+}
+
+.password-link {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.login-footer {
+    text-align: center;
+}
+
+.login-footer h2 {
+    margin: 20px 0 0;
+}
+
+.login-icon {
+    font-size: 7rem;
+    color: #9ca5ad
+}
+
+.decoration-line {
+    border: 1px solid #023E73;
+    width: 200px;
+    margin: 3px auto;
+}
+
 /* -------------------- FULL PAGE ------------------*/
+
 .section img {
     height: 100%;
     width: 100%;
 }
-.section {
 
+.section {
     display: flex;
     justify-content: center;
     border: 1px solid black;

@@ -1,43 +1,74 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet" />
         <title>Register | DeCamping.com</title>
         <link rel="stylesheet" href="/css/utils.css">
         <link rel="stylesheet" href="/css/styles-sm.css">
         <link rel="stylesheet" href="/css/styles-md.css" media="(min-width:768px)">
         <link rel="stylesheet" href="/css/styles-lg.css" media="(min-width:1280px)">
-</head>
-<body>
-        <header>
-                <div class="container">
-                    <i class="fas fa-bars menu"></i>
-                    <div class="container-logo">
-                        <img src="/img/logo-decamping.png" alt="logo" class="logo">
-                    </div>
-                    <i class="far fa-user iconos-derecha"></i>
-                    <i class="fas fa-shopping-cart iconos-derecha"></i>
+    </head>
+    <body>
+        <header class="color-terciario">
+            <div class="container">
+                <i class="fas fa-bars menu"></i>
+                <div class="container-logo">
+                    <img src="/img/logo-decamping.png" alt="logo" class="logo">
                 </div>
-                <div class="container-searchbar">
+                <i class="far fa-user iconos-derecha"></i>
+                <i class="fas fa-shopping-cart iconos-derecha"></i>
+            </div>
+            <div class="container-searchbar">
                     <input type="text" class="search-bar shadow" placeholder="Buscar">
-        
+            </div>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Camping</a></li>
+                    <li><a href="">Montaña</a></li>
+                    <li><a href="">Escalada</a></li>
+                    <li><a href="">SKI</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1 class="text-titles">CREAR CUENTA</h1>
+            <form class="register-form" action="#" method="GET">
+                <div class="form-div">
+                    <label class="form-label" for="">Nombre</label>
+                    <input type="text" name="name" placeholder="Ingrese su nombre" required>
                 </div>
-                <nav class="navegacion">
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Camping</a></li>
-                        <li><a href="">Montaña</a></li>
-                        <li><a href="">Escalada</a></li>
-                        <li><a href="">SKI</a></li>
-        
-                    </ul>
-                </nav>
-            </header>
-</body>
+                <div class="form-div">
+                    <label class="form-label" for="">Apellido</label>
+                    <input type="text" name="Surname" placeholder="Ingrese su apellido" required>
+                </div>
+                <div class="form-div">
+                    <label class="form-label" for="">Dirección de correo electrónico</label>
+                    <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com" required>
+                </div>
+                <div class="form-div">
+                    <label class="form-label" for="">Contraseña</label>
+                    <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+                    <p>La contraseña debe tener al menos 6 caracteres.</p>
+                </div>
+                <div class="form-div">
+                    <label class="form-label" for="">Confirmar contraseña</label>
+                    <input type="password" name="password" placeholder="Repita su contraseña" required>
+                </div>
+                <div class="form-div">
+                    <h3 class="form-bases">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolor laboriosam
+                        esse fuga sapiente dolores quae. Itaque earum deserunt molestias reiciendis dolore
+                        totam sequi repellendus.
+                    </h3>
+                </div>
+                <div class="form-div">
+                    <button class="boton-ppal color-primario" type="submit" href="#">REGISTRARSE</button>
+                </div>
+    </body>
 </html>

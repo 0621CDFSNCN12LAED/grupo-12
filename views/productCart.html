@@ -16,82 +16,78 @@
         <link rel="stylesheet" href="/css/styles-lg.css" media="(min-width:1280px)">
 </head>
 <body>
-        <header>
-                <div class="container">
-                    <i class="fas fa-bars menu"></i>
-                    <div class="container-logo">
-                        <img src="/img/logo-decamping.png" alt="logo" class="logo">
+    <header class="color-terciario">
+        <div class="container">
+            <i class="fas fa-bars menu"></i>
+                <div class="container-logo">
+                    <img src="/img/logo-decamping.png" alt="logo" class="logo">
+                </div>
+                <i class="far fa-user iconos-derecha"></i>
+                <i class="fas fa-shopping-cart iconos-derecha"></i>
+        </div>
+        <div class="container-searchbar">
+            <input type="text" class="search-bar shadow" placeholder="Buscar">
+        </div>
+        <nav class="navegacion">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Camping</a></li>
+                <li><a href="">Montaña</a></li>
+                <li><a href="">Escalada</a></li>
+                <li><a href="">SKI</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2 class="text-titles">CARRITO DE COMPRAS</h2>
+        <div class="container-cart">
+            <img src="/img/bolsa-dormir-coleman-dexter-point.jpg" alt="">
+            <div class="titulos-cart">
+                <p>Bolsa de dormir Coleman</p>
+                <p>-20º Montaña</p>
+                <div class="container-cart-options">
+                    <div class="cart-options">
+                        <label for="quantity">Cantidad:</label>
+                        <select name="quantity" id="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
                     </div>
-                    <i class="far fa-user iconos-derecha"></i>
-                    <i class="fas fa-shopping-cart iconos-derecha"></i>
+                    <p class="cart-price">$ 1.500</p>
                 </div>
-                <div class="container-searchbar">
-                    <input type="text" class="search-bar shadow" placeholder="Buscar">
-        
-                </div>
-                <nav class="navegacion">
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Camping</a></li>
-                        <li><a href="">Montaña</a></li>
-                        <li><a href="">Escalada</a></li>
-                        <li><a href="">SKI</a></li>
-        
-                    </ul>
-                </nav>
-            </header>
-            <h2 class="text-titles">CARRITO DE COMPRAS</h2>
-
-            <div class="container-cart">
-                <img src="/img/bolsa-dormir-coleman-dexter-point.jpg" alt="">
-                <div class="titulos-cart">
-                    <p>Bolsa de dormir Coleman</p>
-                    <p>-20º Montaña</p>
-                    <div class="container-cart-options">
-                        <div class="cart-options">
-                            <label for="quantity">Cantidad:</label>
+            </div>
+        </div>
+        <div class="container-cart">
+            <img src="/img/mochila-mochilero-discovery-40l.jpg" alt="">
+            <div class="titulos-cart">
+                <p>Mochila Discovery</p>
+                <p>40 Lts</p>
+                <div class="container-cart-options">
+                    <div class="cart-options">
+                        <label for="quantity">Cantidad:</label>
                             <select name="quantity" id="quantity">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                             </select>
-                        </div>
-                        <p class="cart-price">$ 1.500</p>
                     </div>
+                    <p class="cart-price">$ 4.000</p>
                 </div>
             </div>
-            <div class="container-cart">
-                    <img src="/img/mochila-mochilero-discovery-40l.jpg" alt="">
-                    <div class="titulos-cart">
-                        <p>Mochila Discovery</p>
-                        <p>40 Lts</p>
-                        <div class="container-cart-options">
-                            <div class="cart-options">
-                                <label for="quantity">Cantidad:</label>
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </div>
-                            <p class="cart-price">$ 4.000</p>
-                        </div>
-                    </div>
+        </div>
+        <div class="container-endcart">
+            <div class="subtotal-cart">
+                <h2>Subtotal: </h2>
+                <p class="subtotal-price">$5.500</p>
             </div>
-
-            <div class="container-endcart">
-                <div class="subtotal-cart">
-                    <h2>Subtotal: </h2>
-                    <p class="subtotal-price">$5.500</p>
-                </div>
-                <div class="botones-cart">
-                    <button class="boton-pago color-primario">Ir a pagar</button>
-                    <button class="boton-pago color-secundario">Seguir comprando</button>
-                </div>
-            
+            <div class="form-div">
+                <button class="boton-ppal color-primario">Ir a pagar</button>
             </div>
-
+            <div class="form-div">
+                <button class="boton-ppal color-secundario">Seguir comprando</button>
+            </div>
+        </div>
 </body>
 </html>
