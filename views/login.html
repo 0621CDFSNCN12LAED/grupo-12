@@ -40,31 +40,47 @@
     </header>
     <main>
         <h1 class="text-titles">ACCESO USUARIO</h1>
-        <form class="register-form" action="#" method="GET">
-            <div class="form-div">
-                <label class="form-label" for="">Correo electrónico</label>
-                <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com" required>
+        <div class="register-wrapper">
+            <div class="content-wrapper-1">
+                <form class="register-form" action="#" method="GET">
+                    <div class="form-div">
+                        <label class="form-label" for="">Correo electrónico</label>
+                        <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com" required>
+                    </div>
+                    <div class="form-div">
+                        <label class="form-label" for="">Contraseña</label>
+                        <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+                    </div>
+                    <div class="form-div">
+                        <label class="remember-me" for=""><input type="checkbox" name="rememberUser" value="rememberUser">Recordarme</label>
+                    </div>
+                    <div class="form-div">
+                        <button class="boton-ppal color-primario" type="submit" href="#">REGISTRARSE</button>
+                    </div>
+                    <div class="form-div align-center">
+                        <a class="password-link" href="#">Olvidé mi contraseña</a>
+                    </div>
+                </form>
+                <hr class="simple-line">
+                <div class="login-footer">
+                    <i class="far fa-user login-icon"></i>
+                    <h3>Todavía no te registraste?</h3>
+                    <h2>CREAR UNA CUENTA</h2>
+                    <hr class="decoration-line">
+                </div>
             </div>
-            <div class="form-div">
-                <label class="form-label" for="">Contraseña</label>
-                <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+            <div class="vertical-line-2">
             </div>
-            <div class="form-div">
-                <label class="remember-me" for=""><input type="checkbox" name="rememberUser" value="rememberUser">Recordarme</label>
+            <div class="content-wrapper-2">
+                <div class="form-div">
+                    <i class="far fa-user login-icon"></i>
+                    <h3>Todavía no te registraste?</h3>
+                    <h2>CREAR UNA CUENTA</h2>
+                    <hr class="decoration-line">
+                </div>
             </div>
-            <div class="form-div">
-                <button class="boton-ppal color-primario" type="submit" href="#">REGISTRARSE</button>
-            </div>
-            <div class="form-div align-center">
-                <a class="password-link" href="#">Olvidé mi contraseña</a>
-            </div>
-        <hr class="simple-line">
-        <div class="login-footer">
-            <i class="far fa-user login-icon"></i>
-            <h3>Todavía no te registraste?</h3>
-            <h2>CREAR UNA CUENTA</h2>
-            <hr class="decoration-line">
         </div>
+    </main>
 </body>
 
 </html>
