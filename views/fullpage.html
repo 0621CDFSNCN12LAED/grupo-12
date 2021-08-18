@@ -17,43 +17,47 @@
         <link rel="stylesheet" href="/css/styles-lg.css" media="(min-width:1280px)">
 </head>
 <body>
-    <div id="fullPage">
-        <div class="section section1">
-            <div class="slide">
-                <h1>First slide</h1>
-                <img src="/img/mochila-doite-tanganika-80l.jpg" alt="">
+        <header class="color-terciario">
+                <div class="container">
+                    <i class="fas fa-bars menu"></i>
+                    <div class="container-logo">
+                        <img src="/img/logo-decamping.png" alt="logo" class="logo">
+                    </div>
+                    <i class="far fa-user iconos-derecha"></i>
+                    <i class="fas fa-shopping-cart iconos-derecha"></i>
+                </div>
+                <div class="container-searchbar">
+                    <input type="text" class="search-bar shadow" placeholder="Buscar">
+        
+                </div>
+                <nav class="navegacion">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Camping</a></li>
+                        <li><a href="">Montaña</a></li>
+                        <li><a href="">Escalada</a></li>
+                        <li><a href="">SKI</a></li>
+        
+                    </ul>
+                </nav>
+            </header>
+            <div id="fullPage">
+                <div class="section section1">
+                    <div class="slide">
+                        <h1>First slide</h1>
+                        <img src="/img/mochila-doite-tanganika-80l.jpg" alt="">
 
+                    </div>
+                </div>
             </div>
-            <div class="slide">
-                    <h1>Second slide</h1>
-                    <img src="/img/mochila-doite-tanganika-80l.jpg" alt="">
-
-            </div>
-            <div class="slide">
-                <h1>Third slide</h1>
-                <img src="/img/mochila-doite-tanganika-80l.jpg" alt="">
-
-            </div>
-        </div>
-        <div class="section section2">
-                <img src="/img/mochila-mochilero-discovery-40l.jpg" alt="">
-            </div>
-        <div class="section section3">
-                <img src="/img/carpa-iglu-spinit-camper-6p.jpg" alt="">
-            </div>
-        <div class="section section4">
-                <img src="/img/bolsa-dormir-coleman-dexter-point.jpg" alt="">
-            </div>
-
-    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     new fullpage('#fullPage',{
         autoscrolling: true,
-        navigation: true,
+        /*navigation: true,
         scrollingSpeed: 500,
-        controlArrows: false, /*Esto es para sacar las flechas de los prods*/
-        continuousHorizontal: true
+        controlArrows: false, /*Esto es para sacar las flechas de los prods
+        continuousHorizontal: true */
     })
 
 </script>

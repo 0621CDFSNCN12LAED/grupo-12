@@ -83,6 +83,7 @@ main {
     text-align: center;
     font-weight: 500;
     font-size: 1.8rem;
+    margin: 15px;
 }
 
 .text-prices {
@@ -282,6 +283,50 @@ main {
     border-radius: 5px;
 }
 
+/*------------------PRODUCT DETAIL -------------------*/
+.prod-detail {
+    height: 75%;
+    display: block;
+}
+
+.detail-image {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+.options-buttons {
+    display: flex;
+    justify-content: center;
+}
+.options-buttons button{
+    background-color: #023e73;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+.floating-elements {
+    position: fixed;
+    right: 2%;
+    top: 60%;
+}
+.floating-content {
+    display: block;
+}
+.floating-content button{
+    border: 2px solid black;
+    background-color: #D9D7C5;
+    color: #023E73;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+
 
 /*----------------- REGISTER ------------------------*/
 
@@ -359,6 +404,7 @@ main {
 }
 
 .section {
+    height: 30%;
     display: flex;
     justify-content: center;
     border: 1px solid black;
