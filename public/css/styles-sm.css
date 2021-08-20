@@ -211,10 +211,195 @@ main {
   right: 0;
 }
 
+/*--------------- Footer Pato ------------- */
+
+footer {
+    background-color: #365946;
+    color: #D9D7C5;
+    padding: 10px;
+}
+
+.footer-nav {
+    background-color: #658f77;
+    width: 250px;
+}
+
+.nav-span {
+    background-color: #365946;
+    padding: 10px;
+    color: #D9D7C5;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+}
+
+.nav-span::after {
+  float: right;
+  right: 10%;
+  content: "+";
+}
+
+.dropdown-ul {
+    list-style: none;
+    width: 100%;
+    height: 0px;
+    margin: 0;
+    padding-left: 5px;
+    overflow: hidden;
+    transition: height .4s ease;
+}
+
+.dropdown-ul li {
+    padding: 7px 5px;
+}
+
+.dropdown-ul a {
+    text-decoration: none;
+    color: #D9D7C5;
+}
+
+#touch-1, #touch-2, #touch-3 {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+}
+
+#touch-1:checked + .dropdown-ul {
+    height: 100px;
+}
+
+#touch-2:checked + .dropdown-ul {
+    height: 100px;
+}
+
+#touch-3:checked + .dropdown-ul {
+    height: 100px;
+}
+
+.mobile-footer-hr {
+    width: 65%;
+    border-top: solid 1px;
+}
+
+.newsletter p {
+    font-size: 0.8rem;
+    font-weight: initial;
+    margin: 0;
+}
+
+.newsletter input {
+    border: none;
+    border-radius: 5px;
+    width: 75%;
+    height: 25px;
+}
+
+.newsletter button {
+    border: initial;
+    border-radius: 2px;
+}
+
+.desktop-footer-hr {
+    display: none;
+}
+
+.compra-telefonica {
+    display: none;
+}
+
+.follow-us {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.follow-us h3 {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.follow-us a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #D9D7C5;
+    margin: auto 0;
+    padding: 5px;
+}
+
+.terms {
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.terms a {
+    padding: 15px 10px 5px;
+    text-decoration: none;
+    color: #D9D7C5;
+    margin: 0;
+}
+
 
 /*--------------- Footer ------------- */
 
+.correo {
+    width: 100%;
+}
 
+.navegador{
+    width: x;
+    margin: 20px auto;
+    text-decoration: none;
+    list-style-position: inside;
+    list-style: none;
+    color: #D9D7C5;
+    margin-left: 5px;
+}
+
+.seguinos {
+    display: flex;
+    height: 40px;
+    display: flex;
+    list-style: none;
+    color:#D9D7C5;
+    font-size: 20px;
+    justify-content: space-around;
+    padding: 0% 0% 0% 30%;
+}
+
+.newsletter{
+    color: #D9D7C5;
+    font-size: 22px;
+    margin: 10px;
+}
+
+.barra{
+    margin: 0 10px 10px;
+    width: 90%;
+    height: 40px;
+    border: none;
+    font-size: 17px;
+    line-height: 0.4;
+    letter-spacing: -0.011em;
+}
+
+.desplegable {
+    border-top-width: 5px;
+    border-top-style: solid;
+    padding-left: 5px;
+}
+
+.terminos {
+    font-size: 10px;
+    text-decoration: underline;
+    padding-left: 5px;
+}
+
+.textoTerminos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 20px;
+}
 
 
 /*----------------- Product Cart ------------------------*/
@@ -294,10 +479,12 @@ main {
     display: flex;
     justify-content: center;
 }
+
 .options-buttons {
     display: flex;
     justify-content: center;
 }
+
 .options-buttons button{
     background-color: #023e73;
     color: white;
@@ -307,14 +494,17 @@ main {
     height: 50px;
     margin: 10px;
 }
+
 .floating-elements {
     position: fixed;
     right: 2%;
     top: 60%;
 }
+
 .floating-content {
     display: block;
 }
+
 .floating-content button{
     border: 2px solid black;
     background-color: #D9D7C5;

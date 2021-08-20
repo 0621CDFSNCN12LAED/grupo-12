@@ -52,7 +52,15 @@
 
 /*--------------- Footer ------------- */
 
+.info-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
+.mobile-footer-hr {
+    display: none;
+}
 
 
 /*----------------- Product Cart ------------------------*/
