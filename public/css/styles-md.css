@@ -1,5 +1,16 @@
 /*--------------- Header ------------- */
 
+header {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+}
+
+main {
+    margin-top: 165px;
+}
+
 .container .menu {
     display: none;
 }
@@ -47,8 +58,13 @@
 
 /*--------------- Main ------------- */
 
+.product-wrapper {
+    width: 50%;
+}
 
-
+.categories-section {
+    display: none;
+}
 
 /*--------------- Footer ------------- */
 
@@ -60,6 +76,67 @@
 
 .mobile-footer-hr {
     display: none;
+}
+
+.desktop-footer-hr {
+    display: block;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    justify-content: space-between;
+    background-color: #365946;
+}
+
+.nav-span::after {
+    display: none;
+}
+
+.dropdown-ul {
+    height: 110px;
+}
+
+.footer-div {
+    width: 33%;
+}
+
+.newsletter {
+    width: 35%;
+    margin: auto;
+    font-weight: bold;
+}
+
+.newsletter p {
+    padding: 5px 0;
+}
+
+.compra-telefonica {
+    display: initial;
+    font-size: 1.1rem;
+}
+
+.compra-telefonica h3 {
+    margin: 0;
+    padding: 10px;
+}
+
+.fa-phone-alt {
+    font-size: 1.2rem;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.info-footer-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.follow-us h3 {
+    font-size: 1.1rem;
+    margin: auto 10px;
 }
 
 
@@ -75,7 +152,7 @@
 
 /*----------------- REGISTER ------------------------*/
 
-.text-titles {
+.login-register {
     text-align: initial;
     padding: 15px 5%;
     margin: 0;

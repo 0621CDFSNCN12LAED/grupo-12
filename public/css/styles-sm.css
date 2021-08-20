@@ -150,8 +150,6 @@ main {
 
 .prod-destacado {
     background-color: #ffffff;
-    height: 280px;
-    width: 100%;
 }
 
 .prod-img {
@@ -159,17 +157,15 @@ main {
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    max-height: 200px;
 }
 
 .article-box {
     border-bottom: solid 2px #023e73;
-    background-color: #dbdbdb;
+    background-color: #D9D7C5;
 }
 
 .product-wrapper {
     padding: 15px;
-    margin: 0 0 15px;
 }
 
 .button-prod {
@@ -211,7 +207,7 @@ main {
   right: 0;
 }
 
-/*--------------- Footer Pato ------------- */
+/*--------------- Footer ------------- */
 
 footer {
     background-color: #365946;
@@ -234,9 +230,9 @@ footer {
 }
 
 .nav-span::after {
-  float: right;
-  right: 10%;
-  content: "+";
+    float: right;
+    right: 10%;
+    content: "+";
 }
 
 .dropdown-ul {
@@ -281,6 +277,10 @@ footer {
     border-top: solid 1px;
 }
 
+.newsletter {
+    padding-left: 10px;
+}
+
 .newsletter p {
     font-size: 0.8rem;
     font-weight: initial;
@@ -290,7 +290,7 @@ footer {
 .newsletter input {
     border: none;
     border-radius: 5px;
-    width: 75%;
+    width: 50%;
     height: 25px;
 }
 
@@ -327,7 +327,7 @@ footer {
 
 .terms {
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .terms a {
@@ -335,70 +335,6 @@ footer {
     text-decoration: none;
     color: #D9D7C5;
     margin: 0;
-}
-
-
-/*--------------- Footer ------------- */
-
-.correo {
-    width: 100%;
-}
-
-.navegador{
-    width: x;
-    margin: 20px auto;
-    text-decoration: none;
-    list-style-position: inside;
-    list-style: none;
-    color: #D9D7C5;
-    margin-left: 5px;
-}
-
-.seguinos {
-    display: flex;
-    height: 40px;
-    display: flex;
-    list-style: none;
-    color:#D9D7C5;
-    font-size: 20px;
-    justify-content: space-around;
-    padding: 0% 0% 0% 30%;
-}
-
-.newsletter{
-    color: #D9D7C5;
-    font-size: 22px;
-    margin: 10px;
-}
-
-.barra{
-    margin: 0 10px 10px;
-    width: 90%;
-    height: 40px;
-    border: none;
-    font-size: 17px;
-    line-height: 0.4;
-    letter-spacing: -0.011em;
-}
-
-.desplegable {
-    border-top-width: 5px;
-    border-top-style: solid;
-    padding-left: 5px;
-}
-
-.terminos {
-    font-size: 10px;
-    text-decoration: underline;
-    padding-left: 5px;
-}
-
-.textoTerminos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding-bottom: 20px;
 }
 
 
@@ -573,6 +509,7 @@ footer {
 .password-link {
     text-align: center;
     font-size: 1rem;
+    color: black;
 }
 
 .login-footer {
@@ -593,6 +530,7 @@ footer {
     width: 200px;
     margin: 3px auto;
 }
+
 
 /* -------------------- FULL PAGE ------------------*/
 
