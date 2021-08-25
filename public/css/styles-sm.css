@@ -82,7 +82,7 @@ main {
     text-align: center;
     font-weight: 500;
     font-size: 1.8rem;
-    margin: 15px;
+    margin: 20px 0 15px;
 }
 
 .text-prices {
@@ -94,7 +94,7 @@ main {
 .text-description {
     font-weight: 400;
     font-size: 1rem;
-    margin: 0;
+    margin: auto;
     padding: 0 10px 10px;
 }
 
@@ -171,12 +171,14 @@ main {
     display: block;
     background-color: #023E73;
     border: none;
+    border-radius: 5px;
     color: #ffffff;
-    font-size: 13px;
-    padding: 20px;
-    width: 260px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    width: 280px;
+    height: 50px;
+    margin: 25px auto;
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -209,18 +211,18 @@ main {
 /*--------------- Footer ------------- */
 
 footer {
-    background-color: #365946;
+    background: url("/img/footer-background.jpg") no-repeat fixed;
+    background-position: bottom;
+    background-size: cover;
     color: #D9D7C5;
     padding: 10px;
 }
 
 .footer-nav {
-    background-color: #658f77;
     width: 250px;
 }
 
 .nav-span {
-    background-color: #365946;
     padding: 10px;
     color: #D9D7C5;
     font-weight: bold;
@@ -558,6 +560,10 @@ border: 3px solid blue;
 
 /*----------------- REGISTER ------------------------*/
 
+.register-form {
+    margin-bottom: 15px;
+}
+
 .content-wrapper-2 {
     display: none;
 }
@@ -590,6 +596,11 @@ border: 3px solid blue;
     margin: 0;
 }
 
+.form-div a {
+    text-decoration: none;
+    color: black;
+}
+
 .form-bases {
     font-size: 0.75rem;
     font-style: italic;
@@ -609,6 +620,7 @@ border: 3px solid blue;
 }
 
 .password-link {
+    text-decoration: underline !important;
     text-align: center;
     font-size: 1rem;
     color: black;
@@ -616,6 +628,12 @@ border: 3px solid blue;
 
 .login-footer {
     text-align: center;
+    margin: 20px;
+}
+
+.login-footer a {
+    text-decoration: none;
+    color: black;
 }
 
 .login-footer h2 {

@@ -1,14 +1,14 @@
 /*--------------- Header ------------- */
 
+main {
+    margin-top: 165px;
+}
+
 header {
     position: fixed;
     width: 100%;
     overflow: hidden;
     top: 0;
-}
-
-main {
-    margin-top: 165px;
 }
 
 .container .menu {
@@ -66,6 +66,14 @@ main {
     display: none;
 }
 
+.text-description {
+    height: 38px;
+}
+
+.prod-destacado:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
 /*--------------- Footer ------------- */
 
 .info-footer {
@@ -87,7 +95,6 @@ main {
     flex-wrap: wrap;
     width: 65%;
     justify-content: space-between;
-    background-color: #365946;
 }
 
 .nav-span::after {

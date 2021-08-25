@@ -1,4 +1,4 @@
-# grupo-12 - DeCamping
+# grupo-12 - DeCamping.com
 
 ## 1. Repositorio del proyecto
 URL: https://github.com/0621CDFSNCN12LAED/grupo-12
@@ -44,3 +44,12 @@ Podemos dividir a nuestra audiencia en 2 grandes grupos: <br>
 ## 4. Wireframes del sitio
 
 Incluidos en directorio /wireframes.
+
+---------------------------------------------------------------------------------------------------
+
+## Tablero Trello del proyecto
+
+Aquí listamos las historias del usuario y las tareas pendientes, en curso y terminadas. También incluimos un apartado para aquellas tareas que no podemos resolver aún.
+Link: https://trello.com/b/IRxLIRAc/dh-decampingcom
+
+
