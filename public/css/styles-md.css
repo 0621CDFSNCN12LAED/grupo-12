@@ -149,12 +149,58 @@ header {
 
 /*----------------- Product Cart ------------------------*/
 
+.container-cart {
+    width: 100%;
+}
 
+.container-products {
+    width: 60%;
+    max-width: 700px;
+}
+
+.container-checkout {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-endcart {
+    width: 30%;
+}
 
 
 /*------------------PRODUCT DETAIL -------------------*/
 
+.floating-elements {
+    display: none;
+}
 
+.detail-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.detail-image {
+    width: 50%;
+}
+
+.detail-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.options-buttons {
+    width: 10%;
+    display: block;
+}
+
+.container-pricing-information {
+    width: 40%;
+}
+
+.detail-information p {
+    padding: 0;
+}
 
 
 /*----------------- REGISTER ------------------------*/
