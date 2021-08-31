@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Home | DeCamping.com</title>
+    <%- include("./partials/head.ejs") %>
+  </head>
+
+  <body>
+    <!-- Header section (fixed) -->
+    <%- include("./partials/header.ejs") %>
+
+    <!-- Main section -->
+    <main>
+      <h2 class="text-titles">Mochila DOITE 60LTS</h2>
+
+      <!-- Contenido principal del productDetail-->
+      <div class="product-wrapper">
+        <div class="floating-elements">
+          <div class="floating-content">
+            <div>
+              <button class="floation-button"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+            <div>
+              <button class="floation-button"><i class="fa fa-heart"></i></button>
+            </div>
+            <div>
+              <button class="floation-button"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <article class="prod-detail">
+        <div class="detail-container">
+          <div class="detail-image">
+            <img src="/img/osprey-mochila-stratos-36l-back.jpg" alt="Carpa Iglu Spinit Camper 6P" />
+          </div>
+          <div class="options-buttons">
+            <button class="selected">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+          </div>
+          <div class="container-pricing-information">
+            <div class="detail-price">
+              <p class="detail-price-format">$13.200</p>
+            </div>
+            <div class="detail-information">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium itaque velit,
+                pariatur at delectus quibusdam et modi adipisci dicta odio quia ullam. Quae laborum,
+                sapiente aliquid omnis reiciendis ducimus animi?
+              </p>
+            </div>
+            <div class="cart-options">
+              <label for="quantity">Cantidad:</label>
+              <select name="quantity" id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="detail-cart">
+              <button class="boton-ppal color-primario">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer section -->
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
