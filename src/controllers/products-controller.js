@@ -2,13 +2,13 @@ const path = require("path");
 
 const productsController = {
   productDetail: (req, res) => {
-    res.render("productDetail");
+    res.render("products/productDetail");
   },
   cart: (req, res) => {
-    res.render("productCart");
+    res.render("products/productCart");
   },
   fullpage: (req, res) => {
-    res.render("fullpage");
+    res.render("products/fullpage");
   },
 };
 

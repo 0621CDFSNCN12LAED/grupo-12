@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <title>Administrador</title>
+    <%- include("../partials/head.ejs") %>
+
+</head>
+<body>
+    <main>
+        <h2 class="text-titles">Creador de productos</h2>
+        <form action="" method="GET" class="register-form">
+            <div class="form-div">
+                <label for="name">Nombre del producto</label>
+                <input type="text" name="name">
+              </div>
+              <div class="form-div">
+                <label for="description">Descripción</label>
+                <input type="textarea" name="description">
+              </div>
+              <div class="form-div">
+                <label for="image">Imagen</label>
+                <input type="file" name="image">
+              </div>
+              <div class="form-div">
+                <label for="category">Categoría</label>
+                <select name="category">
+                    <option value="montaña">Montaña</option>
+                    <option value="escalada">Escalada</option>
+                    <option value="ski">Ski</option>
+                    <option value="mochilas">Mochilas</option>
+                  </select>
+              </div>
+              <div class="form-div">
+                <label for="size">Tamaño</label>
+                <input type="text" name="size">
+              </div>
+              <div class="form-div">
+                <label for="price">Precio</label>
+                <input type="text" name="price">
+              </div>
+
+              <div class="form-div">
+                <button class="boton-ppal color-primario" type="submit" href="#">Crear producto</button>
+              </div>
+
+        </form>
+    </main>
+    
+</body>
+</html>
