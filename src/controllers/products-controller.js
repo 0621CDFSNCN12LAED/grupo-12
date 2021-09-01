@@ -7,7 +7,7 @@ const products = [
     category: "montanismo",
     subcategory: "mochilas",
     discount: null,
-    starred: true,
+    starred: false,
     id: 1,
   },
   {
@@ -18,7 +18,7 @@ const products = [
     category: "montanismo",
     subcategory: "accesorios",
     discount: null,
-    starred: true,
+    starred: false,
     id: 2,
   },
   {
@@ -55,6 +55,8 @@ const productsController = {
   fullpage: (req, res) => {
     res.render("products/fullpage");
   },
+  products: products
 };
 
 module.exports = productsController;
+
