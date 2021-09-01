@@ -5,6 +5,21 @@
 
 </head>
 <body>
+  <header>
+    <div class="container">
+      <i class="fas fa-bars menu"></i>
+      <div class="container-logo">
+        <a href="../">
+          <img src="/img/logo-decamping.png" alt="Logo DeCamping.com" class="logo" />
+        </a>
+      </div>
+      <a href="../users/login" class="iconos-derecha">
+        <i class="far fa-user"></i>
+      </a>
+      <a href="../products/productCart" class="iconos-derecha"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </header>
+  
     <main>
         <h2 class="text-titles">Creador de productos</h2>
         <form action="" method="GET" class="register-form">
@@ -23,15 +38,28 @@
               <div class="form-div">
                 <label for="category">Categoría</label>
                 <select name="category">
+                  <option value="camping">Camping</option>
                     <option value="montaña">Montaña</option>
                     <option value="escalada">Escalada</option>
                     <option value="ski">Ski</option>
-                    <option value="mochilas">Mochilas</option>
                   </select>
               </div>
               <div class="form-div">
-                <label for="size">Tamaño</label>
-                <input type="text" name="size">
+                <label for="category">Subcategorías</label>
+                <select name="category">
+                    <option value="mochilas">Mochilas</option>
+                    <option value="accesorios">Accesorios</option>
+                    <option value="carpas">Carpas</option>
+                    <option value="para-dormir">Para dormir</option>
+                  </select>
+              </div>
+              <div class="form-div">
+                <label for="discount">Descuento</label>
+                <input type="number" min="0" max="50" step="5" />
+              </div>
+              <div class="form-div">
+                <label for="starred">Destacado</label>
+                <input type="checkbox" name="starred">
               </div>
               <div class="form-div">
                 <label for="price">Precio</label>
