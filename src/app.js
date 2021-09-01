@@ -1,6 +1,7 @@
 // Global imports/requires
 const express = require("express");
 const path = require("path");
+const logger = require("morgan");
 
 // Initializing express app
 const app = express();
@@ -14,15 +15,16 @@ const mainRoutes = require("./routes/main-routes");
 const productRoutes = require("./routes/products-routes");
 const adminRoutes = require("./routes/admin-routes");
 
-
 // Activating server in port 3000
 app.listen(3000, () => console.log("Server running smoothly in port 3000"));
 
 // Making 'public' folder visible globally
 app.use(express.static(path.join(__dirname, "../public")));
 
+// Logs every request in the console
+app.use(logger("dev"));
+
 // Declaring routes
 app.use("/", mainRoutes);
 app.use("/products", productRoutes);
 app.use("/admin", adminRoutes);
-
