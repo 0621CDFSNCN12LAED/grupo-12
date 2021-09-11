@@ -7,9 +7,8 @@ const router = express.Router();
 // Definimos las rutas
 router.get("/", mainController.home);
 
-router.get("/login", mainController.login);
+router.get("/users/login", mainController.login);
 
-router.get("/register", mainController.register);
-
+router.get("/users/register", mainController.register);
 
 module.exports = router;

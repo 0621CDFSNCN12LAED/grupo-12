@@ -2,9 +2,16 @@
   <article class="prod-destacado">
     <img src="<%= product.img %>" class="prod-img" alt="<%= product.name %>" />
     <div class="article-box">
-      <p class="text-prices"><%= product.price %></p>
-      <p class="discount-prices"><%= product.discount %></p>
       <h3 class="text-description"><%= product.name %></h3>
+      <% if (product.discount != null) { %>
+      <div class="discount-box">
+        <span class="text-prices-discount"><%= product.price %></span>
+        <span class="text-discount"><%= product.discount %></span>
+      </div>
+      <p class="text-prices"><%= product.price - product.price * product.discount / 100 %></p>
+      <% } else { %>
+      <p class="text-prices"><%= product.price %></p>
+      <% } %>
     </div>
   </article>
 </div>

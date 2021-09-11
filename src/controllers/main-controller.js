@@ -3,13 +3,13 @@ const products = productController.products;
 
 const mainController = {
   home: (req, res) => {
-    res.render("home", {products: products});
+    res.render("home", { products: products });
   },
   login: (req, res) => {
-    res.render("users/login");
+    res.render("./users/login");
   },
   register: (req, res) => {
-    res.render("users/register");
+    res.render("./users/register");
   },
 };
 

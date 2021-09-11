@@ -1,29 +1,29 @@
 const products = [
   {
     name: "Mochila Osprey Stratos 36L",
-    price: "$21.875",
+    price: 21875,
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
     img: "/img/osprey-mochila-stratos-36l.jpg",
     category: "montanismo",
     subcategory: "mochilas",
-    discount: "30% OFF",
+    discount: 30,
     starred: false,
     id: 1,
   },
   {
     name: "Arnés Petzl Fly",
-    price: "$16.644",
+    price: 16644,
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
     img: "/img/petzl-arnes-fly.jpg",
     category: "montanismo",
     subcategory: "accesorios",
-    discount: "20% OFF",
+    discount: 20,
     starred: false,
     id: 2,
   },
   {
     name: "Saco de Dormir Outwell Camper 0ºC",
-    price: "$13.975",
+    price: 13975,
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
     img: "/img/outwell-saco-de-dormir-camper-0-c.jpg",
     category: "camping",
@@ -34,7 +34,7 @@ const products = [
   },
   {
     name: "Tienda de Campaña Columbus Enol 5P",
-    price: "$27.790",
+    price: 27790,
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
     img: "/img/columbus-tienda-de-campana-enol-5p-closed.jpg",
     category: "camping",
@@ -55,8 +55,7 @@ const productsController = {
   fullpage: (req, res) => {
     res.render("products/fullpage");
   },
-  products: products
+  products: products,
 };
 
 module.exports = productsController;
-
