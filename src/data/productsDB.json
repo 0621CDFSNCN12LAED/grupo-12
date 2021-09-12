@@ -1,156 +1,178 @@
-[{
-    "id": 1,
-    "name": "Mochila Osprey Stratos 36L",
-    "price": 21875,
-    "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
-    "img": "/img/osprey-mochila-stratos-36l.jpg",
-    "category": "Montañismo",
-    "subcategory": "mochilas",
-    "discount": 30,
-    "starred": false
-      },
-      {
-    "id": 2,
-    "name": "Arnés Petzl Fly",
-    "price": 16600,
-    "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
-    "img": "/img/petzl-arnes-fly.jpg",
-    "category": "Montañismo",
-    "subcategory": "accesorios",
-    "discount": 20,
-    "starred": false
-      },
-      {
-    "id": 3,
-    "name": "Saco de Dormir Outwell Camper 0ºC",
-    "price": 13975,
-    "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
-    "img": "/img/outwell-saco-de-dormir-camper-0-c.jpg",
-    "category": "Camping",
-    "subcategory": "bolsa de dormir",
-    "discount": null,
-    "starred": true
-      },
-      {
-    "id": 4,
-    "name": "Tienda de Campaña Columbus Enol 5P",
-    "price": 27790,
-    "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
-    "img": "/img/columbus-tienda-de-campana-enol-5p-closed.jpg",
-    "category": "Camping",
-    "subcategory": "carpas",
-    "discount": null,
-    "starred": true
-      },
-       {
-    "id": 5,
-    "name": "Veal - Bones",
-    "price": 12700,
-    "desc": "Presence of artificial left arm (complete) (partial)",
-    "img": "http://dummyimage.com/191x100.png/dddddd/000000",
-    "category": "Montañismo",
-    "subcategory": "Masonry",
-    "discount": 68,
-    "starred": true
-  }, {
-    "id": 6,
-    "name": "Spice - Chili Powder Mexican",
-    "price": 167000,
-    "desc": "Poisoning by predominantly alpha-adrenoreceptor agonists, undetermined",
-    "img": "http://dummyimage.com/232x100.png/cc0000/ffffff",
-    "category": "Montañismo",
-    "subcategory": "Termite Control",
-    "discount": 37,
-    "starred": true
-  }, {
-    "id": 7,
-    "name": "Soup Campbells Split Pea And Ham",
-    "price": 18790,
-    "desc": "Nondisplaced comminuted fracture of left patella, subsequent encounter for closed fracture with delayed healing",
-    "img": "http://dummyimage.com/119x100.png/ff4444/ffffff",
-    "category": "Montañismo",
-    "subcategory": "HVAC",
-    "discount": 20,
-    "starred": false
-  }, {
-    "id": 8,
-    "name": "Cheese - Ricotta",
-    "price": 15600,
-    "desc": "Benign neoplasm of other specified parts of central nervous system",
-    "img": "http://dummyimage.com/175x100.png/cc0000/ffffff",
-    "category": "Camping",
-    "subcategory": "elementos de camping",
-    "discount": 23,
-    "starred": true
-  }, {
-    "id": 9,
-    "name": "Squid - Breaded",
-    "price": 12900,
-    "desc": "Salter-Harris Type II physeal fracture of right calcaneus, sequela",
-    "img": "http://dummyimage.com/153x100.png/ff4444/ffffff",
-    "category": "SKI",
-    "subcategory": "Electrical and Fire Alarm",
-    "discount": 7,
-    "starred": true
-  }, {
-    "id": 10,
-    "name": "Appetizer - Lobster Phyllo Roll",
-    "price": 90000,
-    "desc": "Local infection of the skin and subcutaneous tissue, unspecified",
-    "img": "http://dummyimage.com/227x100.png/5fa2dd/ffffff",
-    "category": "SKI",
-    "subcategory": "Exterior Signage",
-    "discount": 36,
-    "starred": true
-  }, {
-    "id": 11,
-    "name": "Chocolate - Milk Coating",
-    "price": 18900,
-    "desc": "Unspecified injury of unspecified external jugular vein, sequela",
-    "img": "http://dummyimage.com/193x100.png/5fa2dd/ffffff",
-    "category": "SKI",
-    "subcategory": "Structural & Misc Steel Erection",
-    "discount": 36,
-    "starred": true
-  }, {
-    "id": 12,
-    "name": "Curry Powder Madras",
-    "price": 190980,
-    "desc": "Laceration without foreign body of right thumb without damage to nail",
-    "img": "http://dummyimage.com/205x100.png/dddddd/000000",
-    "category": "Escalada",
-    "subcategory": "Elevator",
-    "discount": 17,
-    "starred": true
-  }, {
-    "id": 13,
-    "name": "Melon - Watermelon, Seedless",
-    "price": 15440,
-    "desc": "Gastric contents in pharynx causing other injury",
-    "img": "http://dummyimage.com/212x100.png/cc0000/ffffff",
-    "category": "Escalada",
-    "subcategory": "Framing (Wood)",
-    "discount": null,
-    "starred": true
-  }, {
-    "id": 14,
-    "name": "Wine - Red, Pinot Noir, Chateau",
-    "price": 15000,
-    "desc": "Nondisplaced trimalleolar fracture of unspecified lower leg, subsequent encounter for open fracture type I or II with delayed healing",
-    "img": "http://dummyimage.com/124x100.png/cc0000/ffffff",
-    "category": "Montañismo",
-    "subcategory": "HVAC",
-    "discount": 15,
-    "starred": true
-  }, {
-    "id": 15,
-    "name": "Split Peas - Green, Dry",
-    "price": 15440,
-    "desc": "Displaced fracture of shaft of fourth metacarpal bone, left hand, initial encounter for open fracture",
-    "img": "http://dummyimage.com/187x100.png/5fa2dd/ffffff",
-    "category": "SKI",
-    "subcategory": "Roofing (Asphalt)",
-    "discount": 10,
-    "starred": true
-  }
+[
+    {
+        "id": 1,
+        "name": "Mochila Osprey Stratos 36L",
+        "price": 21875,
+        "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
+        "img": "osprey-mochila-stratos-36l.jpg",
+        "category": "Montañismo",
+        "subcategory": "mochilas",
+        "discount": 30,
+        "starred": false
+    },
+    {
+        "id": 2,
+        "name": "Arnés Petzl Fly",
+        "price": 16600,
+        "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
+        "img": "petzl-arnes-fly.jpg",
+        "category": "Montañismo",
+        "subcategory": "accesorios",
+        "discount": 20,
+        "starred": false
+    },
+    {
+        "id": 3,
+        "name": "Saco de Dormir Outwell Camper 0ºC",
+        "price": 13975,
+        "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
+        "img": "outwell-saco-de-dormir-camper-0-c.jpg",
+        "category": "Camping",
+        "subcategory": "bolsa de dormir",
+        "discount": null,
+        "starred": true
+    },
+    {
+        "id": 4,
+        "name": "Tienda de Campaña Columbus Enol 5P",
+        "price": 27790,
+        "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
+        "img": "columbus-tienda-de-campana-enol-5p-closed.jpg",
+        "category": "Camping",
+        "subcategory": "carpas",
+        "discount": null,
+        "starred": true
+    },
+    {
+        "id": 5,
+        "name": "Veal - Bones",
+        "price": 12700,
+        "desc": "Presence of artificial left arm (complete) (partial)",
+        "img": "http://dummyimage.com/191x100.png/dddddd/000000",
+        "category": "Montañismo",
+        "subcategory": "Masonry",
+        "discount": 68,
+        "starred": true
+    },
+    {
+        "id": 6,
+        "name": "Spice - Chili Powder Mexican",
+        "price": 167000,
+        "desc": "Poisoning by predominantly alpha-adrenoreceptor agonists, undetermined",
+        "img": "http://dummyimage.com/232x100.png/cc0000/ffffff",
+        "category": "Montañismo",
+        "subcategory": "Termite Control",
+        "discount": 37,
+        "starred": true
+    },
+    {
+        "id": 7,
+        "name": "Soup Campbells Split Pea And Ham",
+        "price": 18790,
+        "desc": "Nondisplaced comminuted fracture of left patella, subsequent encounter for closed fracture with delayed healing",
+        "img": "http://dummyimage.com/119x100.png/ff4444/ffffff",
+        "category": "Montañismo",
+        "subcategory": "HVAC",
+        "discount": 20,
+        "starred": false
+    },
+    {
+        "id": 8,
+        "name": "Cheese - Ricotta",
+        "price": 15600,
+        "desc": "Benign neoplasm of other specified parts of central nervous system",
+        "img": "http://dummyimage.com/175x100.png/cc0000/ffffff",
+        "category": "Camping",
+        "subcategory": "elementos de camping",
+        "discount": 23,
+        "starred": true
+    },
+    {
+        "id": 9,
+        "name": "Squid - Breaded",
+        "price": 12900,
+        "desc": "Salter-Harris Type II physeal fracture of right calcaneus, sequela",
+        "img": "http://dummyimage.com/153x100.png/ff4444/ffffff",
+        "category": "SKI",
+        "subcategory": "Electrical and Fire Alarm",
+        "discount": 7,
+        "starred": true
+    },
+    {
+        "id": 10,
+        "name": "Appetizer - Lobster Phyllo Roll",
+        "price": 90000,
+        "desc": "Local infection of the skin and subcutaneous tissue, unspecified",
+        "img": "http://dummyimage.com/227x100.png/5fa2dd/ffffff",
+        "category": "SKI",
+        "subcategory": "Exterior Signage",
+        "discount": 36,
+        "starred": true
+    },
+    {
+        "id": 11,
+        "name": "Chocolate - Milk Coating",
+        "price": 18900,
+        "desc": "Unspecified injury of unspecified external jugular vein, sequela",
+        "img": "http://dummyimage.com/193x100.png/5fa2dd/ffffff",
+        "category": "SKI",
+        "subcategory": "Structural & Misc Steel Erection",
+        "discount": 36,
+        "starred": true
+    },
+    {
+        "id": 12,
+        "name": "Curry Powder Madras",
+        "price": 190980,
+        "desc": "Laceration without foreign body of right thumb without damage to nail",
+        "img": "http://dummyimage.com/205x100.png/dddddd/000000",
+        "category": "Escalada",
+        "subcategory": "Elevator",
+        "discount": 17,
+        "starred": true
+    },
+    {
+        "id": 13,
+        "name": "Melon - Watermelon, Seedless",
+        "price": 15440,
+        "desc": "Gastric contents in pharynx causing other injury",
+        "img": "http://dummyimage.com/212x100.png/cc0000/ffffff",
+        "category": "Escalada",
+        "subcategory": "Framing (Wood)",
+        "discount": null,
+        "starred": true
+    },
+    {
+        "id": 14,
+        "name": "Wine - Red, Pinot Noir, Chateau",
+        "price": 15000,
+        "desc": "Nondisplaced trimalleolar fracture of unspecified lower leg, subsequent encounter for open fracture type I or II with delayed healing",
+        "img": "http://dummyimage.com/124x100.png/cc0000/ffffff",
+        "category": "Montañismo",
+        "subcategory": "HVAC",
+        "discount": 15,
+        "starred": true
+    },
+    {
+        "id": 15,
+        "name": "Split Peas - Green, Dry",
+        "price": 15440,
+        "desc": "Displaced fracture of shaft of fourth metacarpal bone, left hand, initial encounter for open fracture",
+        "img": "http://dummyimage.com/187x100.png/5fa2dd/ffffff",
+        "category": "SKI",
+        "subcategory": "Roofing (Asphalt)",
+        "discount": 10,
+        "starred": true
+    },
+    {
+        "id": 16,
+        "name": "Producto de Prueba",
+        "price": 19000,
+        "desc": "Producto de prueba",
+        "img": "1631409920543Captura de Pantalla 2021-09-08 a la(s) 13.24.25.png",
+        "category": "Camping",
+        "subcategory": "mochilas",
+        "discount": 10,
+        "starred": true
+    }
 ]

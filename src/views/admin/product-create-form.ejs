@@ -22,31 +22,31 @@
   
     <main>
         <h2 class="text-titles">Creador de productos</h2>
-        <form action="" method="GET" class="register-form">
+        <form action="/admin/product/" method="POST" class="register-form" enctype="multipart/form-data" >
             <div class="form-div">
                 <label for="name">Nombre del producto</label>
-                <input type="text" name="name">
+                <input type="text" name="name" id="name">
               </div>
               <div class="form-div">
-                <label for="description">Descripción</label>
-                <input type="textarea" name="description">
+                <label for="desc">Descripción</label>
+                <input type="textarea" name="desc">
               </div>
               <div class="form-div">
-                <label for="image">Imagen</label>
-                <input type="file" name="image">
+                <label for="img">Imagen</label>
+                <input type="file" name="img" id="img">
               </div>
               <div class="form-div">
                 <label for="category">Categoría</label>
                 <select name="category">
-                  <option value="camping">Camping</option>
-                    <option value="montaña">Montaña</option>
-                    <option value="escalada">Escalada</option>
-                    <option value="ski">Ski</option>
+                  <option value="Camping">Camping</option>
+                    <option value="Montañismo">Montañismo</option>
+                    <option value="Escalada">Escalada</option>
+                    <option value="SKI">SKI</option>
                   </select>
               </div>
               <div class="form-div">
-                <label for="category">Subcategorías</label>
-                <select name="category">
+                <label for="subcategory">Subcategorías</label>
+                <select name="subcategory">
                     <option value="mochilas">Mochilas</option>
                     <option value="accesorios">Accesorios</option>
                     <option value="carpas">Carpas</option>
@@ -55,7 +55,7 @@
               </div>
               <div class="form-div">
                 <label for="discount">Descuento</label>
-                <input type="number" min="0" max="50" step="5" />
+                <input type="number" min="0" max="50" name="discount" />
               </div>
               <div class="form-div">
                 <label for="starred">Destacado</label>
@@ -63,11 +63,11 @@
               </div>
               <div class="form-div">
                 <label for="price">Precio</label>
-                <input type="text" name="price">
+                <input type="number" name="price">
               </div>
 
               <div class="form-div">
-                <button class="boton-ppal color-primario" type="submit" href="#">Crear producto</button>
+                <button class="boton-ppal color-primario" type="submit" >Crear producto</button>
               </div>
 
         </form>

@@ -11,10 +11,12 @@ router.get("/fullpage", productController.fullpage);
 router.get("/", productController.allProducts);
 
 
-// ------ GET ONE PRODUCT ------
+// ------ GET ONE PRODUCT ---------
 router.get("/:id", productController.productDetail);
 
+//------ GET CATEGORY PAGE ---------
 router.get("/category/:category", productController.productCategory);
+
 
 
 

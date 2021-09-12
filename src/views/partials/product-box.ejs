@@ -2,7 +2,7 @@
 
   <a href="/products/<%= product.id %>">
   <article class="prod-destacado">
-      <img src="<%= product.img %>" class="prod-img" alt="<%= product.name %>" />
+      <img src="/img/products/<%= product.img %>" class="prod-img" alt="<%= product.name %>" />
       <div class="article-box">
         <h3 class="text-description"><%= product.name %></h3>
         <% if (product.discount != null) { %>
