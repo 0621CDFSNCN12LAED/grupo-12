@@ -24,6 +24,9 @@ app.use(express.static(path.join(__dirname, "../public")));
 // Logs every request in the console
 app.use(logger("dev"));
 
+//locals
+app.locals.toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 // Declaring routes
 app.use("/", mainRoutes);
 app.use("/products", productRoutes);

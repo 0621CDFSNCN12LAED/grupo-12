@@ -16,6 +16,9 @@ header {
 .prod-img {
     width: 100%;
 }
+a {
+    text-decoration: none;
+}
 
 /* ----------------- Clases genéricas --------------------*/
 .align-center {

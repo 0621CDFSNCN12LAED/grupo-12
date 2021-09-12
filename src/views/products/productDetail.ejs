@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title>Home | DeCamping.com</title>
+    <title><%= product.name %> | DeCamping.com</title>
     <%- include("../partials/head.ejs") %>
   </head>
 
@@ -12,13 +12,13 @@
 
     <!-- Main section -->
     <main>
-      <h2 class="text-titles">Mochila DOITE 60LTS</h2>
+      <h2 class="text-titles"><%= product.name %></h2>
 
       <!-- Contenido principal del productDetail-->
       <article class="prod-detail">
         <div class="detail-container">
           <div class="detail-image">
-            <img src="/img/osprey-mochila-stratos-36l-back.jpg" alt="Carpa Iglu Spinit Camper 6P" />
+            <img src="<%= product.img %>" alt="<%= product.name %>" />
           </div>
           <div class="options-buttons">
             <button class="selected">1</button>
@@ -28,13 +28,11 @@
           </div>
           <div class="container-pricing-information">
             <div class="detail-price">
-              <p class="detail-price-format">$13.200</p>
+              <p class="detail-price-format">$ <%= toThousand(product.price) %></p>
             </div>
             <div class="detail-information">
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium itaque velit,
-                pariatur at delectus quibusdam et modi adipisci dicta odio quia ullam. Quae laborum,
-                sapiente aliquid omnis reiciendis ducimus animi?
+                <%= product.desc %>
               </p>
             </div>
             <div class="cart-options">

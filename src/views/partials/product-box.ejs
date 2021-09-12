@@ -1,17 +1,22 @@
 <div class="product-wrapper">
+
+  <a href="/products/<%= product.id %>">
   <article class="prod-destacado">
-    <img src="<%= product.img %>" class="prod-img" alt="<%= product.name %>" />
-    <div class="article-box">
-      <h3 class="text-description"><%= product.name %></h3>
-      <% if (product.discount != null) { %>
-      <div class="discount-box">
-        <span class="text-prices-discount"><%= product.price %></span>
-        <span class="text-discount"><%= product.discount %></span>
+      <img src="<%= product.img %>" class="prod-img" alt="<%= product.name %>" />
+      <div class="article-box">
+        <h3 class="text-description"><%= product.name %></h3>
+        <% if (product.discount != null) { %>
+        <div class="discount-box">
+          <span class="text-prices-discount"><%= toThousand(product.price) %></span>
+          <span class="text-discount"><%= product.discount %></span>
+        </div>
+        <p class="text-prices"><%= toThousand(product.price - product.price * product.discount / 100) %></p>
+        <% } else { %>
+        <p class="text-prices"><%= toThousand(product.price) %></p>
+        <% } %>
       </div>
-      <p class="text-prices"><%= product.price - product.price * product.discount / 100 %></p>
-      <% } else { %>
-      <p class="text-prices"><%= product.price %></p>
-      <% } %>
-    </div>
+    
   </article>
+</a>
+
 </div>

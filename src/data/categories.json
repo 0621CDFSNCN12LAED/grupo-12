@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Montañismo",
+        "description": "Montañismo description"
+    },
+    {
+        "id": 2,
+        "name": "Camping",
+        "description": "Elementos de montaña para dormir"
+    }, 
+    {
+        "id": 3,
+        "name": "Escalada",
+        "description": "Escalada description"
+    }, 
+    {
+        "id": 4,
+        "name": "SKI",
+        "description": "Montañismo description"
+    }
+
+]

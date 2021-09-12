@@ -84,6 +84,7 @@ main {
   padding: 10px 10px 20px;
   -webkit-line-clamp: 1;
   text-align: center;
+  color: black;
 }
 
 .text-prices {
@@ -92,10 +93,11 @@ main {
   margin: 0;
   padding: 0 30px;
   text-align: right;
+  color: #023e73;
 }
 
 .text-prices::before {
-  content: "Precio: $";
+  content: "Precio: $ ";
 }
 
 .text-prices-discount {
@@ -107,7 +109,7 @@ main {
 }
 
 .text-prices-discount::before {
-  content: "$";
+  content: "$ ";
 }
 
 .text-discount {
