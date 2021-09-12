@@ -33,6 +33,17 @@ const adminController = {
 		const jsonString = JSON.stringify(products,null,4)
 		fs.writeFileSync(productsFilePath,jsonString)
 		res.redirect("/products")
+  },
+  editProduct: (req,res) => {
+    //Mostrar la ventana para editar los productos
+    const product = products.find((prod) => {
+			return prod.id == req.params.id
+		})
+    res.render('admin/product-edit-form', {product})
+  },
+  updateProduct: (req,res) => {
+    //Hacer la edicion de los productos en la base de datos
+    res.send("estamos en un put de editar")
   }
 };
 

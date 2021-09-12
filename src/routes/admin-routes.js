@@ -23,5 +23,10 @@ const uploader = multer({
 router.get('/product/create', adminController.create); 
 router.post('/product/', uploader.single("img"), adminController.store); 
 
+/*** EDIT PRODUCTS ***/ 
+router.get('/product/:id/edit', adminController.editProduct)
+
+router.put('/product/:id', adminController.updateProduct)
+
 
 module.exports = router;

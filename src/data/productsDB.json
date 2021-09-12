@@ -174,5 +174,27 @@
         "subcategory": "mochilas",
         "discount": 10,
         "starred": true
+    },
+    {
+        "id": 17,
+        "name": "Mochila Osprey Stratos 36L",
+        "price": 21875,
+        "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
+        "img": "default-image.png",
+        "category": "Camping",
+        "subcategory": "mochilas",
+        "discount": "30",
+        "starred": false
+    },
+    {
+        "id": 18,
+        "name": "Saco de Dormir Outwell Camper 0ºC",
+        "price": 13975,
+        "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, quae. Quis assumenda quaerat deserunt debitis dolor iusto voluptatibus accusamus error!",
+        "img": "default-image.png",
+        "category": "Camping",
+        "subcategory": "mochilas",
+        "discount": "",
+        "starred": false
     }
 ]
