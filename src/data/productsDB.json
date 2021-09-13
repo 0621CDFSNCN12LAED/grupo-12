@@ -8,7 +8,8 @@
     "category": "Montañismo",
     "subcategory": "Mochilas",
     "discount": 30,
-    "starred": false
+    "starred": false,
+    "stock": 10
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "category": "Montañismo",
     "subcategory": "Accesorios",
     "discount": 20,
-    "starred": false
+    "starred": false,
+    "stock": 10
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "category": "Camping",
     "subcategory": "Para dormir",
     "discount": null,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "category": "Camping",
     "subcategory": "Carpas",
     "discount": null,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "category": "Montañismo",
     "subcategory": "Masonry",
     "discount": 68,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "category": "Montañismo",
     "subcategory": "Termite Control",
     "discount": 37,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "category": "Montañismo",
     "subcategory": "HVAC",
     "discount": 20,
-    "starred": false
+    "starred": false,
+    "stock": 10
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "category": "Camping",
     "subcategory": "elementos de camping",
     "discount": 23,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "category": "SKI",
     "subcategory": "Electrical and Fire Alarm",
     "discount": 7,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "category": "SKI",
     "subcategory": "Exterior Signage",
     "discount": 36,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "category": "SKI",
     "subcategory": "Structural & Misc Steel Erection",
     "discount": 36,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "category": "Escalada",
     "subcategory": "Elevator",
     "discount": 17,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "category": "Escalada",
     "subcategory": "Framing (Wood)",
     "discount": null,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "category": "Montañismo",
     "subcategory": "HVAC",
     "discount": 15,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "category": "SKI",
     "subcategory": "Roofing (Asphalt)",
     "discount": 10,
-    "starred": true
+    "starred": true,
+    "stock": 10
   },
   {
     "id": 16,
@@ -172,7 +187,8 @@
     "discount": 10,
     "starred": false,
     "price": 3000,
-    "img": "default-img.jpg"
+    "img": "default-img.jpg",
+    "stock": 10
   },
   {
     "id": 17,
@@ -182,6 +198,18 @@
     "discount": 50,
     "price": 30000,
     "starred": true,
-    "img": "default-img.jpg"
+    "img": "default-img.jpg",
+    "stock": 10
+  },
+  {
+    "id": 18,
+    "name": "Product Ejemplo 123",
+    "category": "Montañismo",
+    "subcategory": "Accesorios",
+    "discount": 0,
+    "starred": false,
+    "price": 19890,
+    "img": "1631498113401-Captura de Pantalla 2021-09-08 a la(s) 18.08.43.png",
+    "stock": 10
   }
 ]

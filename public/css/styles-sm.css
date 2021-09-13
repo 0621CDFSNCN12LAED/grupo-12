@@ -441,6 +441,19 @@ footer {
 .fullpage-main {
   padding: 0;
 }
+.edit-delete-container {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.detail-cart i {
+  margin-left: 10px;
+}
+
+
+
 
 /* ----------------- HEADER FULLPAGE -------------------*/
 

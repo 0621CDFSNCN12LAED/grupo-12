@@ -12,7 +12,6 @@
 
     <!-- Main section -->
     <main>
-      <h2 class="text-titles"><%= product.name %></h2>
 
       <!-- Contenido principal del productDetail-->
       <article class="prod-detail">
@@ -20,16 +19,22 @@
           <div class="detail-image">
             <img src="/img/products/<%= product.img %>" alt="<%= product.name %>" />
           </div>
-          <div class="options-buttons">
-            <button class="selected">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-          </div>
+
           <div class="container-pricing-information">
-            <div class="detail-price">
-              <p class="detail-price-format">$ <%= toThousand(product.price) %></p>
-            </div>
+            <h2 class="text-titles"><%= product.name %></h2>
+
+            <% if(product.discount > 0) { %>
+              <div class="detail-price">
+                <p class="detail-price-format">$ <%=  toThousand(product.price - product.price * product.discount / 100) %></p>
+                <p class="text-prices-discount"><%=  toThousand(product.price) %></p>
+              </div>
+              <% } else { %>
+                <div class="detail-price">
+                  <p class="detail-price-format">$ <%=  toThousand(product.price - product.price * product.discount / 100) %></p>
+                </div>
+              <% } %>
+
+            
             <div class="detail-information">
               <p><%= product.description %></p>
             </div>
@@ -43,7 +48,22 @@
               </select>
             </div>
             <div class="detail-cart">
-              <button class="boton-ppal color-primario">Agregar al carrito</button>
+              <button class="boton-ppal color-primario">Agregar al carrito<i class="fas fa-cart-plus"></i></button>
+            </div>
+            <div class="edit-delete-container">
+              <div class="edit-delete-form-container">
+                <form action="/admin/product/<%= product.id %>/edit" method="GET">
+                  <button class="boton-ppal color-primario">Editar producto</button>
+                </form>
+              </div>
+              <div class="edit-delete-form-container">
+                <form action="/" method="GET">
+                  <button class="boton-ppal color-delete">Eliminar producto</button>
+                </form>
+              </div>
+              
+             
+
             </div>
           </div>
         </div>
