@@ -1,32 +1,34 @@
+// ***** Requires *****
 const express = require("express");
-const path = require('path');
-const adminController = require("../controllers/admin-controller");
 const router = express.Router();
+const path = require("path");
+const multer = require("multer");
 
-// MULTER
-const multer = require('multer');
+// ***** Controller Require *****
+const adminController = require("../controllers/admin-controller");
+
+// ***** Initializing MULTER *****
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, "../../public/img/products"),
-    filename: (req,file,cb) => {
-        // VAlidar el tamaño del archivo
-        //if(file.size > 10 * 1000 * 1000){
-        //    cb(new Error("Archivo demasiado grande"))}
-        cb(null,Date.now() + file.originalname)
-    }
-})
+  destination: path.join(__dirname, "../../public/img/products"),
+  filename: (req, file, cb) => {
+    // Validar el tamaño del archivo
+    //if(file.size > 10 * 1000 * 1000){
+    //    cb(new Error("Archivo demasiado grande"))}
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
 
-const uploader = multer({
-    storage
-})
+const uploader = multer({ storage });
 
-/*** CREATE ONE PRODUCT ***/ 
-router.get('/product/create', adminController.create); 
-router.post('/product/', uploader.single("img"), adminController.store); 
+// ----- CREATE ONE PRODUCT -----
+router.get("/product/create", adminController.create);
+router.post("/product", uploader.single("img"), adminController.store);
 
-/*** EDIT PRODUCTS ***/ 
-router.get('/product/:id/edit', adminController.editProduct)
+// ----- EDIT ONE PRODUCT -----
+router.get("/product/:id/edit", adminController.edit);
+router.put("/product/:id", uploader.single("img"), adminController.update);
 
-router.put('/product/:id', adminController.updateProduct)
-
+// ----- DELETE ONE PRODUCT -----
+router.delete("/product/:id", adminController.delete);
 
 module.exports = router;

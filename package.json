@@ -21,10 +21,11 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "fullpage.js": "^3.1.2",
-    "morgan": "^1.10.0"
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3"
   },
   "devDependencies": {
-    "multer": "^1.4.3",
     "nodemon": "^2.0.12"
   }
 }

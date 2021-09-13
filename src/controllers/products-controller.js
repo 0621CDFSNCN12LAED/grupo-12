@@ -1,33 +1,34 @@
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
 
-const productsFilePath = path.join(__dirname, '../data/productsDB.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const adminServices = require("../services/admin-services");
+
+const products = adminServices.products;
 
 const productsController = {
-  productDetail: (req, res) => {
-    const product = products.find((prod) => {
-			return prod.id == req.params.id
-		})
-    res.render("products/productDetail",{product});
+  viewAll: (req, res) => {
+    res.render("products/products", { products });
   },
+
+  viewCategory: (req, res) => {
+    // Find one category
+    const productsByCategory = adminServices.findCategory(req.params.category);
+    const selectedCategory = req.params.category;
+    res.render("products/productsCategory", { productsByCategory, selectedCategory });
+  },
+
+  detail: (req, res) => {
+    const product = adminServices.findOneById(req.params.id);
+    res.render("products/productDetail", { product });
+  },
+
   cart: (req, res) => {
     res.render("products/productCart");
   },
+
   fullpage: (req, res) => {
     res.render("products/fullpage");
   },
-  allProducts: (req,res) => {
-    res.render("products/products", {products});
-  },
-  productCategory: (req,res) => {
-    let selectedCategory = req.params.category
-    let productsByCategory = products.filter((prod) => {
-			return prod.category == selectedCategory
-		})
-    res.render("products/productsCategory", {productsByCategory, selectedCategory});
-
-  }
 };
 
 module.exports = productsController;
