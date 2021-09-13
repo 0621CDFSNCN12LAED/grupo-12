@@ -40,7 +40,7 @@ const adminServices = {
   },
 
   editOne(id, payload, image) {
-    this.findOneById(id);
+    const product = this.findOneById(id);
     product.name = payload.name;
     product.description = payload.description;
     product.category = payload.category;

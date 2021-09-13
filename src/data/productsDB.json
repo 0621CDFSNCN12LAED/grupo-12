@@ -173,5 +173,15 @@
     "starred": false,
     "price": 3000,
     "img": "default-img.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Otra zapa",
+    "category": "Camping",
+    "subcategory": "Accesorios",
+    "discount": 50,
+    "price": 30000,
+    "starred": true,
+    "img": "default-img.jpg"
   }
 ]
