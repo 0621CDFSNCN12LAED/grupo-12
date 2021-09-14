@@ -19,6 +19,9 @@ header {
   display: flex;
   justify-content: space-between;
 }
+.container-header {
+  margin: 0 40px;
+}
 
 .logo {
   width: 200px;
@@ -54,6 +57,42 @@ header {
 .navegacion li a:hover {
   top: -6px;
 }
+
+.lupa {
+  display: none;
+}
+.container-searchbar {
+  padding: 0;
+  margin: 0 10px;
+  display: flex;
+  width: 50%;
+  background-color: #D9D7C5;
+  border-radius: 3px;
+}
+
+.container-searchbar input{
+  color: black;
+  font-size: 17px;
+  padding-left: 6px;
+}
+
+.container-form {
+  display: flex;
+  width: 100%;
+}
+.container-form button {
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+.container-form input {
+  background-color: transparent;
+}
+.container-form i{
+  color: black;
+}
+
+
 
 /*--------------- Main ------------- */
 
@@ -175,7 +214,7 @@ header {
 }
 
 .detail-image {
-  width: 50%;
+  height: 500px;
 }
 
 .detail-image img {

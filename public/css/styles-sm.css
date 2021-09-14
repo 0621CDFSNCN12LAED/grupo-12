@@ -43,6 +43,7 @@
 
 .container-searchbar {
   padding-bottom: 10px;
+  display: none;
 }
 
 .search-bar {
@@ -451,6 +452,12 @@ footer {
 .detail-cart i {
   margin-left: 10px;
 }
+
+
+.detail-image img{
+  height: 100%;
+}
+
 
 
 
