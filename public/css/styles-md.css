@@ -1,7 +1,7 @@
 /*--------------- Header ------------- */
 
 main {
-  margin-top: 165px;
+  margin-top: 125px;
 }
 
 header {
@@ -66,11 +66,11 @@ header {
   margin: 0 10px;
   display: flex;
   width: 50%;
-  background-color: #D9D7C5;
+  background-color: #d9d7c5;
   border-radius: 3px;
 }
 
-.container-searchbar input{
+.container-searchbar input {
   color: black;
   font-size: 17px;
   padding-left: 6px;
@@ -88,11 +88,9 @@ header {
 .container-form input {
   background-color: transparent;
 }
-.container-form i{
+.container-form i {
   color: black;
 }
-
-
 
 /*--------------- Main ------------- */
 

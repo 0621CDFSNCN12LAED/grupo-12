@@ -46,26 +46,19 @@
         <h2 class="text-titles">PROD. DESTACADOS</h2>
         <!-- En version mobile convertir en slider para ocupar menos espacio -->
         <div class="flex">
-          <% for (product of products) { %>
-            <% if(product.starred == true) { %>
-            <%- include("./partials/product-box.ejs") %>
-              <% }  %>
-            <% }  %>
+          <% for (product of products) { %> <% if(product.starred == true) { %> <%-
+          include("./partials/product-box.ejs") %> <% } %> <% } %>
         </div>
       </section>
       <section>
         <h2 class="text-titles">OFERTAS</h2>
         <div class="flex">
-          <% for (product of products) { %>
-            <% if(product.discount != null) { %>
-            <%- include("./partials/product-box.ejs") %>
-              <% }  %>
-            <% }  %>
-        
+          <% for (product of products) { %> <% if(product.discount != null) { %> <%-
+          include("./partials/product-box.ejs") %> <% } %> <% } %>
         </div>
       </section>
-      <form action="/products" method="GET">
-        <button type="submit" class="button-prod" ><span>VER TODOS LOS PRODUCTOS</span></button>
+      <form action="/products" method="GET" style="padding-bottom: 20px">
+        <button type="submit" class="button-prod"><span>VER TODOS LOS PRODUCTOS</span></button>
       </form>
     </main>
 

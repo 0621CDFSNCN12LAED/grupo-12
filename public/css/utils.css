@@ -1,71 +1,68 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* -------------------- Globales ------------------ */
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
 }
 
 header {
-    background-color: #365946;
+  background-color: #365946;
 }
 
 .prod-img {
-    width: 100%;
+  width: 100%;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* ----------------- Clases genéricas --------------------*/
 .align-center {
-    text-align: center
+  text-align: center;
 }
 
 .icono-grande {
-    font-size:2em;
-    margin-bottom: 10px
-}
-.magin-0 {
-    margin: 0;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 .shadow {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .align-center {
-    text-align: center;
+  text-align: center;
 }
 
 .inactive {
-    display: none;
+  display: none;
 }
 
 /* ------------------- Colores ---------------------------*/
 
 .color-primario {
-    background-color: #023E73;
+  background-color: #023e73;
 }
 
 .color-secundario {
-    background-color: #2b5f8c;
+  background-color: #2b5f8c;
 }
 
-.color-terciario {
-    background-color: #365946;
+.color-terciario  {
+  background-color: #365946;
 }
 
 .color-cuarto {
-    color: #D9D7C5;
+  color: #d9d7c5;
 }
 
 .color-quinto {
-    color: #F2C49B;
+  color: #f2c49b;
 }
 .color-delete {
-    background-color: red;
+  background-color: red;
 }
