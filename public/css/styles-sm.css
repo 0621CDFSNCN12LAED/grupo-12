@@ -446,6 +446,10 @@ footer {
   height: 100%;
 }
 
+.prod-detail {
+  padding: 10px;
+}
+
 /* ----------------- HEADER FULLPAGE -------------------*/
 
 /* ----------- FLOATING RIGHT ---------*/
