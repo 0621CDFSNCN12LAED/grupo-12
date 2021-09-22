@@ -33,9 +33,10 @@ const adminController = {
   },
 
   // ----- DELETE ONE product -----
-  delete: (req, res) => {
-    res.send("Estas eliminando un producto");
-  },
+  destroy : (req, res) => {
+		adminServices.destroyOne(req.params.id);
+		res.redirect("/products")
+	}
 };
 
 module.exports = adminController;

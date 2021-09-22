@@ -9,7 +9,8 @@
     "subcategory": "Mochilas",
     "discount": 30,
     "starred": false,
-    "stock": 10
+    "stock": 10,
+    "deleted": false
   },
   {
     "id": 2,
@@ -56,7 +57,8 @@
     "subcategory": "Masonry",
     "discount": 68,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 6,
@@ -68,7 +70,8 @@
     "subcategory": "Termite Control",
     "discount": 37,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 7,
@@ -80,7 +83,8 @@
     "subcategory": "HVAC",
     "discount": 20,
     "starred": false,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 8,
@@ -92,7 +96,8 @@
     "subcategory": "elementos de camping",
     "discount": 23,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 9,
@@ -104,7 +109,8 @@
     "subcategory": "Electrical and Fire Alarm",
     "discount": 7,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 10,
@@ -116,7 +122,8 @@
     "subcategory": "Exterior Signage",
     "discount": 36,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 11,
@@ -128,7 +135,8 @@
     "subcategory": "Structural & Misc Steel Erection",
     "discount": 36,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 12,
@@ -140,7 +148,8 @@
     "subcategory": "Elevator",
     "discount": 17,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 13,
@@ -152,7 +161,8 @@
     "subcategory": "Framing (Wood)",
     "discount": null,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 14,
@@ -164,7 +174,8 @@
     "subcategory": "HVAC",
     "discount": 15,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 15,
@@ -176,7 +187,8 @@
     "subcategory": "Roofing (Asphalt)",
     "discount": 10,
     "starred": true,
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 16,
@@ -187,7 +199,8 @@
     "starred": false,
     "price": 3000,
     "img": "default-img.jpg",
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 17,
@@ -198,17 +211,216 @@
     "price": 30000,
     "starred": true,
     "img": "default-img.jpg",
-    "stock": 10
+    "stock": 10,
+    "deleted": true
   },
   {
     "id": 18,
-    "name": "Product Ejemplo 123",
+    "name": "Columbus Mochila Russell 25L",
+    "description": "Mochila impermeable para el frio extremo de 25 Litros. ",
     "category": "Montañismo",
+    "subcategory": "Mochilas",
+    "discount": 0,
+    "starred": true,
+    "price": 35000,
+    "img": "1632349473403-columbus-mochila-russell-25l.jpeg"
+  },
+  {
+    "id": 19,
+    "name": "Millet Mochila Ubic 40L",
+    "description": "Millet Mochila Ubic 40L",
+    "category": "Montañismo",
+    "subcategory": "Mochilas",
+    "discount": 10,
+    "price": 20900,
+    "starred": false,
+    "img": "1632349593060-millet-mochila-ubic-40l.jpeg"
+  },
+  {
+    "id": 20,
+    "name": "Osprey Mochila Atmos AG 65L",
+    "description": "Si hay un producto que está de manera consistente en el tope de las listas anuales de senderismo y acampada, es la mochila de excursión Osprey Atmos AG 65L. Ganadora de múltiples premios internacionales por su practicidad, resistencia y adaptabilidad, la Atmos AG 65L siempre te brindará una respuesta superior en cualquier actividad outdoor.",
+    "category": "Montañismo",
+    "subcategory": "Mochilas",
+    "discount": 5,
+    "price": 90000,
+    "starred": false,
+    "img": "1632349743696-osprey-mochila-atmos-ag-65l.jpeg"
+  },
+  {
+    "id": 21,
+    "name": "Osprey Mochila Stratos 36L",
+    "description": "Fabricada con las especificaciones más rigurosas y la mejor calidad ofrecida por la marca americana, la mochila Osprey Stratos 36L tiene totalmente justificada su gran reputación dentro del mundo del senderismo. Ya sea para caminar en la naturaleza o subir a la montaña, con la Stratos siempre sentirás el viento detrás de ti.",
+    "category": "Montañismo",
+    "subcategory": "Mochilas",
+    "discount": 10,
+    "price": 100000,
+    "starred": false,
+    "img": "1632349790806-osprey-mochila-stratos-36l.jpeg"
+  },
+  {
+    "id": 22,
+    "name": "Petzl Asegurador Reverso",
+    "description": "Polivalente y ultraligero, el REVERSO es un asegurador-descensor diseñado para el aseguramiento y el descenso en rápel. El modo Reverso permite el aseguramiento independiente y simultáneo de uno o dos segundos. Es adecuado para la mayoría de diámetros de cuerda: cuerda simple de 8,5 a 10,5 mm, cuerda doble de 7,1 a 9,2 mm y cuerda gemela de 6,9 a 9,2 mm.",
+    "category": "Escalada",
     "subcategory": "Accesorios",
     "discount": 0,
+    "starred": true,
+    "price": 4000,
+    "img": "1632349877588-petzl-asegurador-reverso.jpeg"
+  },
+  {
+    "id": 23,
+    "name": "Petzl Grigri +",
+    "description": "Asegurador con frenado asistido y empuñadura antipánico, para cualquier diámetro de cuerda simple (de 8,5 a 11 mm)",
+    "category": "Escalada",
+    "subcategory": "Accesorios",
+    "discount": 0,
+    "price": 4500,
     "starred": false,
-    "price": 19890,
-    "img": "1631498113401-Captura de Pantalla 2021-09-08 a la(s) 18.08.43.png",
-    "stock": 10
+    "img": "1632349927954-petzl-grigri--.jpeg"
+  },
+  {
+    "id": 24,
+    "name": "Wildcountry Ropeman 1",
+    "description": "El original, el Ropeman tiene una leva de aleación de alumino, es ligéro y fácil de utilizar. Diseñado para el uso en cuerdas con un diámetro de más de 10mm. Perfecto para escalada y autorrescate.   Especificaciones:  - Alloy 7075 T6, - >10mm. - 3 Sigma rated, - CE EN567, - UIAA 126.",
+    "category": "Escalada",
+    "subcategory": "Accesorios",
+    "discount": 0,
+    "price": 6500,
+    "starred": false,
+    "img": "1632349977344-wildcountry-ropeman-1.jpeg"
+  },
+  {
+    "id": 25,
+    "name": "Black Diamond Asegurador ATC XP",
+    "description": "Black Diamond Asegurador ATC XP",
+    "category": "Escalada",
+    "subcategory": "Accesorios",
+    "discount": 10,
+    "price": 3200,
+    "starred": false,
+    "img": "1632350596818-black-diamond-asegurador-atc-xp.jpeg"
+  },
+  {
+    "id": 26,
+    "name": "Haglöfs Saco De Dormir Tarius -18ºC",
+    "description": "Haglöfs Saco De Dormir Tarius -18ºC",
+    "category": "Camping",
+    "subcategory": "Para dormir",
+    "discount": 0,
+    "starred": true,
+    "price": 30000,
+    "img": "1632351878622-haglofs-saco-de-dormir-tarius--18-c.jpeg"
+  },
+  {
+    "id": 27,
+    "name": "Robens Saco De Dormir Spire II -4ºC",
+    "description": "Robens Saco De Dormir Spire II -4ºC",
+    "category": "Camping",
+    "subcategory": "Para dormir",
+    "discount": 10,
+    "price": 120000,
+    "starred": false,
+    "img": "1632351981299-robens-saco-de-dormir-spire-ii--4-c.jpeg"
+  },
+  {
+    "id": 28,
+    "name": "Sea To Summit Saco De Dormir Trailhead THII",
+    "description": "Sea To Summit Saco De Dormir Trailhead THII",
+    "category": "Camping",
+    "subcategory": "Para dormir",
+    "discount": 0,
+    "starred": true,
+    "price": 108000,
+    "img": "1632352070896-sea-to-summit-saco-de-dormir-trailhead-thii.jpeg"
+  },
+  {
+    "id": 29,
+    "name": "Outwell Saco De Dormir Camper Supreme -9ºC",
+    "description": "Outwell Saco De Dormir Camper Supreme -9ºC",
+    "category": "Camping",
+    "subcategory": "Para dormir",
+    "discount": 0,
+    "price": 70000,
+    "starred": false,
+    "img": "1632352113977-outwell-saco-de-dormir-camper-supreme--9-c.jpeg"
+  },
+  {
+    "id": 30,
+    "name": "Petzl Casco Meteor",
+    "description": "Petzl Casco Meteor",
+    "category": "SKI",
+    "subcategory": "Accesorios",
+    "discount": 0,
+    "starred": true,
+    "price": 32000,
+    "img": "1632352231274-petzl-casco-meteor.jpeg"
+  },
+  {
+    "id": 31,
+    "name": "Black Diamond Casco Half Dome",
+    "description": "Black Diamond Casco Half Dome",
+    "category": "SKI",
+    "subcategory": "Accesorios",
+    "discount": 0,
+    "starred": true,
+    "price": 40000,
+    "img": "1632352289010-black-diamond-casco-half-dome.jpeg"
+  },
+  {
+    "id": 32,
+    "name": "Black Diamond Casco Vapor",
+    "description": "Black Diamond Casco Vapor",
+    "category": "SKI",
+    "subcategory": "Accesorios",
+    "discount": 10,
+    "price": 120000,
+    "starred": false,
+    "img": "1632352320261-black-diamond-casco-vapor.jpeg"
+  },
+  {
+    "id": 33,
+    "name": "Kong Casco Kosmos Full",
+    "description": "Kong Casco Kosmos Full",
+    "category": "SKI",
+    "subcategory": "Accesorios",
+    "discount": 5,
+    "price": 45000,
+    "starred": false,
+    "img": "1632352355207-kong-casco-kosmos-full.jpeg"
+  },
+  {
+    "id": 34,
+    "name": "Julbo Máscaras Esquí Fusion",
+    "description": "Julbo Máscaras Esquí Fusion",
+    "category": "SKI",
+    "subcategory": "Accesorios",
+    "discount": 0,
+    "price": 54000,
+    "starred": false,
+    "img": "1632352407885-julbo-mascaras-esqui-fusion.jpeg"
+  },
+  {
+    "id": 35,
+    "name": "Julbo Máscaras Esquí Proton OTG",
+    "description": "Julbo Máscaras Esquí Proton OTG",
+    "category": "SKI",
+    "subcategory": "Accesorios",
+    "discount": 0,
+    "price": 15000,
+    "starred": false,
+    "img": "1632352443141-julbo-mascaras-esqui-proton-otg.jpeg"
+  },
+  {
+    "id": 36,
+    "name": "Julbo Máscaras Esquí Echo Spectron3",
+    "description": "Julbo Máscaras Esquí Echo Spectron3",
+    "category": "SKI",
+    "subcategory": "Accesorios",
+    "discount": 0,
+    "price": 15000,
+    "starred": false,
+    "img": "1632352505978-julbo-mascaras-esqui-echo-spectron3.jpeg"
   }
 ]

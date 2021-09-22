@@ -7,7 +7,9 @@ const products = adminServices.products;
 
 const productsController = {
   viewAll: (req, res) => {
-    res.render("products/products", { products });
+    const filteredProducts = adminServices.findAll();
+
+    res.render("products/products", { products: filteredProducts});
   },
 
   viewCategory: (req, res) => {
@@ -25,7 +27,6 @@ const productsController = {
   cart: (req, res) => {
     res.render("products/productCart");
   },
-
   fullpage: (req, res) => {
     res.render("products/fullpage");
   },
