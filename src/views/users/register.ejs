@@ -13,29 +13,40 @@
     <!-- Main section -->
     <main>
       <h1 class="text-titles login-register">CREAR CUENTA</h1>
+      <% if(locals.errors && errors.password1){ %>
+        <div>
+            <p><%= JSON.stringify(locals.errors) %></p>
+        </div>
+    
+        <% } %>
       <div class="register-wrapper">
         <div class="content-wrapper-1">
-          <form class="register-form" action="#" method="GET">
+          <form class="register-form" action="/users/register" method="POST">
             <div class="form-div">
-              <label class="form-label" for="">Nombre</label>
-              <input type="text" name="name" placeholder="Ingrese su nombre" required />
+              <label class="form-label" for="firstName">Nombre</label>
+              <input type="text" name="firstName" placeholder="Ingrese su nombre" required />
             </div>
             <div class="form-div">
-              <label class="form-label" for="">Apellido</label>
-              <input type="text" name="Surname" placeholder="Ingrese su apellido" required />
+              <label class="form-label" for="lastName">Apellido</label>
+              <input type="text" name="lastName" placeholder="Ingrese su apellido" required />
             </div>
             <div class="form-div">
-              <label class="form-label" for="">Dirección de correo electrónico</label>
-              <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com" required />
+              <label class="form-label" for="email">Dirección de correo electrónico</label>
+              <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com"  />
             </div>
             <div class="form-div">
-              <label class="form-label" for="">Contraseña</label>
-              <input type="password" name="password" placeholder="Ingrese su contraseña" required />
-              <p>La contraseña debe tener al menos 6 caracteres.</p>
+              <label class="form-label" for="password1">Contraseña</label>
+              <input type="password" name="password1" placeholder="Ingrese su contraseña" required />
+              <% if (locals.errors) { %>
+              <% for (let error of locals.errors) { %>
+                  <p><%= error.msg %></p>
+              <% } %>  
+              <% } %>  
+
             </div>
             <div class="form-div">
-              <label class="form-label" for="">Confirmar contraseña</label>
-              <input type="password" name="password" placeholder="Repita su contraseña" required />
+              <label class="form-label" for="password2">Confirmar contraseña</label>
+              <input type="password" name="password2" placeholder="Repita su contraseña" required />
             </div>
             <div class="form-div">
               <h3 class="form-bases">
@@ -45,7 +56,7 @@
               </h3>
             </div>
             <div class="form-div">
-              <button class="boton-ppal color-primario" type="submit" href="#">REGISTRARSE</button>
+              <button class="boton-ppal color-primario" type="submit">REGISTRARSE</button>
             </div>
           </form>
         </div>

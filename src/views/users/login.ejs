@@ -15,13 +15,16 @@
       <h1 class="text-titles login-register">ACCESO USUARIO</h1>
       <div class="register-wrapper">
         <div class="content-wrapper-1">
-          <form class="register-form" action="#" method="GET">
+          <form class="register-form" action="/users/login" method="POST">
             <div class="form-div">
-              <label class="form-label" for="">Correo electrónico</label>
+              <label class="form-label" for="email">Correo electrónico</label>
               <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com" required />
+              <% if(locals.errors && errors.email) { %>
+                <p><%= errors.email.msg %></p>
+              <% } %>
             </div>
             <div class="form-div">
-              <label class="form-label" for="">Contraseña</label>
+              <label class="form-label" for="password">Contraseña</label>
               <input type="password" name="password" placeholder="Ingrese su contraseña" required />
             </div>
             <div class="form-div">
@@ -30,7 +33,7 @@
               >
             </div>
             <div class="form-div">
-              <button class="boton-ppal color-primario" type="submit" href="#">REGISTRARSE</button>
+              <button class="boton-ppal color-primario" type="submit" href="#">LOGIN</button>
             </div>
             <div class="form-div align-center">
               <a class="password-link" href="#">Olvidé mi contraseña</a>

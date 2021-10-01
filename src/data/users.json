@@ -88,5 +88,30 @@
         "password": "1234",
         "category": "admin",
         "image": "image"
+    },
+    {
+        "id": 11,
+        "firstName": "Juan",
+        "lastName": "Ferrari",
+        "email": "juansegundoferrari@gmail.com",
+        "password": "$2a$10$9pOdPogl9KBD/GcfDSvEweuWpBSxh/4N/vtAgDhBTosXGIXjrjvL6"
+    },
+    {
+        "id": 12,
+        "firstName": "Juan",
+        "lastName": "Ferrari 2",
+        "email": "segundo.ferrari@mercadolibre.com",
+        "password": "$2a$10$fbsOyhIk/24q3TIYvKdXo.Rp/8MbY1gU2Dwz/X8KefP3S5UtZR1TO",
+        "category": "viewer",
+        "image": "IMAGEN HARCODEADA POR EL MOMENTO"
+    },
+    {
+        "id": 13,
+        "firstName": "Juan",
+        "lastName": "Ferrari",
+        "email": "1@a.com",
+        "password": "$2a$10$pj6YTZK7KFHNUuAuD9ZUYumydNXmyO8c9/qCVNMW3q1rZ74qEz0zO",
+        "category": "viewer",
+        "image": "IMAGEN HARCODEADA POR EL MOMENTO"
     }
 ]
