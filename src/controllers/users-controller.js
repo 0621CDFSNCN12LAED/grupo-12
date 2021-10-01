@@ -22,7 +22,11 @@ const mainController = {
             req.session.usuarioLogueado = userToLogin
             //console.log(userToLogin)
 
-            res.redirect('/users/userDetail' ) 
+            if(req.body.remember_user) {
+                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+            }
+
+            res.redirect('/users/userDetail') 
         }
         // Contraseña incorrecta
         return res.render('./users/login', {errors: {
