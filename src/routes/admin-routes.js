@@ -7,6 +7,10 @@ const multer = require("multer");
 // ***** Controller Require *****
 const adminController = require("../controllers/admin-controller");
 
+// -------- AUTH MIDDLEWARE -----------
+let LoginMiddlewares = require('../middlewares/loginMiddlewares')
+
+
 // ***** Initializing MULTER *****
 const storage = multer.diskStorage({
   destination: path.join(__dirname, "../../public/img/products"),
@@ -21,14 +25,14 @@ const storage = multer.diskStorage({
 const uploader = multer({ storage });
 
 // ----- CREATE ONE PRODUCT -----
-router.get("/product/create", adminController.create);
+router.get("/product/create",LoginMiddlewares.authMiddleware, adminController.create);
 router.post("/product", uploader.single("img"), adminController.store);
 
 // ----- EDIT ONE PRODUCT -----
-router.get("/product/:id/edit", adminController.edit);
+router.get("/product/:id/edit",LoginMiddlewares.authMiddleware, adminController.edit);
 router.put("/product/:id", uploader.single("img"), adminController.update);
 
 // ----- DELETE ONE PRODUCT -----
-router.delete("/product/:id", adminController.destroy);
+router.delete("/product/:id",LoginMiddlewares.authMiddleware, adminController.destroy);
 
 module.exports = router;

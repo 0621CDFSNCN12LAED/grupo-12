@@ -22,7 +22,7 @@ const mainController = {
             req.session.usuarioLogueado = userToLogin
             //console.log(userToLogin)
 
-            res.render('./users/userDetail', {user: JSON.stringify(userToLogin)} ) 
+            res.redirect('/users/userDetail' ) 
         }
         // Contraseña incorrecta
         return res.render('./users/login', {errors: {
@@ -74,7 +74,17 @@ const mainController = {
         return res.render('./users/register', {errors: resultValidation.errors})
 
     }
-  }
+  },
+  userDetail: (req,res) => {
+      console.log(req.session.usuarioLogueado)
+      res.render('./users/userDetail', {user: req.session.usuarioLogueado})
+  },
+  logout: (req,res) => {
+    res.clearCookie('userEmail')
+    req.session.destroy();
+    return res.redirect('/users/login')
+}
+
 };
 
 module.exports = mainController;

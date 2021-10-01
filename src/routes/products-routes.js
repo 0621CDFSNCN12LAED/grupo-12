@@ -13,7 +13,7 @@ router.get("/category/:category", productController.viewCategory);
 router.get("/:id", productController.detail);
 
 // ---- GO TO CART ----
-router.get("/productCart", productController.cart);
+router.get("/cart/productCart", productController.cart);
 
 // ---- NOT IN USE ----
 router.get("/fullpage", productController.fullpage);
