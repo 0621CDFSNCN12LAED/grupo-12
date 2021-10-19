@@ -1,44 +1,39 @@
 // Requires
 const express = require("express");
+const router = express.Router();
+const { check, body, validationResult } = require("express-validator");
+
+// Controller require
 const usersController = require("../controllers/users-controller");
 
-const router = express.Router();
-const {check, body, validationResult} = require('express-validator')
-
 // ------ MIDDLEWARES --------
-
-let LoginMiddlewares = require('../middlewares/loginMiddlewares')
+let LoginMiddlewares = require("../middlewares/loginMiddlewares");
 
 // ----- VALIDATIONS --------
+const registerValidations = require("../validations/register-validations");
+const loginValidations = require("../validations/login-validations");
 
-let loginValidation = [
-    body('email').isEmail().withMessage('Debes ingresar un mail válido'),
-    body('password1').isLength({min: 4}).withMessage("Contraseña debe contener mínimo 4 caracteres")
-  ]
+// ******** ROUTES ********
+// Login
+router.get("/login", LoginMiddlewares.guestMiddleware, usersController.login);
+router.post("/login", loginValidations, usersController.processLogin);
 
-// ---- LOGIN PAGE ----
-router.get("/login",LoginMiddlewares.guestMiddleware, usersController.login);
-router.post("/login", usersController.processLogin);
+// Register
+router.get("/register", LoginMiddlewares.guestMiddleware, usersController.register);
+router.post("/register", registerValidations, usersController.createUser);
 
+router.get("/check", function (req, res) {
+  if (req.session.usuarioLogueado == undefined) {
+    res.send("no estas logueado");
+  } else {
+    res.send("El usuario logueado es: " + req.session.usuarioLogueado.email);
+  }
+});
 
-// ---- REGISTER PAGE ----
-router.get("/register",LoginMiddlewares.guestMiddleware, usersController.register);
-router.post("/register",loginValidation, usersController.createUser);
+// User detail
+router.get("/userDetail", LoginMiddlewares.authMiddleware, usersController.userDetail);
 
-router.get('/check', function(req,res){
-    if(req.session.usuarioLogueado == undefined){
-      res.send("no estas logueado")
-    } else {
-      res.send("El usuario logueado es: " + req.session.usuarioLogueado.email)
-    }
-  });
-
-// ------- USER DETAIL -------
-router.get("/userDetail",LoginMiddlewares.authMiddleware, usersController.userDetail);
-
-
-// -------- LOGOUT ----------
-router.get('/logout', usersController.logout);
-
+// Logout
+router.get("/logout", usersController.logout);
 
 module.exports = router;

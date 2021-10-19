@@ -620,9 +620,15 @@ footer {
 }
 
 .form-bases {
+  color: black !important;
   font-size: 0.75rem;
   font-style: italic;
   font-weight: normal;
+}
+
+error-msg {
+  font-size: 0.5rem;
+  color: red;
 }
 
 /*------------------- LOGIN ----------------------*/
@@ -685,4 +691,3 @@ footer {
 .user-detail-container {
   margin: 10px 15px;
 }
-

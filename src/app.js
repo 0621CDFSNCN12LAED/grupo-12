@@ -3,14 +3,12 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const methodOverride = require("method-override");
-var cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
-var userLoggedMiddleware = require('./middlewares/loginMiddlewares')
+const userLoggedMiddleware = require("./middlewares/loginMiddlewares");
 
-// requerimos el middleware de express-session
-var session = require('express-session')
-
-// Initializing app express()
+// Initializing express() app
 const app = express();
 
 // Middlewares
@@ -20,14 +18,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(cookieParser());
-app.use(session({
-  secret: "deCamping",
-  resave: false,
-  saveUninitialized: false
+app.use(
+  session({
+    secret: "deCamping",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-}))
-app.use(userLoggedMiddleware.userLoggedMiddleware)
-
+app.use(userLoggedMiddleware.userLoggedMiddleware);
 
 // Setting EJS as main Template Engine
 app.set("view engine", "ejs");
@@ -46,13 +45,11 @@ const productRoutes = require("./routes/products-routes");
 const adminRoutes = require("./routes/admin-routes");
 const usersRoutes = require("./routes/users-routes");
 
-
 // Route system - use()
 app.use("/", mainRoutes);
 app.use("/products", productRoutes);
 app.use("/admin", adminRoutes);
 app.use("/users", usersRoutes);
-
 
 // Server listening in port 3000
 app.listen(3000, () => console.log("Server running smoothly in port 3000"));

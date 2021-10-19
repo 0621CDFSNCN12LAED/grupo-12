@@ -13,47 +13,58 @@
     <!-- Main section -->
     <main>
       <h1 class="text-titles login-register">CREAR CUENTA</h1>
-      <% if(locals.errors && errors.password1){ %>
-        <div>
-            <p><%= JSON.stringify(locals.errors) %></p>
-        </div>
-    
-        <% } %>
       <div class="register-wrapper">
         <div class="content-wrapper-1">
           <form class="register-form" action="/users/register" method="POST">
             <div class="form-div">
-              <label class="form-label" for="firstName">Nombre</label>
-              <input type="text" name="firstName" placeholder="Ingrese su nombre" required />
+              <label class="form-label" for="firstName">Nombre *</label>
+              <input type="text" name="firstName" placeholder="Ingrese su nombre"
+              value="<%=locals.oldValues ? oldValues.firstName : "" %>" > <% if (locals.errors &&
+              errors.firstName) { %>
+              <div class="error-msg">
+                <p><%= errors.firstName.msg %></p>
+              </div>
+              <% } %>
             </div>
             <div class="form-div">
-              <label class="form-label" for="lastName">Apellido</label>
-              <input type="text" name="lastName" placeholder="Ingrese su apellido" required />
+              <label class="form-label" for="lastName">Apellido *</label>
+              <input type="text" name="lastName" placeholder="Ingrese su apellido"
+              value="<%=locals.oldValues ? oldValues.lastName : "" %>" > <% if (locals.errors &&
+              errors.lastName) { %>
+              <div class="error-msg">
+                <p><%= errors.lastName.msg %></p>
+              </div>
+              <% } %>
             </div>
             <div class="form-div">
-              <label class="form-label" for="email">Dirección de correo electrónico</label>
-              <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com"  />
+              <label class="form-label" for="email">E-mail *</label>
+              <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com"
+              value="<%=locals.oldValues ? oldValues.email : "" %>" > <% if (locals.errors &&
+              errors.email) { %>
+              <div class="error-msg">
+                <p><%= errors.email.msg %></p>
+              </div>
+              <% } %>
             </div>
             <div class="form-div">
-              <label class="form-label" for="password1">Contraseña</label>
-              <input type="password" name="password1" placeholder="Ingrese su contraseña" required />
-              <% if (locals.errors) { %>
-              <% for (let error of locals.errors) { %>
-                  <p><%= error.msg %></p>
-              <% } %>  
-              <% } %>  
-
+              <label class="form-label" for="password1">Contraseña *</label>
+              <input type="password" name="password1" placeholder="Ingrese su contraseña" />
+              <% if (locals.errors && errors.password1) { %>
+              <div class="col-12 form-error">
+                <p><%= errors.password1.msg %></p>
+              </div>
+              <% } %>
             </div>
             <div class="form-div">
-              <label class="form-label" for="password2">Confirmar contraseña</label>
-              <input type="password" name="password2" placeholder="Repita su contraseña" required />
+              <label class="form-label" for="password2">Confirmar contraseña *</label>
+              <input type="password" name="password2" placeholder="Repita su contraseña" />
             </div>
             <div class="form-div">
-              <h3 class="form-bases">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolor laboriosam
-                esse fuga sapiente dolores quae. Itaque earum deserunt molestias reiciendis dolore
-                totam sequi repellendus.
-              </h3>
+              <p class="form-bases">(*) Campos obligatorios.</p>
+              <p class="form-bases">
+                La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un
+                caracter especial (Ej: ?!,@)
+              </p>
             </div>
             <div class="form-div">
               <button class="boton-ppal color-primario" type="submit">REGISTRARSE</button>
