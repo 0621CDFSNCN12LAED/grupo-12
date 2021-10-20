@@ -20,7 +20,7 @@ router.post("/login", loginValidations, usersController.processLogin);
 
 // Register
 router.get("/register", LoginMiddlewares.guestMiddleware, usersController.register);
-router.post("/register", registerValidations, usersController.createUser);
+router.post("/register", registerValidations, usersController.processRegister);
 
 router.get("/check", function (req, res) {
   if (req.session.usuarioLogueado == undefined) {

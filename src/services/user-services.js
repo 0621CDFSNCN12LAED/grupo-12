@@ -4,12 +4,17 @@
 //4. Editar la información de un usuario
 //5. Eliminar a un usuario de la DB
 
+// ***** Global requires *****
+const path = require("path");
 const fs = require("fs");
 
-const User = {
-  fileName: "./src/data/usersDB.json",
-  getData: function () {
-    return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
+// ***** Database folder *****
+const usersFilePath = path.join(__dirname, "../data/usersDB.json");
+const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+
+const userServices = {
+  users() {
+    return users;
   },
   generateId: function () {
     let allUsers = this.findAll();
@@ -20,7 +25,8 @@ const User = {
     return 1;
   },
   findAll: function () {
-    return this.getData();
+    const allUsers = this.users().filter((user) => user);
+    return allUsers;
   },
   findbyPk: function (id) {
     let allUsers = this.findAll();
@@ -39,14 +45,14 @@ const User = {
       ...userData,
     };
     allUsers.push(newUser);
-    fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, 4));
+    fs.writeFileSync(usersFilePath, JSON.stringify(allUsers, null, 2));
     return newUser;
   },
   delete: function (id) {
     let allUsers = this.findAll();
     let finalUsers = allUsers.filter((oneUser) => oneUser.id !== id);
-    fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, 4));
+    fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, 2));
     return true;
   },
 };
-module.exports = User;
+module.exports = userServices;

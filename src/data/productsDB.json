@@ -30,7 +30,7 @@
     "img": "outwell-saco-de-dormir-camper-0-c.jpg",
     "category": "Camping",
     "subcategory": "Para dormir",
-    "discount": null,
+    "discount": 0,
     "starred": true,
     "stock": 10
   },
@@ -42,7 +42,7 @@
     "img": "columbus-tienda-de-campana-enol-5p-closed.jpg",
     "category": "Camping",
     "subcategory": "Carpas",
-    "discount": null,
+    "discount": 0,
     "starred": true,
     "stock": 10
   },
@@ -158,7 +158,7 @@
     "img": "default-img.jpg",
     "category": "Escalada",
     "subcategory": "Framing (Wood)",
-    "discount": null,
+    "discount": 0,
     "starred": true,
     "stock": 10,
     "deleted": true

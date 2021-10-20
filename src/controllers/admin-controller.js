@@ -2,7 +2,7 @@
 const path = require("path");
 const fs = require("fs");
 
-const adminServices = require("../services/admin-services");
+const productServices = require("../services/product-services");
 
 // ***** Controllers *****
 const adminController = {
@@ -14,29 +14,29 @@ const adminController = {
   // ----- CREATE ONE product -----
   store: (req, res) => {
     // Create one & save
-    adminServices.createOne(req.body, req.file);
+    productServices.createOne(req.body, req.file);
     res.redirect("/products");
   },
 
   // ----- Go to EDIT form -----
   edit: (req, res) => {
     // Find one
-    const product = adminServices.findOneById(req.params.id);
+    const product = productServices.findOneById(req.params.id);
     res.render("admin/product-edit-form", { product });
   },
 
   // ----- EDIT ONE product -----
   update: (req, res) => {
     // Find one, edit & save
-    adminServices.editOne(req.params.id, req.body, req.file);
+    productServices.editOne(req.params.id, req.body, req.file);
     res.redirect("/products");
   },
 
   // ----- DELETE ONE product -----
-  destroy : (req, res) => {
-		adminServices.destroyOne(req.params.id);
-		res.redirect("/products")
-	}
+  destroy: (req, res) => {
+    productServices.destroyOne(req.params.id);
+    res.redirect("/products");
+  },
 };
 
 module.exports = adminController;

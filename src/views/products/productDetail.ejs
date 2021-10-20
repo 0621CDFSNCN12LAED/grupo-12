@@ -22,7 +22,7 @@
           <div class="container-pricing-information">
             <h2 class="text-titles"><%= product.name %></h2>
 
-            <% if(product.discount > 0) { %>
+            <% if(product.deleted != true) { %> <% if(product.discount > 0) { %>
             <div class="detail-price">
               <span class="detail-price-format"
                 >$ <%= toThousand(product.price - product.price * product.discount / 100) %></span
@@ -67,6 +67,14 @@
                 </form>
               </div>
             </div>
+            <% } else { %>
+            <p>Lo sentimos, este producto ya no está disponible.</p>
+            <form action="/products" method="GET">
+              <button class="boton-ppal color-primario" type="submit">
+                Volver al listado de productos
+              </button>
+            </form>
+            <% } %>
           </div>
         </div>
       </article>

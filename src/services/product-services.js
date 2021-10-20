@@ -7,16 +7,18 @@ const productsFilePath = path.join(__dirname, "../data/productsDB.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const adminServices = {
-  products: products,
-  findAll(){
-		const filteredProducts = products.filter((prod) => {
-			return !prod.deleted == true
-		})
-		return filteredProducts;
-	},
+  products() {
+    return products;
+  },
+  findAll() {
+    const filteredProducts = products.filter((prod) => {
+      return prod.deleted != true;
+    });
+    return filteredProducts;
+  },
   findCategory(category) {
     const selectedCategory = category;
-    const filteredProducts = this.findAll()
+    const filteredProducts = this.findAll();
     const productsByCategory = filteredProducts.filter((prod) => {
       return prod.category == selectedCategory;
     });
@@ -39,7 +41,8 @@ const adminServices = {
       price: Number(payload.price),
       discount: Number(payload.discount),
       starred: payload.starred == "on" ? (payload.starred = true) : (payload.starred = false),
-      img: image ? image.filename : "default-img.jpg"
+      // Falta agregar atributos DELETED y STOCK
+      img: image ? image.filename : "default-img.jpg",
     };
     products.push(product);
     this.save();
@@ -58,17 +61,16 @@ const adminServices = {
     product.img = image ? image.filename : product.img;
     this.save();
   },
-  destroyOne(id){
-		const product = this.findOneById(id);
-		product.deleted = true;
-		this.save();
-	},
+  destroyOne(id) {
+    const product = this.findOneById(id);
+    product.deleted = true;
+    this.save();
+  },
 
   save() {
     const productsJSON = JSON.stringify(products, null, 2);
     fs.writeFileSync(productsFilePath, productsJSON);
   },
-  
 };
 
 module.exports = adminServices;

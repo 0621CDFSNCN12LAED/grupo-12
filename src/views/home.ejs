@@ -53,7 +53,7 @@
       <section>
         <h2 class="text-titles">OFERTAS</h2>
         <div class="flex">
-          <% for (product of products) { %> <% if(product.discount != null) { %> <%-
+          <% for (product of products) { %> <% if(product.discount != 0) { %> <%-
           include("./partials/product-box.ejs") %> <% } %> <% } %>
         </div>
       </section>

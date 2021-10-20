@@ -2,7 +2,7 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
-const UserModel = require("../models/users-model.js");
+const userServices = require("../services/user-services.js");
 
 // ******* Users database ********
 const usersFilePath = path.join(__dirname, "../data/usersDB.json");
@@ -15,50 +15,43 @@ const mainController = {
     res.render("./users/login");
   },
   processLogin: (req, res) => {
-    let userToLogin = UserModel.findbyField("email", req.body.email);
-
-    if (userToLogin) {
-      let isOkPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-      if (isOkPassword) {
-        //Logueo Exitoso
-
-        //guardar el usuario en session
-        delete userToLogin.password;
-        req.session.usuarioLogueado = userToLogin;
-        //console.log(userToLogin)
-
-        if (req.body.remember_user) {
-          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
+      const userToLogin = userServices.findbyField("email", req.body.email);
+      if (userToLogin) {
+        const isOkPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+        if (isOkPassword) {
+          //Logueo Exitoso
+          //guardar el usuario en session
+          delete userToLogin.password;
+          req.session.usuarioLogueado = userToLogin;
+          //console.log(userToLogin)
+          if (req.body.remember_user) {
+            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
+          }
+          res.redirect("/users/userDetail");
+        } else {
+          // Contraseña incorrecta
+          res.render("./users/login", {
+            errors: {
+              email: { msg: "Las credenciales son inválidas" },
+            },
+          });
+          return;
         }
-
-        res.redirect("/users/userDetail");
       }
-      // Contraseña incorrecta
-      return res.render("./users/login", {
-        errors: {
-          email: {
-            msg: "Las credenciales son inválidas",
-          },
-        },
-      });
+    } else {
+      res.render("./users/login", { errors: errors.mapped(), oldValues: req.body });
     }
-    // Mail no encontrado
-    return res.render("./users/login", {
-      errors: {
-        email: {
-          msg: "No se encuentra este email en nuestra base de datos",
-        },
-      },
-    });
   },
   register: (req, res) => {
     res.render("./users/register");
   },
-  createUser: (req, res) => {
+  processRegister: (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
       /*    
-    let userInDB = UserModel.findbyField("email", req.body.email);
+    let userInDB = userServices.findbyField("email", req.body.email);
       if (userInDB) {
         let errorUserLogged = [
           {
@@ -102,7 +95,7 @@ const mainController = {
         category: "viewer",
         image: "IMAGEN HARCODEADA POR EL MOMENTO",
       };
-      let userCreated = UserModel.create(userToCreate);
+      let userCreated = userServices.create(userToCreate);
       return res.render("./users/login", { user: userToCreate });
     } else {
       return res.render("./users/register", { errors: resultValidation.errors });

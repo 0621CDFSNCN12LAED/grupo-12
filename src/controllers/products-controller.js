@@ -1,26 +1,24 @@
 const path = require("path");
 const fs = require("fs");
 
-const adminServices = require("../services/admin-services");
-
-const products = adminServices.products;
+const productServices = require("../services/product-services");
 
 const productsController = {
   viewAll: (req, res) => {
-    const filteredProducts = adminServices.findAll();
+    const filteredProducts = productServices.findAll();
 
-    res.render("products/products", { products: filteredProducts});
+    res.render("products/products", { products: filteredProducts });
   },
 
   viewCategory: (req, res) => {
     // Find one category
-    const productsByCategory = adminServices.findCategory(req.params.category);
+    const productsByCategory = productServices.findCategory(req.params.category);
     const selectedCategory = req.params.category;
     res.render("products/productsCategory", { productsByCategory, selectedCategory });
   },
 
   detail: (req, res) => {
-    const product = adminServices.findOneById(req.params.id);
+    const product = productServices.findOneById(req.params.id);
     res.render("products/productDetail", { product });
   },
 

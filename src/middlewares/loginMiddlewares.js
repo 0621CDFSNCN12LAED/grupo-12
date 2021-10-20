@@ -1,11 +1,11 @@
-const registerUser = require("../models/users-model.js");
+const userServices = require("../services/user-services.js");
 
 let LoginMiddlewares = {
   userLoggedMiddleware: (req, res, next) => {
     res.locals.isLogged = false;
 
     let emailInCookie = req.cookies.userEmail;
-    let userFromCookie = registerUser.findbyField("email", emailInCookie);
+    let userFromCookie = userServices.findbyField("email", emailInCookie);
 
     if (userFromCookie) {
       req.session.userLogged = userFromCookie;

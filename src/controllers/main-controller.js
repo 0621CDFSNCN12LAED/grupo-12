@@ -2,14 +2,11 @@
 const path = require("path");
 const fs = require("fs");
 
-const productsFilePath = path.join(__dirname, "../data/productsDB.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
-const adminServices = require("../services/admin-services");
+const productServices = require("../services/product-services");
 
 const mainController = {
   home: (req, res) => {
-    const filteredProducts = adminServices.findAll();
+    const filteredProducts = productServices.findAll();
 
     res.render("home", { products: filteredProducts });
   },
