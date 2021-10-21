@@ -34,8 +34,9 @@ const mainController = {
           // Contraseña incorrecta
           res.render("./users/login", {
             errors: {
-              email: { msg: "Las credenciales son inválidas" },
+              credenciales: { msg: "Las credenciales son inválidas" },
             },
+            oldValues: req.body,
           });
           return;
         }
@@ -62,6 +63,7 @@ const mainController = {
         ];
 */
       const user = {
+        id: userServices.generateId(),
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,

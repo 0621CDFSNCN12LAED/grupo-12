@@ -115,10 +115,11 @@
     "image": "IMAGEN HARCODEADA POR EL MOMENTO"
   },
   {
+    "id": 14,
     "firstName": "Patricio",
     "lastName": "Ruggeri",
     "email": "pato.ruggeri@hotmail.com",
-    "password": "$2a$10$VcBz/Wp6PmCdIYD0MX5MPeUjn74BqBQFXY90f/HAVApAktW4l7cOS",
+    "password": "$2a$10$UFWActPMi5SVDSpG9JUoAuIJTDFIHP6tS.Nl7/PrZVMSNjCKcvPoq",
     "category": "viewer",
     "avatar": "IMAGEN HARCODEADA POR EL MOMENTO"
   }

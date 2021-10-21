@@ -29,6 +29,15 @@
             <div class="form-div">
               <label class="form-label" for="password">Contraseña</label>
               <input type="password" name="password" placeholder="Ingrese su contraseña" />
+              <% if (locals.errors && errors.password) { %>
+              <div class="error-msg">
+                <p><%= errors.password.msg %></p>
+              </div>
+              <% } %> <% if (locals.errors && errors.credenciales) { %>
+              <div class="error-msg">
+                <p><%= errors.credenciales.msg %></p>
+              </div>
+              <% } %>
             </div>
             <div class="form-div">
               <label class="remember-me" for="remember_user"
