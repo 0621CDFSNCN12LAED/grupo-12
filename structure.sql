@@ -1,7 +1,6 @@
 
 CREATE DATABASE `decamping_db`;
 USE decamping_db;
- DROP TABLE users
 
 CREATE TABLE users (
   id int(10) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
