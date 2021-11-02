@@ -47,5 +47,12 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
+  model.associate = function (models) {
+    model.hasMany(models.Order, {
+      as: "orders",
+      foreignKey: "address_id",
+    });
+  };
+
   return model;
 };
