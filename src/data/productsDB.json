@@ -421,5 +421,16 @@
     "price": 15000,
     "starred": false,
     "img": "1632352505978-julbo-mascaras-esqui-echo-spectron3.jpeg"
+  },
+  {
+    "id": 37,
+    "name": "Zapatillas Nike React Vision",
+    "description": "Zapatillas con diseño urbano, muy confortables. Llevalas todo el día puestas y sentite cómodo como nunca.",
+    "category": "Camping",
+    "subcategory": "Accesorios",
+    "discount": 30,
+    "price": 24000,
+    "starred": false,
+    "img": "1635954956047-nike-react-vision.jpeg"
   }
 ]

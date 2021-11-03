@@ -30,10 +30,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       defaultValue: "no-image.jpg",
     },
+    createdAt: {
+      field: "created_at",
+      type: DataTypes.DATE,
+    },
+    updatedAt: {
+      field: "updated_at",
+      type: DataTypes.DATE,
+    },
   };
 
   const config = {
-    timestamps: false,
+    timestamps: true,
+    underscores: true,
   };
 
   const model = sequelize.define("User", cols, config);

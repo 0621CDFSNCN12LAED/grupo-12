@@ -40,10 +40,11 @@
           <label for="subcategory">Subcategorías</label>
           <select id="subcategory" name="subcategory" required>
             <option value="" selected disabled>Elija una sub-categoría</option>
-            <option value="Mochilas">Mochilas</option>
-            <option value="Accesorios">Accesorios</option>
             <option value="Carpas">Carpas</option>
-            <option value="Para dormir">Para dormir</option>
+            <option value="Camperas">Camperas</option>
+            <option value="Pantalones">Pantalones</option>
+            <option value="Accesorios">Accesorios</option>
+            <option value="Elementos técnicos">Elementos técnicos</option>
           </select>
         </div>
         <div class="form-div">
@@ -58,7 +59,10 @@
           <label for="price">Precio</label>
           <input type="number" name="price" id="price" required />
         </div>
-
+        <div class="form-div">
+          <label for="stock">Unidades en stock</label>
+          <input type="number" name="stock" id="stock" required />
+        </div>
         <div class="form-div">
           <button class="boton-ppal color-primario" type="submit">Crear producto</button>
         </div>

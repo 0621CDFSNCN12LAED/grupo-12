@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title><%= selectedCategory %> | DeCamping.com</title>
+    <title><%= selectedCategory.name %> | DeCamping.com</title>
     <%- include("../partials/head.ejs") %>
   </head>
 
@@ -12,12 +12,10 @@
     <!-- Main section -->
     <main>
       <section>
-        <h2 class="text-titles"><%= selectedCategory %></h2>
+        <h2 class="text-titles"><%= selectedCategory.name %></h2>
         <div class="flex">
-          <% for (product of productsByCategory) { %>
-            <%- include("../partials/product-box.ejs") %>
-            <% }  %>
-        
+          <% for (product of productsByCategory) { %> <%- include("../partials/product-box.ejs") %>
+          <% } %>
         </div>
       </section>
     </main>

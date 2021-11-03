@@ -16,7 +16,7 @@
       <article class="prod-detail">
         <div class="detail-container">
           <div class="detail-image">
-            <img src="/img/products/<%= product.img %>" alt="<%= product.name %>" />
+            <img src="/img/products/<%= product.image %>" alt="<%= product.name %>" />
           </div>
 
           <div class="container-pricing-information">
@@ -42,13 +42,19 @@
               <p><%= product.description %></p>
             </div>
             <div class="cart-options">
+              <% if (product.stock > 0) { %>
+              <p style="color: green">En stock</p>
               <label for="quantity">Cantidad:</label>
               <select name="quantity" id="quantity">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="4">4</option>
               </select>
+              <% } else { %>
+              <p style="color: red">Producto sin stock</p>
+              <% } %>
             </div>
             <div class="detail-cart">
               <button class="boton-ppal color-primario">

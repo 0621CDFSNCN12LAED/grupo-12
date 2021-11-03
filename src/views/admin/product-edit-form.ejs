@@ -20,31 +20,32 @@
               <input type="text" name="name" id="name" value="<%= product.name %>">
             </div>
             <div class="form-div">
-              <label for="desc">Descripción</label>
-              <input type="textarea" name="desc" value="<%= product.description %>">
+              <label for="description">Descripción</label>
+              <input type="textarea" name="description" value="<%= product.description %>">
             </div>
             <div class="form-div">
-              <label for="img">Imagen</label>
+              <label for="image">Imagen</label>
               <br>
-              <img style="width: 30%;" src="/img/products/<%= product.img %>" alt="">
-              <input type="file" name="img" id="img">
+              <img style="width: 30%;" src="/img/products/<%= product.image %>" alt="">
+              <input type="file" name="image" id="image">
             </div>
             <div class="form-div">
               <label for="category">Categoría</label>
               <select name="category">
-                <option value="Camping" <%= product.category == "Camping" ? "selected" : "" %>>Camping</option>
-                <option value="Montañismo" <%= product.category == "Montañismo" ? "selected" : "" %>>Montañismo</option>
-                <option value="Escalada" <%= product.category == "Escalada" ? "selected" : "" %>>Escalada</option>
-                <option value="SKI" <%= product.category == "SKI" ? "selected" : "" %>>SKI</option>
+                <option value="Camping" <%= (product.category_id == 1) ? "selected" : "" %>>Camping</option>
+                <option value="Montañismo" <%= (product.category_id == 2) ? "selected" : "" %>>Montañismo</option>
+                <option value="Escalada" <%= (product.category_id == 3) ? "selected" : "" %>>Escalada</option>
+                <option value="SKI" <%= (product.category_id == 4) ? "selected" : "" %>>SKI</option>
               </select>
             </div>
             <div class="form-div">
               <label for="subcategory">Subcategoría</label>
               <select name="subcategory">
-                <option value="Mochilas" <%= product.subcategory == "Mochilas" ? "selected" : "" %>>Mochilas</option>
-                <option value="Accesorios" <%= product.subcategory == "Accesorios" ? "selected" : "" %>>Accesorios</option>
-                <option value="Carpas" <%= product.subcategory == "Carpas" ? "selected" : "" %>>Carpas</option>
-                <option value="Para dormir" <%= product.subcategory == "Para dormir" ? "selected" : "" %>>Para dormir</option>
+                <option value="Carpas" <%= (product.subcategory_id == 1) ? "selected" : "" %>>Carpas</option>
+                <option value="Camperas" <%= (product.subcategory_id == 2) ? "selected" : "" %>>Camperas</option>
+                <option value="Pantalones" <%= (product.subcategory_id == 3) ? "selected" : "" %>>Pantalones</option>
+                <option value="Accesorios" <%= (product.subcategory_id == 4) ? "selected" : "" %>>Accesorios</option>
+                <option value="Elementos técnicos" <%= (product.subcategory_id == 5) ? "selected" : "" %>>Elementos técnicos</option>
                   </select>
             </div>
             <div class="form-div">
@@ -59,7 +60,10 @@
               <label for="price">Precio</label>
               <input type="number" name="price" value="<%= product.price %>">
             </div>
-
+            <div class="form-div">
+              <label for="stock">Stock actual</label>
+              <input type="number" name="stock" value="<%= product.stock %>">
+            </div>
             <div class="form-div">
               <button class="boton-ppal color-primario" type="submit" >Editar producto</button>
             </div>
