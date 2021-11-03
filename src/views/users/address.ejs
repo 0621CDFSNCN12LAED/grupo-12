@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Home | DeCamping.com</title>
+    <%- include("../partials/head.ejs") %>
+  </head>
+
+  <body>
+    <!-- Header section (fixed) -->
+    <%- include("../partials/header.ejs") %>
+
+    <!-- Main section -->
+    <main>
+      <h1 class="text-titles login-register">CREAR DIRECCIÓN</h1>
+      <div class="register-wrapper">
+        <div class="content-wrapper-1">
+          <form class="register-form" action="/users/address" method="POST">
+            <div class="form-div">
+              <label class="form-label" for="street_name">Calle *</label>
+              <input type="text" name="street_name" placeholder="Ingrese su calle"
+              value="<%=locals.oldValues ? oldValues.street_name : "" %>" > <% if (locals.errors &&
+              errors.firstName) { %>
+              <div class="error-msg">
+                <p><%= errors.street_name.msg %></p>
+              </div>
+              <% } %>
+            </div>
+            <div class="form-div">
+              <label class="form-label" for="street_number">Número *</label>
+              <input type="text" name="street_number" placeholder="Ingrese su número"
+              value="<%=locals.oldValues ? oldValues.street_number : "" %>" > <% if (locals.errors &&
+              errors.street_number) { %>
+              <div class="error-msg">
+                <p><%= errors.street_number.msg %></p>
+              </div>
+              <% } %>
+            </div>
+            <div class="form-div">
+              <label class="form-label" for="city">Ciudad *</label>
+              <input type="text" name="city" placeholder="Ciudad"
+              value="<%=locals.oldValues ? oldValues.city : "" %>" > <% if (locals.errors &&
+              errors.city) { %>
+              <div class="error-msg">
+                <p><%= errors.city.msg %></p>
+              </div>
+              <% } %>
+            </div>
+            <div class="form-div">
+              <label class="form-label" for="province">Provincia *</label>
+              <input type="text" name="province" placeholder="Provincia" />
+              <% if (locals.errors && errors.province) { %>
+              <div class="col-12 form-error">
+                <p><%= errors.province.msg %></p>
+              </div>
+              <% } %>
+            </div>
+            <div class="form-div">
+              <label class="form-label" for="country">País *</label>
+              <input type="text" name="country" placeholder="País" />
+            </div>
+            <div class="form-div">
+              <label class="form-label" for="country">Referencia</label>
+              <input type="text" name="country" placeholder="Referencia" />
+            </div>
+            <div class="form-div">
+              <label class="form-label" for="phone_number">Teléfono</label>
+              <input type="text" name="phone_number" placeholder="Teléfono" />
+            </div>
+            <div class="form-div">
+              <p class="form-bases">(*) Campos obligatorios.</p>
+            </div>
+            <div class="form-div">
+              <button class="boton-ppal color-primario" type="submit">REGISTRARSE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer section -->
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

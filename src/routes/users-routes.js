@@ -38,6 +38,10 @@ router.get("/userDetail", LoginMiddlewares.authMiddleware, usersControllerDB.use
 // Logout
 router.get("/logout", usersControllerDB.logout);
 
+// User address 
+router.get("/address", usersControllerDB.createAddress);
+
+
 
 // ********* DB ROUTES *********
 router.get("/getAllUsers", usersControllerDB.getAll);
@@ -48,8 +52,11 @@ router.post("/login", loginValidations, usersControllerDB.processLogin);
 
 // Register
 router.get("/register", LoginMiddlewares.guestMiddleware, usersControllerDB.register);
-router.post("/register", usersControllerDB.processRegister);
-//registerValidations
+router.post("/register", registerValidations,usersControllerDB.processRegister);
+
+//Editado de usuarios
+router.get("/edit",LoginMiddlewares.authMiddleware, usersControllerDB.editUser);
+router.put("/edit", usersControllerDB.updateUser);
 
 
 

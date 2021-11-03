@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Home | DeCamping.com</title>
+    <%- include("../partials/head.ejs") %>
+  </head>
+
+  <body>
+    <!-- Header section (fixed) -->
+    <%- include("../partials/header.ejs") %>
+
+    <!-- Main section -->
+    <main>
+      <h1 class="text-titles login-register">EDITAR USUARIO</h1>
+      <div class="register-wrapper">
+        <div class="content-wrapper-1">
+          <form class="register-form" action="/users/edit?_method=PUT" method="POST">
+            <div class="form-div">
+              <label class="form-label" for="first_name">Nombre</label>
+              <input type="text" name="first_name" placeholder="Ingrese su nombre"
+              value="<%=user ? user.first_name : "" %>" > <% if (locals.errors &&
+              errors.firstName) { %>
+              <div class="error-msg">
+                <p><%= errors.firstName.msg %></p>
+              </div>
+              <% } %>
+            </div>
+            <div class="form-div">
+              <label class="form-label" for="last_name">Apellido</label>
+              <input type="text" name="last_name" placeholder="Ingrese su apellido"
+              value="<%=user ? user.last_name : "" %>" > <% if (locals.errors &&
+              errors.last_name) { %>
+              <div class="error-msg">
+                <p><%= errors.last_name.msg %></p>
+              </div>
+              <% } %>
+            </div>
+            <div class="form-div">
+              <label class="form-label" for="email">E-mail</label>
+              <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com"
+              value="<%=user ? user.email : "" %>" > <% if (locals.errors &&
+              errors.email) { %>
+              <div class="error-msg">
+                <p><%= errors.email.msg %></p>
+              </div>
+              <% } %>
+            </div>
+            <div class="form-div">
+
+            <div class="form-div">
+              <button class="boton-ppal color-primario" type="submit">EDITAR</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer section -->
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

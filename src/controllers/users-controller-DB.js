@@ -81,9 +81,10 @@ const mainController = {
       res.render("./users/register", { errors: errors.mapped(), oldValues: req.body });
     }
   },
-  userDetail: (req, res) => {
-    console.log(req.session.usuarioLogueado);
-    res.render("./users/userDetail", { user: req.session.usuarioLogueado });
+  userDetail: async (req, res) => {
+    let id = req.session.usuarioLogueado.id
+    let UserToEdit = await db.User.findByPk(id)
+    res.render("./users/userDetail", { user: UserToEdit });
   },
   logout: (req, res) => {
     res.clearCookie("userEmail");
@@ -93,6 +94,23 @@ const mainController = {
   getAll: async (req,res) => {
     const users = await db.User.findAll()
     res.send(users)
+  },
+  editUser: async (req,res) => {
+    let id = req.session.usuarioLogueado.id
+    let UserToEdit = await db.User.findByPk(id)
+    res.render("./users/userEdit",{ user: UserToEdit });
+  },
+  updateUser: async (req,res) => {
+    let id = req.session.usuarioLogueado.id
+    
+     const userUpdated = await db.User.update(
+      req.body,  { where: { id: id }
+    })   
+    res.redirect("/users/userDetail")
+
+  },
+  createAddress: (req,res) => {
+    res.render("./users/address");
   }
 };
 

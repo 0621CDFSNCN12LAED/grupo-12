@@ -20,10 +20,14 @@
         </form>
 -->
         <div class="user-detail-information">
-          <p>Nombre: <%= user["first_name"] %></p>
+          <p>Nombre: <%= user.first_name %></p>
           <p>Apellido: <%= user.last_name %></p>
           <p>Email: <%= user.email %></p>
         </div>
+        <form action="/users/edit" method="GET">
+          <button class="boton-ppal color-primario">Editar</button>
+        </form>
+        <br>
         <form action="/users/logout" method="GET">
           <button class="boton-ppal color-delete">Cerrar sesión</button>
         </form>
