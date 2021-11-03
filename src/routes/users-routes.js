@@ -39,7 +39,9 @@ router.get("/userDetail", LoginMiddlewares.authMiddleware, usersControllerDB.use
 router.get("/logout", usersControllerDB.logout);
 
 // User address 
-router.get("/address", usersControllerDB.createAddress);
+router.get("/address",LoginMiddlewares.authMiddleware, usersControllerDB.showAddress);
+router.post("/address", usersControllerDB.createAddress);
+
 
 
 

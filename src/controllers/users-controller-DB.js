@@ -84,7 +84,20 @@ const mainController = {
   userDetail: async (req, res) => {
     let id = req.session.usuarioLogueado.id
     let UserToEdit = await db.User.findByPk(id)
-    res.render("./users/userDetail", { user: UserToEdit });
+    let UserAddressDB = await db.Address.findAll(
+      {
+        where: {
+          user_id: id
+        }
+      }
+    )
+    let UserAddress = {
+      length: UserAddressDB.length,
+      addresses: UserAddressDB
+    }
+    console.log(UserAddress.addresses[3])
+
+    res.render("./users/userDetail", { user: UserToEdit, address: UserAddress });
   },
   logout: (req, res) => {
     res.clearCookie("userEmail");
@@ -109,9 +122,27 @@ const mainController = {
     res.redirect("/users/userDetail")
 
   },
-  createAddress: (req,res) => {
+  //ADDRESS
+  showAddress: (req,res) => {
     res.render("./users/address");
+  },
+  createAddress: async (req,res) => {
+    let user_id = req.session.usuarioLogueado.id
+    const Address = {
+      user_id: user_id,
+      street_name: req.body.street_name,
+      street_number: req.body.street_number,
+      city: req.body.city,
+      province: req.body.province,
+      country: req.body.country,
+      reference: req.body.reference,
+      phone: req.body.phone
+    }
+    let AddressToCreate = await db.Address.create(Address)
+    res.redirect("/users/userDetail")
+
   }
+
 };
 
 module.exports = mainController;

@@ -23,6 +23,11 @@
           <p>Nombre: <%= user.first_name %></p>
           <p>Apellido: <%= user.last_name %></p>
           <p>Email: <%= user.email %></p>
+          <h3>Direcciones [ <%= address.length %> ]:</h3>
+          <% for (let i = 0; i < address.length; i++){ %>
+          <p>Dirección <%= i + 1 %>: <%= address.addresses[i].street_name %> <%= address.addresses[i].street_number %>, <%= address.addresses[i].city %>, <%= address.addresses[i].province %></p>
+          <%} %>
+
         </div>
         <form action="/users/edit" method="GET">
           <button class="boton-ppal color-primario">Editar</button>
