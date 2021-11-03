@@ -13,7 +13,7 @@ const adminController = {
   // ----- CREATE ONE product -----
   store: async (req, res) => {
     // Create one & save
-    productServices.createOne(req.body, req.file);
+    await productServices.createOne(req.body, req.file);
     res.redirect("/products");
   },
 
@@ -27,13 +27,13 @@ const adminController = {
   // ----- EDIT ONE product -----
   update: async (req, res) => {
     // Find one, edit & save
-    productServices.editOne(req.params.id, req.body, req.file);
+    await productServices.editOne(req.params.id, req.body, req.file);
     res.redirect("/products");
   },
 
   // ----- DELETE ONE product -----
   destroy: async (req, res) => {
-    productServices.destroyOne(req.params.id);
+    await productServices.destroyOne(req.params.id);
     res.redirect("/products");
   },
 };

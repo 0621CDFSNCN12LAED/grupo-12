@@ -25,11 +25,11 @@ const uploader = multer({ storage });
 
 // ----- CREATE ONE PRODUCT -----
 router.get("/product/create", LoginMiddlewares.authMiddleware, adminController.create);
-router.post("/product", uploader.single("img"), adminController.store);
+router.post("/product", uploader.single("image"), adminController.store);
 
 // ----- EDIT ONE PRODUCT -----
 router.get("/product/:id/edit", LoginMiddlewares.authMiddleware, adminController.edit);
-router.put("/product/:id", uploader.single("img"), adminController.update);
+router.put("/product/:id", uploader.single("image"), adminController.update);
 
 // ----- DELETE ONE PRODUCT -----
 router.delete("/product/:id", LoginMiddlewares.authMiddleware, adminController.destroy);

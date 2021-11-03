@@ -52,11 +52,13 @@ const adminServices = {
   },
 
   async createOne(payload, file) {
-    const category = await db.Category.findOne({
-      where: {
-        name: payload.category,
-      },
-    });
+    //    const category = await db.Category.findOne({
+    //      where: {
+    //        name: payload.category,
+    //      },
+    //    });
+    const category = await this.findCategory(payload);
+
     const subcategory = await db.Subcategory.findOne({
       where: {
         name: payload.subcategory,
