@@ -122,5 +122,14 @@
     "password": "$2a$10$UFWActPMi5SVDSpG9JUoAuIJTDFIHP6tS.Nl7/PrZVMSNjCKcvPoq",
     "category": "viewer",
     "avatar": "IMAGEN HARCODEADA POR EL MOMENTO"
+  },
+  {
+    "id": 15,
+    "firstName": "Martin",
+    "lastName": "Ramirez",
+    "email": "martin@gmail.com",
+    "password": "$2a$10$tz6liQJoPh8FAjiR4mfKCuivD1ulpNjPcM688quLbgBVQWzyK1dC6",
+    "category": "viewer",
+    "avatar": "IMAGEN HARCODEADA POR EL MOMENTO"
   }
 ]

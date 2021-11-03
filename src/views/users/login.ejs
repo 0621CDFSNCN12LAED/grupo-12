@@ -19,7 +19,7 @@
             <div class="form-div">
               <label class="form-label" for="email">Correo electrónico</label>
               <input type="email" name="email" placeholder="Ej: ejemplo@gmail.com"
-              value="<%=locals.oldValues ? oldValues.email : "" %>" > <% if (locals.errors &&
+              value="<%= locals.user ? user.email : "" %>" > <% if (locals.errors &&
               errors.email) { %>
               <div class="error-msg">
                 <p><%= errors.email.msg %></p>

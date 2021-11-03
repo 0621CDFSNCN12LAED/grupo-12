@@ -27,14 +27,11 @@ module.exports = (sequelize, DataTypes) => {
       as: "users",
       foreignKey: "user_id",
     });
-  }
 
-    model.associate = function (models) {
-      model.belongsTo(models.Address, {
-        as: "adressess",
-        foreignKey: "address_id",
-      })
-    };
+    model.belongsTo(models.Address, {
+      as: "adressess",
+      foreignKey: "address_id",
+    });
 
     model.belongsToMany(models.Product, {
       as: "products",
@@ -44,5 +41,6 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false,
     });
 
+  } 
   return model;
 };
