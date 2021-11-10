@@ -40,6 +40,10 @@
   display: none;
 }
 
+.display-initial {
+  display: initial !important;
+}
+
 .search-bar {
   display: block;
   margin: 0 auto;
@@ -58,6 +62,7 @@
 
 main {
   background: rgb(245, 245, 245);
+  min-height: 400px;
 }
 
 .carousel {
@@ -93,7 +98,7 @@ main {
 }
 
 .text-prices::before {
-  content: "Precio: $ ";
+  content: 'Precio: $ ';
 }
 
 .text-prices-discount {
@@ -105,7 +110,7 @@ main {
 }
 
 .text-prices-discount::before {
-  content: "$ ";
+  content: '$ ';
 }
 
 .text-discount {
@@ -115,7 +120,7 @@ main {
 }
 
 .text-discount::after {
-  content: "% OFF";
+  content: '% OFF';
 }
 
 .categories {
@@ -141,28 +146,28 @@ main {
 
 .camping {
   height: 21vw;
-  background-image: url("/img/categories/camping.png");
+  background-image: url('/img/categories/camping.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
 .ski {
   height: 21vw;
-  background-image: url("/img/categories/ski.png");
+  background-image: url('/img/categories/ski.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
 .montanismo {
   height: 21vw;
-  background-image: url("/img/categories/montanismo.png");
+  background-image: url('/img/categories/montanismo.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
 .escalada {
   height: 21vw;
-  background-image: url("/img/categories/escalada.png");
+  background-image: url('/img/categories/escalada.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -216,7 +221,7 @@ main {
 }
 
 .button-prod span:after {
-  content: "\00bb";
+  content: '\00bb';
   font-size: 20px;
   position: absolute;
   opacity: 0;
@@ -237,7 +242,7 @@ main {
 /*--------------- Footer ------------- */
 
 footer {
-  background: url("/img/footer-background.jpg") no-repeat fixed;
+  background: url('/img/footer-background.jpg') no-repeat fixed;
   background-position: bottom;
   background-size: cover;
   color: #d9d7c5;
@@ -259,7 +264,7 @@ footer {
 .nav-span::after {
   float: right;
   right: 10%;
-  content: "+";
+  content: '+';
 }
 
 .dropdown-ul {

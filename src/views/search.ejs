@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Home | DeCamping.com</title>
+    <%- include("./partials/head.ejs") %>
+  </head>
+
+  <body>
+    <!-- Header section (fixed) -->
+    <%- include("./partials/header.ejs") %>
+    <!-- Main section -->
+    <main>
+      <section>
+        <h2 class="text-titles">RESULTADOS DE LA BÚSQUEDA</h2>
+        <div class="flex">
+          <% if (products.length > 0) { %> <% for (product of products) { %> <%-
+          include("./partials/product-box.ejs") %> <% } %> <% } else { %>
+          <p>No se encontraron resultados, por favor prueba con otra búsqueda.</p>
+          <% } %>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer section -->
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

@@ -7,8 +7,8 @@
       </a>
     </div>
     <div class="container-searchbar">
-      <form action="#" class="container-form">
-        <input type="text" class="search-bar" placeholder="Buscar..." />
+      <form action="/search" method="GET" class="container-form">
+        <input type="text" name="keyword" class="search-bar" placeholder="Buscar..." />
         <button><i class="fas fa-search"></i></button>
       </form>
     </div>
@@ -33,3 +33,15 @@
     </ul>
   </nav>
 </header>
+
+<script>
+  const lupa = document.querySelector('.lupa');
+  const searchBar = document.querySelector('.container-searchbar');
+  const searchIcon = document.querySelector('form button');
+
+  lupa.addEventListener('click', function (e) {
+    e.preventDefault();
+    searchIcon.style.display = 'none';
+    searchBar.classList.toggle('display-initial');
+  });
+</script>
