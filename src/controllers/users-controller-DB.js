@@ -115,9 +115,23 @@ const mainController = {
   },
   updateUser: async (req,res) => {
     let id = req.session.usuarioLogueado.id
-    
+
+    let newImage;
+    if (req.file) {
+      const image = req.file.filename;
+      newImage = image;
+    } else {
+      const oldImage = await db.User.findByPk(id);
+      newImage = oldImage.image;
+    }
+
      const userUpdated = await db.User.update(
-      req.body,  { where: { id: id }
+      { image: newImage,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email
+        }
+      ,  { where: { id: id }
     })   
     res.redirect("/users/userDetail")
 

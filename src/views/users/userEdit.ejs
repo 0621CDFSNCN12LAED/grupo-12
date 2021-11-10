@@ -15,7 +15,8 @@
       <h1 class="text-titles login-register">EDITAR USUARIO</h1>
       <div class="register-wrapper">
         <div class="content-wrapper-1">
-          <form class="register-form" action="/users/edit?_method=PUT" method="POST">
+          <form class="register-form" action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data"
+          >
             <div class="form-div">
               <label class="form-label" for="first_name">Nombre</label>
               <input type="text" name="first_name" placeholder="Ingrese su nombre"
@@ -46,7 +47,10 @@
               </div>
               <% } %>
             </div>
-            <div class="form-div">
+              <div class="form-div">
+                <label for="img">Imagen</label>
+                <input type="file" name="image" id="image" />
+              </div>
 
             <div class="form-div">
               <button class="boton-ppal color-primario" type="submit">EDITAR</button>

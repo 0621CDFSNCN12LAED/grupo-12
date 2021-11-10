@@ -19,6 +19,10 @@
           <button class="boton-ppal color-primario">Crear nuevo producto</button>
         </form>
 -->
+        <div class="user-detail-image">
+          <img src="/img/users/<%= user.image  %>" alt="<%= user.image  %>">      
+        </div>
+
         <div class="user-detail-information">
           <p>Nombre: <%= user.first_name %></p>
           <p>Apellido: <%= user.last_name %></p>
@@ -28,6 +32,18 @@
           <p>Dirección <%= i + 1 %>: <%= address.addresses[i].street_name %> <%= address.addresses[i].street_number %>, <%= address.addresses[i].city %>, <%= address.addresses[i].province %></p>
           <%} %>
 
+        </div>
+        <div class="user-detail-actions container">
+          <form action="/admin/product/create" method="GET">
+            <button class="boton-ppal color-primario">Crear producto</button>
+          </form>
+          <br>
+        </div>
+
+        <div class="user-detail-actions container">
+          <form action="/users/address" method="GET">
+            <button class="boton-ppal color-primario">Crear dirección</button>
+          </form>
         </div>
         <form action="/users/edit" method="GET">
           <button class="boton-ppal color-primario">Editar</button>

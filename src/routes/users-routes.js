@@ -2,11 +2,26 @@
 const express = require("express");
 const router = express.Router();
 const { check, body, validationResult } = require("express-validator");
+const path = require("path");
+const multer = require("multer");
 
 // Controller require
 const usersController = require("../controllers/users-controller");
 const usersControllerDB = require("../controllers/users-controller-DB");
 
+// MULTER
+
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, "../../public/img/users"),
+  filename: (req, file, cb) => {
+    // Validar el tamaño del archivo
+    //if(file.size > 10 * 1000 * 1000){
+    //    cb(new Error("Archivo demasiado grande"))}
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const uploader = multer({ storage });
 
 // ------ MIDDLEWARES --------
 let LoginMiddlewares = require("../middlewares/loginMiddlewares");
@@ -58,7 +73,7 @@ router.post("/register", registerValidations,usersControllerDB.processRegister);
 
 //Editado de usuarios
 router.get("/edit",LoginMiddlewares.authMiddleware, usersControllerDB.editUser);
-router.put("/edit", usersControllerDB.updateUser);
+router.put("/edit", uploader.single("image"), usersControllerDB.updateUser);
 
 
 
