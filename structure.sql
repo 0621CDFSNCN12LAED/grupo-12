@@ -90,22 +90,14 @@ CREATE TABLE order_product (
   CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES products(id)
 ) default charset utf8;
 
-CREATE TABLE carts (
+CREATE TABLE user_product (
   id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   user_id INT(10) UNSIGNED NOT NULL,
-  PRIMARY KEY (id),
-  KEY fkey_usercart_id (user_id),
-  CONSTRAINT fkey_usercart_id FOREIGN KEY (user_id) REFERENCES users(id)
-) default charset utf8;
-
-CREATE TABLE cart_product (
-  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  cart_id INT(10) UNSIGNED NOT NULL,
   product_id INT(10) UNSIGNED NOT NULL,
   quantity INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (id),
-  KEY fk_cart_id (cart_id),
+  KEY fk_cartuser_id (user_id),
   KEY fk_cartproduct_id (product_id),
-  CONSTRAINT fk_cart_id FOREIGN KEY (cart_id) REFERENCES carts(id),
+  CONSTRAINT fk_cartuser_id FOREIGN KEY (user_id) REFERENCES users(id),
   CONSTRAINT fk_cartproduct_id FOREIGN KEY (product_id) REFERENCES products(id)
 ) default charset utf8;

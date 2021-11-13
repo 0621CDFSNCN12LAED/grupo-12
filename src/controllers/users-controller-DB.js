@@ -1,57 +1,65 @@
 // Requires
-const path = require("path");
-const fs = require("fs");
-const bcrypt = require("bcryptjs");
-
+const path = require('path');
+const fs = require('fs');
+const bcrypt = require('bcryptjs');
 
 // ******* Users database ********
-const db = require('../database/models')
+const db = require('../database/models');
 
 // ******* Validation results ********
-const { validationResult } = require("express-validator");
+const { validationResult } = require('express-validator');
 
 const mainController = {
   login: (req, res) => {
-    res.render("./users/login");
+    res.render('./users/login');
   },
   processLogin: async (req, res) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
       const userToLogin = await db.User.findOne({
-        where: { email: req.body.email }
-     })
-     .then((resultUser) => {
-       if (resultUser) {
-        const isOkPassword = bcrypt.compareSync(req.body.password, resultUser.password);
-        if (isOkPassword){
-          //Logueo exitoso
-          delete resultUser.password
-          req.session.usuarioLogueado = resultUser;
-          console.log(resultUser)
-          if (req.body.remember_user) {
-            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
+        where: { email: req.body.email },
+      }).then((resultUser) => {
+        if (resultUser) {
+          const isOkPassword = bcrypt.compareSync(req.body.password, resultUser.password);
+          if (isOkPassword) {
+            //Logueo exitoso
+            delete resultUser.password;
+            req.session.usuarioLogueado = resultUser;
+            // console.log(resultUser);
+            if (req.body.remember_user) {
+              res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 60 });
+            }
+            res.redirect('/users/userDetail');
+          } else {
+            // Contraseña incorrecta
+            res.render('./users/login', {
+              errors: {
+                credenciales: { msg: 'Las credenciales son inválidas' },
+              },
+              oldValues: req.body,
+              user: resultUser,
+            });
+            return;
           }
-          res.redirect("/users/userDetail");
         } else {
-          // Contraseña incorrecta
-          res.render("./users/login", {
+          res.render('./users/login', {
             errors: {
-              credenciales: { msg: "Las credenciales son inválidas" },
+              credenciales: { msg: 'Las credenciales son inválidas' },
             },
             oldValues: req.body,
-            user: resultUser
+            user: resultUser,
           });
-          return;
         }
-       }
-     }); 
-    
+      });
     } else {
-      res.render("./users/login", { errors: errors.mapped(), oldValues: req.body, user: resultUser });
+      res.render('./users/login', {
+        errors: errors.mapped(),
+        oldValues: req.body,
+      });
     }
   },
   register: (req, res) => {
-    res.render("./users/register");
+    res.render('./users/register');
   },
   processRegister: async (req, res) => {
     const errors = validationResult(req);
@@ -62,59 +70,56 @@ const mainController = {
         last_name: req.body.lastName,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password1, 10),
-        category: "viewer",
-        image: "template-image.jpg",
+        category: 'viewer',
+        image: 'template-image.png',
       };
 
       const userToRegister = await db.User.findOne({
-        where: { email: req.body.email }
-      })
-      if(userToRegister){
-        console.log("usuario ya registrado")
-        res.render("./users/login", {user : userToRegister})
+        where: { email: req.body.email },
+      });
+      if (userToRegister) {
+        console.log('usuario ya registrado');
+        res.render('./users/login', { user: userToRegister });
       } else {
-        let userCreated = await db.User.create(user)
-        res.render("./users/login", {user : user})
+        let userCreated = await db.User.create(user);
+        res.render('./users/login', { user: user });
       }
-
     } else {
-      res.render("./users/register", { errors: errors.mapped(), oldValues: req.body });
+      res.render('./users/register', { errors: errors.mapped(), oldValues: req.body });
     }
   },
   userDetail: async (req, res) => {
-    let id = req.session.usuarioLogueado.id
-    let UserToEdit = await db.User.findByPk(id)
-    let UserAddressDB = await db.Address.findAll(
-      {
-        where: {
-          user_id: id
-        }
-      }
-    )
+    let id = req.session.usuarioLogueado.id;
+    let UserToEdit = await db.User.findByPk(id);
+    let UserAddressDB = await db.Address.findAll({
+      where: {
+        user_id: id,
+      },
+    });
     let UserAddress = {
       length: UserAddressDB.length,
-      addresses: UserAddressDB
-    }
-    console.log(UserAddress.addresses[3])
+      addresses: UserAddressDB,
+    };
+    console.log(UserAddress.addresses[3]);
 
-    res.render("./users/userDetail", { user: UserToEdit, address: UserAddress });
+    res.render('./users/userDetail', { user: UserToEdit, address: UserAddress });
   },
   logout: (req, res) => {
-    res.clearCookie("userEmail");
+    res.clearCookie('userEmail');
     req.session.destroy();
-    return res.redirect("/users/login");
+    return res.redirect('/users/login');
   },
-  getAll: async (req,res) => {
-    const users = await db.User.findAll()
-    res.send(users)
+  getAll: async (req, res) => {
+    const users = await db.User.findAll();
+    res.send(users);
   },
-  editUser: async (req,res) => {
-    let id = req.session.usuarioLogueado.id
-    let UserToEdit = await db.User.findByPk(id)
-    res.render("./users/userEdit",{ user: UserToEdit });
+  editUser: async (req, res) => {
+    let id = req.session.usuarioLogueado.id;
+    let UserToEdit = await db.User.findByPk(id);
+    res.render('./users/userEdit', { user: UserToEdit });
   },
-  updateUser: async (req,res) => {
-    let id = req.session.usuarioLogueado.id
+  updateUser: async (req, res) => {
+    let id = req.session.usuarioLogueado.id;
 
     let newImage;
     if (req.file) {
@@ -125,23 +130,23 @@ const mainController = {
       newImage = oldImage.image;
     }
 
-     const userUpdated = await db.User.update(
-      { image: newImage,
+    const userUpdated = await db.User.update(
+      {
+        image: newImage,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        email: req.body.email
-        }
-      ,  { where: { id: id }
-    })   
-    res.redirect("/users/userDetail")
-
+        email: req.body.email,
+      },
+      { where: { id: id } }
+    );
+    res.redirect('/users/userDetail');
   },
   //ADDRESS
-  showAddress: (req,res) => {
-    res.render("./users/address");
+  showAddress: (req, res) => {
+    res.render('./users/address');
   },
-  createAddress: async (req,res) => {
-    let user_id = req.session.usuarioLogueado.id
+  createAddress: async (req, res) => {
+    let user_id = req.session.usuarioLogueado.id;
     const Address = {
       user_id: user_id,
       street_name: req.body.street_name,
@@ -150,13 +155,11 @@ const mainController = {
       province: req.body.province,
       country: req.body.country,
       reference: req.body.reference,
-      phone: req.body.phone
-    }
-    let AddressToCreate = await db.Address.create(Address)
-    res.redirect("/users/userDetail")
-
-  }
-
+      phone_number: req.body.phone_number,
+    };
+    let AddressToCreate = await db.Address.create(Address);
+    res.redirect('/users/userDetail');
+  },
 };
 
 module.exports = mainController;

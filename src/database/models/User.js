@@ -28,14 +28,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     image: {
       type: DataTypes.TEXT,
-      defaultValue: "no-image.jpg",
+      defaultValue: 'no-image.jpg',
     },
     createdAt: {
-      field: "created_at",
+      field: 'created_at',
       type: DataTypes.DATE,
     },
     updatedAt: {
-      field: "updated_at",
+      field: 'updated_at',
       type: DataTypes.DATE,
     },
   };
@@ -45,18 +45,26 @@ module.exports = (sequelize, DataTypes) => {
     underscores: true,
   };
 
-  const model = sequelize.define("User", cols, config);
+  const model = sequelize.define('User', cols, config);
 
   // Table associations
   model.associate = function (models) {
     model.hasMany(models.Order, {
-      as: "orders",
-      foreignKey: "user_id",
+      as: 'orders',
+      foreignKey: 'user_id',
     });
 
     model.hasMany(models.Address, {
-      as: "addresses",
-      foreignKey: "user_id",
+      as: 'addresses',
+      foreignKey: 'user_id',
+    });
+
+    model.belongsToMany(models.Product, {
+      as: 'products',
+      through: 'user_product',
+      foreignKey: 'user_id',
+      otherKey: 'product_id',
+      timestamps: false,
     });
   };
 
