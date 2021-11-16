@@ -1,13 +1,7 @@
 // ***** Global requires *****
-const path = require("path");
-const fs = require("fs");
+const db = require('../database/models');
 
-const db = require("../database/models");
-
-const adminServices = {
-  //products() {
-  //  return products;
-  //},
+const productServices = {
   async findAll() {
     const filteredProducts = await db.Product.findAll({
       where: {
@@ -37,7 +31,7 @@ const adminServices = {
 
   async productsByCategory(payload) {
     const productsByCategory = await db.Product.findAll({
-      include: [{ association: "categories" }],
+      include: [{ association: 'categories' }],
       where: {
         category_id: payload.id,
         deleted: false,
@@ -52,27 +46,18 @@ const adminServices = {
   },
 
   async createOne(payload, file) {
-    //    const category = await db.Category.findOne({
-    //      where: {
-    //        name: payload.category,
-    //      },
-    //    });
     const category = await this.findCategory(payload);
 
-    const subcategory = await db.Subcategory.findOne({
-      where: {
-        name: payload.subcategory,
-      },
-    });
+    const subcategory = await this.findSubcategory(payload);
 
     const product = await db.Product.create({
       name: payload.name,
-      image: file ? file.filename : "default-img.jpg",
+      image: file ? file.filename : 'default-img.jpg',
       price: Number(payload.price),
       description: payload.description,
       discount: Number(payload.discount),
       stock: Number(payload.stock),
-      starred: payload.starred == "on" ? (payload.starred = true) : (payload.starred = false),
+      starred: payload.starred == 'on' ? (payload.starred = true) : (payload.starred = false),
       deleted: false,
       category_id: category.id,
       subcategory_id: subcategory.id,
@@ -91,17 +76,9 @@ const adminServices = {
       newImage = oldImage.image;
     }
 
-    const category = await db.Category.findOne({
-      where: {
-        name: payload.category,
-      },
-    });
+    const category = await this.findCategory(payload);
 
-    const subcategory = await db.Subcategory.findOne({
-      where: {
-        name: payload.subcategory,
-      },
-    });
+    const subcategory = await this.findSubcategory(payload);
 
     await db.Product.update(
       {
@@ -111,14 +88,28 @@ const adminServices = {
         description: payload.description,
         discount: Number(payload.discount),
         stock: Number(payload.stock),
-        starred: payload.starred == "on" ? (payload.starred = true) : (payload.starred = false),
-        deleted: payload.deleted == "on" ? (payload.deleted = true) : (payload.deleted = false),
+        starred: payload.starred == 'on' ? (payload.starred = true) : (payload.starred = false),
+        deleted: payload.deleted == 'on' ? (payload.deleted = true) : (payload.deleted = false),
         category_id: category.id,
         subcategory_id: subcategory.id,
       },
       {
         where: {
           id: params,
+        },
+      }
+    );
+  },
+
+  async addToCart(payload, params, session) {
+    await db.UserProduct.create(
+      {
+        quantity: payload.quantity,
+      },
+      {
+        where: {
+          product_id: params,
+          user_id: session.usuarioLogueado.id,
         },
       }
     );
@@ -138,4 +129,4 @@ const adminServices = {
   },
 };
 
-module.exports = adminServices;
+module.exports = productServices;

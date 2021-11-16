@@ -41,26 +41,28 @@
             <div class="detail-information">
               <p><%= product.description %></p>
             </div>
-            <div class="cart-options">
-              <% if (product.stock > 0) { %>
-              <p style="color: green">En stock</p>
-              <label for="quantity">Cantidad:</label>
-              <select name="quantity" id="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <% } else { %>
-              <p style="color: red">Producto sin stock</p>
-              <% } %>
-            </div>
-            <div class="detail-cart">
-              <button class="boton-ppal color-primario">
-                Agregar al carrito<i class="fas fa-cart-plus"></i>
-              </button>
-            </div>
+            <form action="/products/<%=product.id%>/cart" method="POST">
+              <div class="cart-options">
+                <% if (product.stock > 0) { %>
+                <p style="color: green">En stock</p>
+                <label for="quantity">Cantidad:</label>
+                <select name="quantity" id="quantity">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <% } else { %>
+                <p style="color: red">Producto sin stock</p>
+                <% } %>
+              </div>
+              <div class="detail-cart">
+                <button type="submit" class="boton-ppal color-primario">
+                  Agregar al carrito<i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+            </form>
             <div class="edit-delete-container">
               <div class="edit-delete-form-container">
                 <form action="/admin/product/<%= product.id %>/edit" method="GET">
