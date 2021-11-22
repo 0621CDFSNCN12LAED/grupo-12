@@ -9,10 +9,18 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.INTEGER,
     },
+    user_id: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+    },
+    product_id: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+    },
   };
 
   const config = {
-    tablename: 'user_product',
+    tableName: 'user_product',
     timestamps: false,
   };
 
