@@ -27,7 +27,7 @@ const mainController = {
         name: { [db.Sequelize.Op.like]: `%${req.query.keyword}%` },
       },
     });
-    res.render('search', { products });
+    res.render('search', { products, keyword: req.query.keyword });
   },
 };
 

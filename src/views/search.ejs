@@ -12,7 +12,7 @@
     <!-- Main section -->
     <main>
       <section>
-        <h2 class="text-titles">RESULTADOS DE LA BÚSQUEDA</h2>
+        <h2 class="text-titles">RESULTADOS DE: "<%= keyword  %>"</h2>
         <div class="flex">
           <% if (products.length > 0) { %> <% for (product of products) { %> <%-
           include("./partials/product-box.ejs") %> <% } %> <% } else { %>

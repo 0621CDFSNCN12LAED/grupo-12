@@ -47,8 +47,15 @@ const productsController = {
   },
 
   addToCart: async (req, res) => {
-    const productToAdd = await productServices.addToCart(req.body, req.params.id, req.session);
-    res.redirect("/products/cart/productCart");
+    let usuarioLogueado = req.session.usuarioLogueado
+    if (usuarioLogueado) {
+      const productToAdd = await productServices.addToCart(req.body, req.params.id, req.session);
+      res.redirect("/products/cart/productCart");
+    
+    } else {
+      res.redirect('/users/login');
+    }
+
   },
 
 

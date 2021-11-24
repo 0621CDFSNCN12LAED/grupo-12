@@ -27,7 +27,14 @@
                 <h4><%= product.products.name %></h4>
                 <div class="container-cart-options">
                   <div class="cart-options">
-                    <p>Cantidad: <%= product.quantity %></p>
+                    <div class="quantity-options">
+                      <p>Cantidad:</p>
+                      <div class="quantity-selector">
+                        <button>-</button>
+                        <p><%= product.quantity %></p>
+                        <button>+</button>
+                      </div>
+                    </div>
                   </div>
                   <p class="cart-price">$ <%= toThousand(product.products.price * product.quantity)  %></p>
                 </div>

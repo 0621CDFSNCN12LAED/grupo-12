@@ -581,6 +581,28 @@ footer {
   margin: 15px 0;
 }
 
+.quantity-options {
+  display: flex;
+}
+.quantity-selector {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  margin-left: 10px;
+}
+.quantity-selector button {
+  width: 33%;
+  height: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+.quantity-selector p {
+  width: 33%;
+  text-align: center;
+  
+}
+
 /*----------------- REGISTER ------------------------*/
 
 .register-form {
