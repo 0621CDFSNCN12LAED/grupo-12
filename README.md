@@ -52,5 +52,3 @@ Incluidos en directorio /wireframes.
 Aquí listamos las historias del usuario y las tareas pendientes, en curso y terminadas. También incluimos un apartado para aquellas tareas que no podemos resolver aún.
 Link: https://trello.com/b/IRxLIRAc/dh-decampingcom
 
-
-aaaa
