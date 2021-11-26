@@ -2,14 +2,19 @@
   <head>
     <title>Administrador</title>
     <%- include("../partials/head.ejs") %>
+    <script defer src="/js/validations/product-validation.js" ></script>
+
   </head>
   <body>
     <%- include("../partials/header.ejs") %>
 
     <main>
       <h2 class="text-titles">Creador de productos</h2>
+      <ul class="product-validation-errors">
+
+      </ul>
       <form
-        action="/admin/product"
+        action="/admin/product/create"
         method="POST"
         class="register-form"
         enctype="multipart/form-data"
