@@ -19,8 +19,8 @@
             <div class="form-div">
               <label class="form-label" for="firstName">Nombre *</label>
               <input type="text" name="firstName" placeholder="Ingrese su nombre"
-              value="<%=locals.oldValues ? oldValues.firstName : "" %>" > <% if (locals.errors &&
-              errors.firstName) { %>
+              value="<%=locals.oldValues ? oldValues.firstName : "" %>" > 
+              <% if (locals.errors && errors.firstName) { %>
               <div class="error-msg">
                 <p><%= errors.firstName.msg %></p>
               </div>

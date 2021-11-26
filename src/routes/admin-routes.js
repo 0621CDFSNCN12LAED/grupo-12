@@ -9,6 +9,7 @@ const adminController = require("../controllers/admin-controller-DB");
 
 // -------- AUTH MIDDLEWARE -----------
 let LoginMiddlewares = require("../middlewares/loginMiddlewares");
+let productValidation = require('../validations/products-validations')
 
 // ***** Initializing MULTER *****
 const storage = multer.diskStorage({
@@ -25,7 +26,7 @@ const uploader = multer({ storage });
 
 // ----- CREATE ONE PRODUCT -----
 router.get("/product/create", LoginMiddlewares.authMiddleware, adminController.create);
-router.post("/product", uploader.single("image"), adminController.store);
+router.post("/product", uploader.single("image"),productValidation, adminController.store);
 
 // ----- EDIT ONE PRODUCT -----
 router.get("/product/:id/edit", LoginMiddlewares.authMiddleware, adminController.edit);

@@ -16,52 +16,82 @@
       >
         <div class="form-div">
           <label for="name">Nombre del producto</label>
-          <input type="text" name="name" id="name" required />
+          <input type="text" name="name" id="name" value="<%=locals.oldValues ? oldValues.name : "" %>" />
+          <% if (locals.errors && errors.name) { %>
+            <div class="error-msg">
+              <p><%= errors.name.msg %></p>
+            </div>
+          <% } %>
         </div>
         <div class="form-div">
           <label for="description">Descripción</label>
-          <input type="textarea" name="description" id="description" required />
+          <input type="textarea" name="description" id="description"  value="<%=locals.oldValues ? oldValues.description : "" %>"/>
+          <% if (locals.errors && errors.description) { %>
+            <div class="error-msg">
+              <p><%= errors.description.msg %></p>
+            </div>
+          <% } %>
         </div>
         <div class="form-div">
           <label for="img">Imagen</label>
           <input type="file" name="image" id="image" />
+          <% if (locals.errors && errors.image) { %>
+            <div class="error-msg">
+              <p><%= errors.image.msg %></p>
+            </div>
+          <% } %>
         </div>
         <div class="form-div">
           <label for="category">Categoría</label>
-          <select name="category" id="category" required>
+          <select name="category" id="category" >
             <option value="" selected disabled>Elija una categoría</option>
-            <option value="Camping">Camping</option>
-            <option value="Montañismo">Montañismo</option>
-            <option value="Escalada">Escalada</option>
-            <option value="SKI">SKI</option>
+            <option value="Camping" <%= locals.oldValues && oldValues.category == "Camping" ? "selected" : "" %>>Camping</option>
+            <option value="Montañismo" <%= locals.oldValues && oldValues.category == "Montañismo" ? "selected" : "" %>>Montañismo</option>
+            <option value="Escalada" <%= locals.oldValues && oldValues.category == "Escalada" ? "selected" : "" %>>Escalada</option>
+            <option value="SKI" <%= locals.oldValues && oldValues.category == "SKI" ? "selected" : "" %>>SKI</option>
           </select>
+          <% if (locals.errors && errors.category) { %>
+            <div class="error-msg">
+              <p><%= errors.category.msg %></p>
+            </div>
+          <% } %>
         </div>
         <div class="form-div">
           <label for="subcategory">Subcategorías</label>
-          <select id="subcategory" name="subcategory" required>
+          <select id="subcategory" name="subcategory" >
             <option value="" selected disabled>Elija una sub-categoría</option>
-            <option value="Carpas">Carpas</option>
-            <option value="Camperas">Camperas</option>
-            <option value="Pantalones">Pantalones</option>
-            <option value="Accesorios">Accesorios</option>
-            <option value="Elementos técnicos">Elementos técnicos</option>
+            <option value="Carpas" <%= locals.oldValues && oldValues.subcategory == "Carpas" ? "selected" : "" %>>Carpas</option>
+            <option value="Camperas" <%= locals.oldValues && oldValues.subcategory == "Camperas" ? "selected" : "" %>>Camperas</option>
+            <option value="Pantalones" <%= locals.oldValues && oldValues.subcategory == "Pantalones" ? "selected" : "" %>>Pantalones</option>
+            <option value="Accesorios" <%= locals.oldValues && oldValues.subcategory == "Accesorios" ? "selected" : "" %>>Accesorios</option>
+            <option value="Elementos técnicos" <%= locals.oldValues && oldValues.subcategory == "Elementos técnicos" ? "selected" : "" %>>Elementos técnicos</option>
           </select>
+          <% if (locals.errors && errors.subcategory) { %>
+            <div class="error-msg">
+              <p><%= errors.subcategory.msg %></p>
+            </div>
+          <% } %>
         </div>
         <div class="form-div">
           <label for="discount">Descuento</label>
-          <input type="number" min="0" max="50" name="discount" id="discount" required />
+          <input type="number" min="0" max="50" name="discount" id="discount"  value="<%=locals.oldValues ? oldValues.discount : "" %>"/>
         </div>
         <div class="form-div">
           <label for="starred">Destacado</label>
-          <input type="checkbox" name="starred" id="starred" />
+          <input type="checkbox" name="starred" id="starred" <%= locals.oldValues && oldValues.starred == "on" ? "checked" : "" %> />
         </div>
         <div class="form-div">
           <label for="price">Precio</label>
-          <input type="number" name="price" id="price" required />
+          <input type="number" name="price" id="price"  value="<%=locals.oldValues ? oldValues.price : "" %>"/>
+          <% if (locals.errors && errors.price) { %>
+            <div class="error-msg">
+              <p><%= errors.price.msg %></p>
+            </div>
+          <% } %>
         </div>
         <div class="form-div">
           <label for="stock">Unidades en stock</label>
-          <input type="number" name="stock" id="stock" required />
+          <input type="number" name="stock" id="stock"  value="<%=locals.oldValues ? oldValues.stock : "" %>"/>
         </div>
         <div class="form-div">
           <button class="boton-ppal color-primario" type="submit">Crear producto</button>

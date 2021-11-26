@@ -3,6 +3,8 @@ const db = require("../database/models");
 
 const productServices = require("../services/product-services-DB");
 
+const { validationResult } = require('express-validator');
+
 // ***** Controllers *****
 const adminController = {
   // ----- Go to CREATE form -----
@@ -13,8 +15,14 @@ const adminController = {
   // ----- CREATE ONE product -----
   store: async (req, res) => {
     // Create one & save
-    await productServices.createOne(req.body, req.file);
-    res.redirect("/products");
+    const errors = validationResult(req);
+    if (errors.isEmpty()) {
+      await productServices.createOne(req.body, req.file);
+      res.redirect("/products");
+    } else {
+      res.render('./admin/product-create-form', { errors: errors.mapped(), oldValues: req.body });
+    }
+
   },
 
   // ----- Go to EDIT form -----
