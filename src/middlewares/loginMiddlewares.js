@@ -1,11 +1,11 @@
-const userServices = require("../services/user-services.js");
+const userServices = require('../services/user-services.js');
 
-let LoginMiddlewares = {
+let loginMiddlewares = {
   userLoggedMiddleware: (req, res, next) => {
     res.locals.isLogged = false;
 
     let emailInCookie = req.cookies.userEmail;
-    let userFromCookie = userServices.findbyField("email", emailInCookie);
+    let userFromCookie = userServices.findbyField('email', emailInCookie);
 
     if (userFromCookie) {
       req.session.userLogged = userFromCookie;
@@ -21,7 +21,7 @@ let LoginMiddlewares = {
     if (req.session.usuarioLogueado == undefined) {
       next();
     } else {
-      return res.redirect("/users/userDetail");
+      return res.redirect('/users/userDetail');
     }
     next();
   },
@@ -29,9 +29,9 @@ let LoginMiddlewares = {
     if (req.session.usuarioLogueado != undefined) {
       next();
     } else {
-      res.redirect("/users/login");
+      res.redirect('/users/login');
     }
   },
 };
 
-module.exports = LoginMiddlewares;
+module.exports = loginMiddlewares;
