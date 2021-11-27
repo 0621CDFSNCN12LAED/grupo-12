@@ -600,7 +600,6 @@ footer {
 .quantity-selector p {
   width: 33%;
   text-align: center;
-  
 }
 
 /*----------------- REGISTER ------------------------*/
@@ -722,8 +721,24 @@ error-msg {
 .user-detail-image img {
   border-radius: 50%;
   display: block;
-  max-width:230px;
-  max-height:95px;
+  max-width: 230px;
+  max-height: 95px;
   width: auto;
   height: auto;
+}
+
+/*------------------ ADMIN --------------------*/
+
+.hidden {
+  display: none;
+}
+
+.is-valid {
+  border-color: green !important;
+  border-width: 2px !important;
+}
+
+.is-invalid {
+  border-color: red !important;
+  border-width: 2px !important;
 }
