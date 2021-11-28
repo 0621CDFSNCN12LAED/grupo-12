@@ -28,7 +28,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     image: {
       type: DataTypes.TEXT,
-      defaultValue: 'no-image.jpg',
     },
     createdAt: {
       field: 'created_at',

@@ -71,8 +71,9 @@ const mainController = {
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password1, 10),
         category: 'viewer',
-        image: 'template-image.png',
+        image: req.file ? req.file.filename : 'template-image.png',
       };
+      console.log(user)
 
       const userToRegister = await db.User.findOne({
         where: { email: req.body.email },

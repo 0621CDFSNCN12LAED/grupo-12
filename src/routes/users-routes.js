@@ -66,7 +66,7 @@ router.post('/login', loginValidations, usersControllerDB.processLogin);
 
 // Register
 router.get('/register', LoginMiddlewares.guestMiddleware, usersControllerDB.register);
-router.post('/register', registerValidations, usersControllerDB.processRegister);
+router.post('/register',uploader.single('image'), registerValidations, usersControllerDB.processRegister);
 
 //Edición de usuarios
 router.get('/edit', LoginMiddlewares.authMiddleware, usersControllerDB.editUser);
