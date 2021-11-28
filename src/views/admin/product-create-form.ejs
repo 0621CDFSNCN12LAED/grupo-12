@@ -20,29 +20,29 @@
         <div class="form-div">
           <label for="name">Nombre del producto</label>
           <input type="text" name="name" id="name" value="<%=locals.oldValues ? oldValues.name : "" %>" />
-          <% if (locals.errors && errors.name) { %>
-            <div class="error-msg">
-              <p><%= errors.name.msg %></p>
-            </div>
-          <% } %>
+          <div id="name-error-msg">
+            <% if (locals.errors && errors.name) { %>
+                <p><%= errors.name.msg %></p>
+            <% } %>
+          </div>
         </div>
         <div class="form-div">
           <label for="description">Descripción</label>
           <input type="textarea" name="description" id="description"  value="<%=locals.oldValues ? oldValues.description : "" %>"/>
-          <% if (locals.errors && errors.description) { %>
-            <div class="error-msg">
-              <p><%= errors.description.msg %></p>
-            </div>
-          <% } %>
+          <div id="description-error-msg">
+            <% if (locals.errors && errors.description) { %>
+                <p><%= errors.description.msg %></p>
+            <% } %>
+          </div>
         </div>
         <div class="form-div">
           <label for="img">Imagen</label>
           <input type="file" name="image" id="image" />
-          <% if (locals.errors && errors.image) { %>
-            <div class="error-msg">
-              <p><%= errors.image.msg %></p>
-            </div>
-          <% } %>
+          <div id="image-error-msg">
+            <% if (locals.errors && errors.image) { %>
+                <p><%= errors.image.msg %></p>
+            <% } %>
+          </div>
         </div>
         <div class="form-div">
           <label for="category">Categoría</label>
@@ -53,11 +53,11 @@
             <option value="Escalada" <%= locals.oldValues && oldValues.category == "Escalada" ? "selected" : "" %>>Escalada</option>
             <option value="SKI" <%= locals.oldValues && oldValues.category == "SKI" ? "selected" : "" %>>SKI</option>
           </select>
-          <% if (locals.errors && errors.category) { %>
-            <div class="error-msg">
-              <p><%= errors.category.msg %></p>
-            </div>
-          <% } %>
+          <div id="category-error-msg">
+            <% if (locals.errors && errors.category) { %>
+                <p><%= errors.category.msg %></p>
+            <% } %>
+          </div>
         </div>
         <div class="form-div">
           <label for="subcategory">Subcategorías</label>
@@ -69,11 +69,11 @@
             <option value="Accesorios" <%= locals.oldValues && oldValues.subcategory == "Accesorios" ? "selected" : "" %>>Accesorios</option>
             <option value="Elementos técnicos" <%= locals.oldValues && oldValues.subcategory == "Elementos técnicos" ? "selected" : "" %>>Elementos técnicos</option>
           </select>
-          <% if (locals.errors && errors.subcategory) { %>
-            <div class="error-msg">
-              <p><%= errors.subcategory.msg %></p>
-            </div>
-          <% } %>
+          <div id="subcategory-error-msg">
+            <% if (locals.errors && errors.subcategory) { %>
+                <p><%= errors.subcategory.msg %></p>
+            <% } %>
+          </div>
         </div>
         <div class="form-div">
           <label for="discount">Descuento</label>
@@ -86,11 +86,11 @@
         <div class="form-div">
           <label for="price">Precio</label>
           <input type="number" name="price" id="price"  value="<%=locals.oldValues ? oldValues.price : "" %>"/>
-          <% if (locals.errors && errors.price) { %>
-            <div class="error-msg">
-              <p><%= errors.price.msg %></p>
-            </div>
-          <% } %>
+          <div id="price-error-msg">
+            <% if (locals.errors && errors.price) { %>
+                <p><%= errors.price.msg %></p>
+            <% } %>
+          </div>
         </div>
         <div class="form-div">
           <label for="stock">Unidades en stock</label>
