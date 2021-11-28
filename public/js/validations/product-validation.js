@@ -18,6 +18,7 @@ productForm.addEventListener('submit', (event) => {
 
   if (validationErrors.length > 0) {
     event.preventDefault();
+    console.log(validationErrors)
 
     ulErrors.classList.remove('hidden');
     ulErrors.innerHTML = '';
