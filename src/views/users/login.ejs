@@ -22,6 +22,7 @@
           <form class="register-form" action="/users/login" method="POST">
             <div class="form-div" id="emailDiv">
               <label class="form-label" for="email">Correo electrónico</label>
+              <!-- Aca hay un error. Si registramos, no se manda la info del mail recien registrado. Solo aparecen los locals en caso que nos logueemos mal -->
               <input type="text" name="email" placeholder="Ej: ejemplo@gmail.com" id="email"
               value="<%=locals.oldValues ? oldValues.email : "" %>" >
               <div id="email-error-msg">

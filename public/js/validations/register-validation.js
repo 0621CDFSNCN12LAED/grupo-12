@@ -4,6 +4,7 @@ let lastNameErrorDiv = document.querySelector('#lastName-error-msg');
 let emailErrorDiv = document.querySelector('#email-error-msg');
 let password1ErrorDiv = document.querySelector('#password1-error-msg');
 let password2ErrorDiv = document.querySelector('#password2-error-msg');
+let imageErrorDiv = document.querySelector("#image-error-msg")
 
 // Register Inputs
 let registerFirstName = document.querySelector('#register-firstName');
@@ -11,6 +12,8 @@ let registerLastName = document.querySelector('#register-lastName');
 let registerEmail = document.querySelector('#register-email');
 let registerPassword1 = document.querySelector('#register-password1');
 let registerPassword2 = document.querySelector('#register-password2');
+let registerImage = document.querySelector('#register-image');
+
 
 
 //Validate Email function --> Esto podriamos globalizarlo
@@ -24,10 +27,24 @@ function validateEmail (emailAdress)
   }
 }
 
+// File validation
+function fileValidation() {
+    var filePath = registerImage.value;
+    // Allowing file type
+    var allowedExtensions = 
+            /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    if (!allowedExtensions.exec(filePath)) {
+        return false;
+    } else  {
+      return true
+    }
+  }
+
 // Prevent submit event & print error messages in HTML
 const registerForm = document.querySelector('main form');
 
 registerForm.addEventListener('submit', (event) => {
+    console.log("Submit")
     let objectError = validationObject()
     console.log(objectError)
 
@@ -40,7 +57,10 @@ registerForm.addEventListener('submit', (event) => {
     //Password frontend setup 
     frontEndSetup(password1ErrorDiv,registerPassword1,objectError.password1,event)   
     //Password2 frontend setup 
-    frontEndSetup(password2ErrorDiv,registerPassword2,objectError.password2,event)     
+    frontEndSetup(password2ErrorDiv,registerPassword2,objectError.password2,event)    
+    //Image frontend setup 
+    frontEndSetup(imageErrorDiv,registerImage,objectError.image,event)   
+
 });
 
 
@@ -79,6 +99,12 @@ function validationObject(){
     if (registerPassword2.value.trim() == '') {
         errors.password2 = "Debes repetir la contraseña"
     }
+    //Validaciones de imagen
+    let fileResponse = fileValidation()
+    if(!fileResponse){
+      errors.image = "El archivo debe ser de formato PNG, JPG, JPEG o GIF"
+    }
+  
     return errors
 }
 
