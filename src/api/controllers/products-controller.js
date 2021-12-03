@@ -1,12 +1,43 @@
 const db = require('../../database/models');
-const Op = db.Sequelize.Op;
 
 module.exports = {
   list: async (req, res) => {
     const products = await db.Product.findAll();
 
-    async function category(product) {
-      await db.Category.findOne({ where: { id: product.category_id } });
+    const campingProducts = await db.Product.findAll({
+      include: [{ association: 'categories' }],
+      where: {
+        category_id: 1,
+      },
+    });
+
+    const montanismoProducts = await db.Product.findAll({
+      include: [{ association: 'categories' }],
+      where: {
+        category_id: 2,
+      },
+    });
+    const escaladaProducts = await db.Product.findAll({
+      include: [{ association: 'categories' }],
+      where: {
+        category_id: 3,
+      },
+    });
+    const skiProducts = await db.Product.findAll({
+      include: [{ association: 'categories' }],
+      where: {
+        category_id: 4,
+      },
+    });
+
+    async function category(id) {
+      const category = await db.Category.findOne({
+        include: [{ association: 'products' }],
+        where: {
+          id: id,
+        },
+      });
+      return category.name;
     }
 
     const abbrProducts = products.map((product) => {
@@ -14,7 +45,7 @@ module.exports = {
         id: product.id,
         name: product.name,
         description: product.description,
-        category: category(product),
+        category: category(product.category_id),
         link: `http://localhost:3000/api/products/${product.id}`,
       };
     });
@@ -22,13 +53,19 @@ module.exports = {
     return res.json({
       meta: {
         count: products.length,
-        countByCategory: 'PENDING',
+        countByCategory: {
+          camping: campingProducts.length,
+          montañismo: montanismoProducts.length,
+          escalada: escaladaProducts.length,
+          ski: skiProducts.length,
+        },
         status: 200,
         url: '/api/products',
       },
       data: abbrProducts,
     });
   },
+
   detail: async (req, res) => {
     const product = await db.Product.findByPk(req.params.id);
     const productCategory = await db.Category.findByPk(product.category_id)
@@ -50,6 +87,7 @@ module.exports = {
 
 
     if (product) {
+      product.image = `http://localhost:3000/img/${product.image}`;
       res.json({
         meta: {
           status: 200,
@@ -63,7 +101,7 @@ module.exports = {
           status: 404,
           url: `/api/products/${req.params.id}`,
         },
-        data: `No se encontró el usuario con id ${req.params.id}`,
+        data: `No se encontró el producto con id ${req.params.id}`,
       });
     }
   },
