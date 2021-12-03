@@ -32,6 +32,7 @@ module.exports = {
       name: user.first_name,
       'last-name': user.last_name,
       email: user.email,
+      //category: user.category,
       image: user.image /* Falta mostrar link a la imagen -> AVERIGUAR */,
       'created-at': moment.utc(user.createdAt).format('MM/DD/YYYY'),
     };

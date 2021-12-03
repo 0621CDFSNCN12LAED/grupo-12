@@ -31,6 +31,23 @@ module.exports = {
   },
   detail: async (req, res) => {
     const product = await db.Product.findByPk(req.params.id);
+    const productCategory = await db.Category.findByPk(product.category_id)
+    const productSubCategory = await db.Subcategory.findByPk(product.subcategory_id)
+
+    const productInfo = {
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      description: product.description,
+      discount: product.discount,
+      stock: product.stock,
+      starred: product.starred,
+      deleted: product.deleted,
+      category_name: productCategory.name,
+      subcategory_name: productSubCategory.name
+    }
+
 
     if (product) {
       res.json({
@@ -38,7 +55,7 @@ module.exports = {
           status: 200,
           url: `/api/products/${req.params.id}`,
         },
-        data: product,
+        data: productInfo,
       });
     } else {
       res.json({
