@@ -27,16 +27,17 @@ module.exports = {
   detail: async (req, res) => {
     const user = await db.User.findByPk(req.params.id);
 
-    abbrUser = {
-      id: user.id,
-      name: user.first_name,
-      'last-name': user.last_name,
-      email: user.email,
-      image: user.image /* Falta mostrar link a la imagen -> AVERIGUAR */,
-      'created-at': moment.utc(user.createdAt).format('MM/DD/YYYY'),
-    };
-
     if (user) {
+      user.image = `http://localhost:3000/img/avatars/${user.image}`;
+
+      abbrUser = {
+        id: user.id,
+        name: user.first_name,
+        'last-name': user.last_name,
+        email: user.email,
+        image: user.image,
+        'created-at': moment.utc(user.createdAt).format('MM/DD/YYYY'),
+      };
       res.json({
         meta: {
           status: 200,

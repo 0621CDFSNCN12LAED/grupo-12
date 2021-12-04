@@ -4,6 +4,10 @@ module.exports = {
   list: async (req, res) => {
     const products = await db.Product.findAll();
 
+    const allCategories = await db.Category.findAll();
+
+    console.log(allCategories);
+
     const campingProducts = await db.Product.findAll({
       include: [{ association: 'categories' }],
       where: {
