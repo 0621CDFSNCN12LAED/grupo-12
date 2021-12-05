@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Products from './components/Products';
+import {Button, Alert} from 'react-bootstrap';
+import TopCards from './components/cards/topCards';
+import NavBar from './components/topNav/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <NavBar />
+        <div className="container">
+          <TopCards />
+        </div>
+        <Products products={["Mochila3", "Mochila4"]} title="Productos1" />
+        <Alert variant="primary"> This is a button</Alert>
+        <Button>Test button </Button>
+      </main>
     </div>
   );
 }
