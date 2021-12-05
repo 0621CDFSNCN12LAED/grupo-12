@@ -4,17 +4,12 @@ module.exports = {
   list: async (req, res) => {
     const products = await db.Product.findAll();
 
-    const allCategories = await db.Category.findAll();
-
-    console.log(allCategories);
-
     const campingProducts = await db.Product.findAll({
       include: [{ association: 'categories' }],
       where: {
         category_id: 1,
       },
     });
-
     const montanismoProducts = await db.Product.findAll({
       include: [{ association: 'categories' }],
       where: {
@@ -34,25 +29,26 @@ module.exports = {
       },
     });
 
-    async function category(id) {
+    // Map method returns a promise for each product
+    const promises = products.map(async (product) => {
+      // Get corresponding category for each product
       const category = await db.Category.findOne({
         include: [{ association: 'products' }],
         where: {
-          id: id,
+          id: product.category_id,
         },
       });
-      return category.name;
-    }
-
-    const abbrProducts = products.map((product) => {
       return {
         id: product.id,
         name: product.name,
         description: product.description,
-        category: category(product.category_id),
+        category: category.name,
         link: `http://localhost:3000/api/products/${product.id}`,
       };
     });
+
+    // Await all promises to be resolved and store them in 'abbrProducts' const
+    const abbrProducts = await Promise.all(promises);
 
     return res.json({
       meta: {
@@ -72,32 +68,29 @@ module.exports = {
 
   detail: async (req, res) => {
     const product = await db.Product.findByPk(req.params.id);
-    const productCategory = await db.Category.findByPk(product.category_id)
-    const productSubCategory = await db.Subcategory.findByPk(product.subcategory_id)
-
-    const productInfo = {
-      id: product.id,
-      name: product.name,
-      image: product.image,
-      price: product.price,
-      description: product.description,
-      discount: product.discount,
-      stock: product.stock,
-      starred: product.starred,
-      deleted: product.deleted,
-      category_name: productCategory.name,
-      subcategory_name: productSubCategory.name
-    }
-
+    const category = await db.Category.findByPk(product.category_id);
+    const subcategory = await db.Subcategory.findByPk(product.subcategory_id);
 
     if (product) {
-      product.image = `http://localhost:3000/img/${product.image}`;
+      const abbrProduct = {
+        id: product.id,
+        name: product.name,
+        image: `http://localhost:3000/img/products/${product.image}`,
+        price: Number(product.price),
+        description: product.description,
+        discount: Number(product.discount),
+        stock: product.stock,
+        starred: product.starred,
+        category: category.name,
+        subcategory: subcategory.name,
+      };
+
       res.json({
         meta: {
           status: 200,
           url: `/api/products/${req.params.id}`,
         },
-        data: productInfo,
+        data: abbrProduct,
       });
     } else {
       res.json({

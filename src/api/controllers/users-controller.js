@@ -1,12 +1,11 @@
 const db = require('../../database/models');
-const Op = db.Sequelize.Op;
 const moment = require('moment');
 
 module.exports = {
   list: async (req, res) => {
     const users = await db.User.findAll();
 
-    abbrUsers = users.map((user) => {
+    const abbrUsers = users.map((user) => {
       return {
         id: user.id,
         name: `${user.first_name} ${user.last_name}`,
@@ -24,6 +23,7 @@ module.exports = {
       data: abbrUsers,
     });
   },
+
   detail: async (req, res) => {
     const user = await db.User.findByPk(req.params.id);
 
@@ -32,8 +32,7 @@ module.exports = {
 
       abbrUser = {
         id: user.id,
-        name: user.first_name,
-        'last-name': user.last_name,
+        name: `${user.first_name} ${user.last_name}`,
         email: user.email,
         image: user.image,
         'created-at': moment.utc(user.createdAt).format('MM/DD/YYYY'),
@@ -56,12 +55,3 @@ module.exports = {
     }
   },
 };
-
-/** {
-      id: users.id,
-      name: users.first_name,
-      'last-name': users.last_name,
-      email: users.email,
-      detail: `/api/users/${users.id}`,
-      }
- */
