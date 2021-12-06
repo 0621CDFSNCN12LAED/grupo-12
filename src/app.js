@@ -32,6 +32,12 @@ app.use(userLoggedMiddleware.userLoggedMiddleware);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//CORS
+const cors = require('cors');
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
+
 // locals
 app.locals.toThousand = (n) =>
   n
@@ -58,4 +64,4 @@ const apiRoutes = require('./api/routes/index');
 app.use('/api', apiRoutes);
 
 // Server listening in port 3000
-app.listen(3000, () => console.log('Server running smoothly in port 3000'));
+app.listen(3001, () => console.log('Server running smoothly in port 3000'));

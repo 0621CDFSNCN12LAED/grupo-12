@@ -5,11 +5,11 @@ function NavBar() {
     return (
         <Navbar bg="secondary" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                <Navbar.Brand href="#home">DeCamping</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    <Nav.Link href="#dashboard">Dashboard</Nav.Link>
+                    <Nav.Link href="#features">Productos</Nav.Link>
+                    <Nav.Link href="#pricing">Usuarios</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
