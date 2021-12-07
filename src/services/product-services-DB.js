@@ -102,15 +102,37 @@ const productServices = {
   },
 
   async addToCart(payload, params, session) {
-    let productToCart = await db.UserProduct.create(
-      {
+    let product = await db.UserProduct.findOne({
+      where: {
+        user_id: session.usuarioLogueado.id,
+        product_id: params,
+      },
+    });
+
+    if (product) {
+      const newQuantity = (product.quantity += Number(payload.quantity));
+      const productInCart = await db.UserProduct.update(
+        {
+          quantity: newQuantity,
+        },
+        {
+          where: {
+            user_id: session.usuarioLogueado.id,
+            product_id: params,
+          },
+        }
+      );
+      return productInCart;
+    } else {
+      const productInCart = await db.UserProduct.create({
         quantity: payload.quantity,
         product_id: params,
         user_id: session.usuarioLogueado.id,
-      }
-    );
-    return productToCart
+      });
+      return productInCart;
+    }
   },
+
   async getCartByUser(user_id) {
     const cartByUser = await db.UserProduct.findAll({
       include: [{ association: 'products' }],
