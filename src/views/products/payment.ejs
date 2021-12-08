@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Carrito | DeCamping.com</title>
+    <%- include("../partials/head.ejs") %>
+  </head>
+
+  <body>
+    <!-- Header section (fixed) -->
+    <%- include("../partials/header.ejs") %>
+
+    <!-- Main section -->
+    <main>
+      <h2 class="text-titles">CONFIRMACION DE PEDIDO</h2>
+      <div class="container-checkout">
+        <div class="container-products">
+          <form action="/products/cart/checkout" method="POST" class="register-form">
+            <div class="payment-div">
+              <label class="form-label" for="address">Por favor elija la dirección de envío:</label>
+              <% for (const address of addresses) { %>
+              <label class="form-sublabel">
+                <input type="radio" name="address" value="<%=address.id%>" />
+                <span>
+                  <%= address.street_name %> <%= address.street_number %>, <%= address.city %>, <%=
+                  address.province %>, <%= address.country %>
+                </span>
+              </label>
+              <% } %>
+            </div>
+            <div class="payment-div">
+              <label class="form-label" for="payment">Por favor elija su método de pago:</label>
+              <select name="payment">
+                <option value="cash">Efectivo</option>
+                <option value="debit">Tarjeta de débito</option>
+                <option value="credit">Tarjeta de crédito</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div>
+          <h3>Detalle de la orden</h3>
+          <div class="container-cart">
+            <p>*** Lista de productos ***</p>
+          </div>
+          <div class="subtotal-cart">
+            <h3>Costo de envio:</h3>
+            <h3>$$$$$</h3>
+          </div>
+          <div class="subtotal-cart">
+            <h2>Total:</h2>
+            <% let precioFinal = 0 %> <% for (product of products) { %> <% precioFinal +=
+            product.products.price * product.quantity%> <% } %>
+            <h2><%= toThousand(precioFinal) %></h2>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer section -->
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

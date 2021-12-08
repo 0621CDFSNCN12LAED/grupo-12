@@ -43,6 +43,19 @@ const productsController = {
     }
   },
 
+  payment: async (req, res) => {
+    let usuarioLogueado = req.session.usuarioLogueado;
+    if (usuarioLogueado) {
+      const productsInCart = await productServices.getCartByUser(usuarioLogueado.id);
+
+      const addresses = await productServices.getAddresses(usuarioLogueado.id);
+
+      res.render('./products/payment', { products: productsInCart, addresses });
+    } else {
+      res.redirect('/users/login');
+    }
+  },
+
   fullpage: (req, res) => {
     res.render('products/fullpage');
   },

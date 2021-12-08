@@ -143,6 +143,15 @@ const productServices = {
     return cartByUser;
   },
 
+  async getAddresses(user_id) {
+    const addresses = await db.Address.findAll({
+      where: {
+        user_id: user_id,
+      },
+    });
+    return addresses;
+  },
+
   async destroyOne(params) {
     await db.Product.update(
       {

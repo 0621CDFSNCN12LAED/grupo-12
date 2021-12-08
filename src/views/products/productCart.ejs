@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title> Carrito | DeCamping.com</title>
+    <title>Carrito | DeCamping.com</title>
     <%- include("../partials/head.ejs") %>
   </head>
 
@@ -15,51 +15,50 @@
       <h2 class="text-titles">CARRITO DE COMPRAS</h2>
       <div class="container-checkout">
         <div class="container-products">
-          <% if(products) { %> 
-            <% for (product of products) {%>
-
-            <div class="container-cart">
-              <img
-                src="/img/products/<%= product.products.image %> "
-                alt="<%= product.products.name %>"
-              />
-              <div class="titulos-cart">
-                <h4><%= product.products.name %></h4>
-                <div class="container-cart-options">
-                  <div class="cart-options">
-                    <div class="quantity-options">
-                      <p>Cantidad:</p>
-                      <div class="quantity-selector">
-                        <button>-</button>
-                        <p><%= product.quantity %></p>
-                        <button>+</button>
-                      </div>
+          <% if(products) { for (product of products) {%>
+          <div class="container-cart">
+            <img
+              src="/img/products/<%=product.products.image%>"
+              alt="<%= product.products.name %>"
+            />
+            <div class="titulos-cart">
+              <h4><%= product.products.name %></h4>
+              <div class="container-cart-options">
+                <div class="cart-options">
+                  <div class="quantity-options">
+                    <p>Cantidad:</p>
+                    <div class="quantity-selector">
+                      <button>-</button>
+                      <p><%= product.quantity %></p>
+                      <button>+</button>
                     </div>
                   </div>
-                  <p class="cart-price">$ <%= toThousand(product.products.price * product.quantity)  %></p>
                 </div>
+                <p class="cart-price">
+                  $ <%= toThousand(product.products.price * product.quantity) %>
+                </p>
               </div>
             </div>
-            
-            <% } %> 
-          <% } %> 
-  
+          </div>
+
+          <% }} %>
         </div>
         <div class="container-endcart">
           <div class="subtotal-cart">
             <h2>Subtotal:</h2>
-            <% let precioFinal = 0 %> 
-
-            <% for (product of products) { %> 
-              <% precioFinal +=  product.products.price * product.quantity%> 
-              <% } %> 
-            <p class="subtotal-price">$ <%= toThousand(precioFinal) %> </p>
+            <% let precioFinal = 0 %> <% for (product of products) { %> <% precioFinal +=
+            product.products.price * product.quantity%> <% } %>
+            <p class="subtotal-price">$ <%= toThousand(precioFinal) %></p>
           </div>
           <div class="form-div">
-            <button class="boton-ppal color-primario">Ir a pagar</button>
+            <form action="/products/cart/payment" method="GET">
+              <button class="boton-ppal color-primario" type="submit">Ir a pagar</button>
+            </form>
           </div>
           <div class="form-div">
-            <button class="boton-ppal color-secundario">Seguir comprando</button>
+            <button class="boton-ppal color-secundario">
+              <a href="/products">Seguir comprando</a>
+            </button>
           </div>
         </div>
       </div>

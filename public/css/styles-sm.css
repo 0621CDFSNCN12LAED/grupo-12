@@ -431,6 +431,29 @@ footer {
   border-radius: 5px;
 }
 
+.boton-ppal a {
+  color: #ffffff !important;
+}
+
+/*------------------ PAYMENT PAGE -------------------*/
+
+.payment-div {
+  padding: 10px;
+  margin: 0 5%;
+}
+
+.form-sublabel {
+  display: block;
+  font-size: 1rem;
+  max-width: 100%;
+}
+.payment-div input {
+  display: inline-block;
+  border: solid 1px black;
+  border-radius: 3px;
+  padding: 10px;
+}
+
 /*------------------PRODUCT DETAIL -------------------*/
 
 .fullpage-main {
@@ -637,7 +660,7 @@ footer {
 .form-div p {
   color: red;
   font-size: 0.75rem;
-  margin: 5px 0 0 0 ;
+  margin: 5px 0 0 0;
 }
 
 .form-div a {
