@@ -155,12 +155,15 @@ const productServices = {
   },
 
   async checkout(payload) {
-    const newOrder = await db.Order.create({
-      user_id: session.usuarioLogueado.id,
-      purchase_date: Date.now,
-      external_reference: 'MercadoPago ref: xxxxxxx',
-      address_id: payload.quantity,
-    });
+    if(usuarioLogueado){
+      const newOrder = await db.Order.create({
+        user_id: session.usuarioLogueado.id,
+        purchase_date: Date.now,
+        external_reference: 'MercadoPago ref: xxxxxxx',
+        address_id: payload.quantity,
+      });
+    }
+    
   },
 
   async destroyOne(params) {

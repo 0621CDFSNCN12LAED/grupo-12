@@ -2,26 +2,32 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 //import Products from './components/Products';
-//import {Button, Alert} from 'react-bootstrap';
+//import {Switch, Route} from 'react-dom';
 import TopCards from './components/cards/topCards';
 import NavBar from './components/topNav/NavBar';
 import ProductTable from './components/tables/productTable';
+import UserTable from './components/tables/userTable';
+import React from 'react';
 //import Test from './components/tables/test';
 
 function App() {
   return (
-    <div className="App">
-      <main>
-        <NavBar />
-        <div className="container general-container">
-          <TopCards />
-        </div>
-        <div className="container general-container">
-          <ProductTable />
-        </div>
+    <React.Fragment>
+      <div className="App">
+        <main>
+          <NavBar />
+          <div className="container general-container">
+            <TopCards />
+          </div>
+          <div className="container general-container">
+            <ProductTable />
+            <UserTable />
+          </div>
 
-      </main>
-    </div>
+        </main>
+      </div>
+    </React.Fragment>
+
   );
 }
 

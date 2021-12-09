@@ -7,9 +7,9 @@ function NavBar() {
             <Container>
                 <Navbar.Brand href="#home">DeCamping</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#dashboard">Dashboard</Nav.Link>
-                    <Nav.Link href="#features">Productos</Nav.Link>
-                    <Nav.Link href="#pricing">Usuarios</Nav.Link>
+                    <Nav.Link href="/">Dashboard</Nav.Link>
+                    <Nav.Link href="/products">Productos</Nav.Link>
+                    <Nav.Link href="/users">Usuarios</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
