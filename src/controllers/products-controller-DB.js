@@ -56,6 +56,18 @@ const productsController = {
     }
   },
 
+  checkout: async (req, res) => {
+    // Crear la OC en DB: user_id, purchase_date, external_reference, address_id
+    const newOrder = await productServices.checkout(req.body);
+    // Pasar la info de los productos a tabla intermedia order_product
+
+    // Eliminar los items del stock
+
+    // Crear PDF de la OC para el cliente (chequear COMO)
+    // Re-dirigir a una pagina que indique que la compra fue exitosa y permita descargar el PDF
+    res.send('estas ok');
+  },
+
   fullpage: (req, res) => {
     res.render('products/fullpage');
   },

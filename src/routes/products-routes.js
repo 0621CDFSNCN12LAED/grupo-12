@@ -21,6 +21,9 @@ router.post('/:id/cart', productController.addToCart);
 // ---- CONFIRM ORDER ----
 router.get('/cart/payment', productController.payment);
 
+// ---- GO TO CHECK OUT ----
+router.post('/cart/checkout', productController.checkout);
+
 // ---- NOT IN USE ----
 router.get('/fullpage', productController.fullpage);
 

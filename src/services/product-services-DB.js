@@ -1,4 +1,6 @@
 // ***** Global requires *****
+const session = require('express-session');
+const { checkout } = require('../controllers/products-controller-DB');
 const db = require('../database/models');
 
 const productServices = {
@@ -150,6 +152,15 @@ const productServices = {
       },
     });
     return addresses;
+  },
+
+  async checkout(payload) {
+    const newOrder = await db.Order.create({
+      user_id: session.usuarioLogueado.id,
+      purchase_date: Date.now,
+      external_reference: 'MercadoPago ref: xxxxxxx',
+      address_id: payload.quantity,
+    });
   },
 
   async destroyOne(params) {

@@ -31,6 +31,7 @@
             <div class="payment-div">
               <label class="form-label" for="payment">Por favor elija su método de pago:</label>
               <select name="payment">
+                <option value="" selected disabled>-- Elija un método de pago --</option>
                 <option value="cash">Efectivo</option>
                 <option value="debit">Tarjeta de débito</option>
                 <option value="credit">Tarjeta de crédito</option>
@@ -52,6 +53,16 @@
             <% let precioFinal = 0 %> <% for (product of products) { %> <% precioFinal +=
             product.products.price * product.quantity%> <% } %>
             <h2><%= toThousand(precioFinal) %></h2>
+          </div>
+          <div class="form-div">
+            <form action="/products/cart/checkout" method="POST">
+              <button class="boton-ppal color-primario" type="submit">CHECK-OUT</button>
+            </form>
+          </div>
+          <div class="form-div">
+            <button class="boton-ppal color-secundario">
+              <a href="/products">Seguir comprando</a>
+            </button>
           </div>
         </div>
       </div>
