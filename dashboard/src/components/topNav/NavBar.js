@@ -10,6 +10,7 @@ function NavBar() {
                     <Nav.Link href="/">Dashboard</Nav.Link>
                     <Nav.Link href="/products">Productos</Nav.Link>
                     <Nav.Link href="/users">Usuarios</Nav.Link>
+                    <Nav.Link href="/category">Categorías</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

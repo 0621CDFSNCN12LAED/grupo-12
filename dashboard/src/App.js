@@ -2,12 +2,13 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 //import Products from './components/Products';
-//import {Switch, Route} from 'react-dom';
+import {Route, Switch} from 'react-router-dom';
 import TopCards from './components/cards/topCards';
 import NavBar from './components/topNav/NavBar';
 import ProductTable from './components/tables/productTable';
 import UserTable from './components/tables/userTable';
 import React from 'react';
+import CategoriesSection from './components/categories/CategoriesSection';
 //import Test from './components/tables/test';
 
 function App() {
@@ -16,13 +17,23 @@ function App() {
       <div className="App">
         <main>
           <NavBar />
-          <div className="container general-container">
-            <TopCards />
-          </div>
-          <div className="container general-container">
-            <ProductTable />
-            <UserTable />
-          </div>
+          <Switch>
+          <Route path="/" exact>
+            <div className="container general-container">
+              <TopCards />
+            </div>
+            <div className="container general-container">
+              <ProductTable />
+              <UserTable />
+            </div>
+          </Route>
+          <Route path="/products" component={ProductTable}/>
+          <Route path="/users" component={UserTable}/>
+          <Route path="/category" component={CategoriesSection}>
+
+          </Route>
+          </Switch>
+  
 
         </main>
       </div>

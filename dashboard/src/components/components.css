@@ -10,3 +10,15 @@
 .border-left-yellow {
     border-left: 7px solid #ffc107;
 }
+.category_item {
+    display: flex;
+    justify-content: space-between ;
+}
+.category_item p {
+    margin: 0;
+}
+.category_item .number {
+    font-weight: bold;
+    color: #198754;
+    font-size: 20px;
+}
