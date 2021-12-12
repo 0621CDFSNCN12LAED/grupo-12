@@ -17,9 +17,9 @@
         <div class="container-products">
           <form action="/products/cart/checkout" method="POST" class="register-form">
             <div class="payment-div">
-              <label class="form-label" for="address">Por favor elija la dirección de envío:</label>
+              <label class="form-label">Por favor elija la dirección de envío:</label>
               <% for (const address of addresses) { %>
-              <label class="form-sublabel">
+              <label class="form-sublabel" for="address">
                 <input type="radio" name="address" value="<%=address.id%>" />
                 <span>
                   <%= address.street_name %> <%= address.street_number %>, <%= address.city %>, <%=
@@ -37,6 +37,14 @@
                 <option value="credit">Tarjeta de crédito</option>
               </select>
             </div>
+            <div class="form-div">
+              <button class="boton-ppal color-primario" type="submit">CHECK-OUT</button>
+            </div>
+            <div class="form-div">
+              <button class="boton-ppal color-secundario">
+                <a href="/products">Seguir comprando</a>
+              </button>
+            </div>
           </form>
         </div>
         <div>
@@ -53,16 +61,6 @@
             <% let precioFinal = 0 %> <% for (product of products) { %> <% precioFinal +=
             product.products.price * product.quantity%> <% } %>
             <h2><%= toThousand(precioFinal) %></h2>
-          </div>
-          <div class="form-div">
-            <form action="/products/cart/checkout" method="POST">
-              <button class="boton-ppal color-primario" type="submit">CHECK-OUT</button>
-            </form>
-          </div>
-          <div class="form-div">
-            <button class="boton-ppal color-secundario">
-              <a href="/products">Seguir comprando</a>
-            </button>
           </div>
         </div>
       </div>

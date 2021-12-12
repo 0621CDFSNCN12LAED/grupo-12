@@ -1,7 +1,7 @@
 // ***** Global requires *****
 const session = require('express-session');
-const { checkout } = require('../controllers/products-controller-DB');
 const db = require('../database/models');
+const moment = require('moment');
 
 const productServices = {
   async findAll() {
@@ -154,14 +154,39 @@ const productServices = {
     return addresses;
   },
 
-  async checkout(payload) {
-    const newOrder = await db.Order.create({
-      user_id: session.usuarioLogueado.id,
-      purchase_date: Date.now,
+  async checkout(payload, user_id) {
+    // Create PO in DB
+    const order = await db.Order.create({
+      user_id: user_id,
+      purchase_date: moment.utc(Date.now()).format('MM/DD/YYYY'),
       external_reference: 'MercadoPago ref: xxxxxxx',
-      address_id: payload.quantity,
+      address_id: payload.address,
+    });
+
+    // Create 1 entry per product in order_product table
+    const cartProducts = await this.getCartByUser(user_id);
+
+    for (const product of cartProducts) {
+      await db.OrderProduct.create({
+        order_id: order.id,
+        product_id: product.product_id,
+        quantity: product.quantity,
+      });
+    }
+
+    return order;
+  },
+
+  async restoreCart(user_id) {
+    // Eliminate products in cart
+    await db.UserProduct.destroy({
+      where: {
+        user_id: user_id,
+      },
     });
   },
+
+  async createPDF() {},
 
   async destroyOne(params) {
     await db.Product.update(

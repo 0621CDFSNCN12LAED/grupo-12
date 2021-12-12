@@ -83,6 +83,7 @@ CREATE TABLE order_product (
   id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   order_id INT(10) UNSIGNED NOT NULL,
   product_id INT(10) UNSIGNED NOT NULL,
+  quantity INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (id),
   KEY fk_order_id (order_id),
   KEY fk_product_id (product_id),

@@ -57,15 +57,24 @@ const productsController = {
   },
 
   checkout: async (req, res) => {
-    // Crear la OC en DB: user_id, purchase_date, external_reference, address_id
-    const newOrder = await productServices.checkout(req.body);
-    // Pasar la info de los productos a tabla intermedia order_product
+    let usuarioLogueado = req.session.usuarioLogueado;
+    if (usuarioLogueado) {
+      // Crear la OC en DB: user_id, purchase_date, external_reference, address_id
+      // Pasar la info de los productos a tabla intermedia order_product
+      const orderSuccess = await productServices.checkout(req.body, usuarioLogueado.id);
 
-    // Eliminar los items del stock
-
-    // Crear PDF de la OC para el cliente (chequear COMO)
-    // Re-dirigir a una pagina que indique que la compra fue exitosa y permita descargar el PDF
-    res.send('estas ok');
+      // Eliminar los items del stock
+      if (orderSuccess) {
+        await productServices.restoreCart(usuarioLogueado.id);
+        const msg = 'Compra exitosa!';
+        res.render('products/checkout', { orderSuccess, msg });
+      } else {
+        const msg = 'Hubo un error en el procesamiento de la orden, por favor inténtelo nuevamente';
+        res.render('products/checkout', { msg });
+      }
+    } else {
+      res.redirect('/users/login');
+    }
   },
 
   fullpage: (req, res) => {

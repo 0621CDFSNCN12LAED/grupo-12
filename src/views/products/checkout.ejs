@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Home | DeCamping.com</title>
+    <%- include("../partials/head.ejs") %>
+  </head>
+
+  <body>
+    <!-- Header section (fixed) -->
+    <%- include("../partials/header.ejs") %>
+    <!-- Main section -->
+    <main>
+      <section>
+        <h2 class="text-titles">PROCESAMIENTO DE ORDEN DE COMPRA</h2>
+        <div class="">
+          <p><%= msg %></p>
+          <% if(orderSuccess) { %>
+          <p>Puede descargar su orden de compra desde el siguiente enlace:</p>
+          <form>
+            <button class="boton-ppal color-primario" type="submit">DESCARGAR PDF</button>
+            <i class="fa fa-file-pdf"></i>
+          </form>
+          <% } else { %>
+          <button><a href="/products/cart">Volver al carrito</a></button>
+          <% } %>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer section -->
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>
