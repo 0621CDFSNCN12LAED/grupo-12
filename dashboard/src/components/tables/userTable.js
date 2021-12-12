@@ -3,13 +3,13 @@ import {Table} from 'react-bootstrap';
 import TableRow from './tableRow';
 
 
-class ProductTable extends React.Component {
+class userTable extends React.Component {
    
     // Constructor 
     constructor(props) {
         super(props);
         this.state = {
-            items: [],
+            users: [],
             DataisLoaded: false
         };
     }
@@ -17,42 +17,39 @@ class ProductTable extends React.Component {
     // ComponentDidMount is used to
     // execute the code 
     componentDidMount() {
-        fetch(
-"http://localhost:3001/api/products")
+        fetch("http://localhost:3001/api/users")
             .then((res) => res.json())
             .then((json) => {
                 this.setState({
-                    items: json.data,
+                    users: json.data,
                     DataisLoaded: true
                 });
             })
     }
     render() {
-        const { DataisLoaded, items } = this.state;
+        const { DataisLoaded, users } = this.state;
         if (!DataisLoaded) return <div>
-            <h1> Cargando productos.... </h1> </div> ;
+            <h1> Cargando usuarios.... </h1> </div> ;
    
         return (
 
         <div className="container general-container">
-            <h1>Tabla de productos </h1>
+            <h1>Tabla de usuarios </h1>
             <Table striped bordered hover>
                 <thead>
                     <tr>
                     <th>Id</th>
                     <th>Nombre</th>
-                    <th>Categoría</th>
-                    <th>Acciones</th>
+                    <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
-                {
-                    items.map( ( item , i) => {
+                 {
+                    users.map( ( user , i) => {
                         return <TableRow  key={i}>
-                                <td>{item.id} </td>
-                                <td>{item.name} </td>
-                                <td>{item.category} </td>
-                                <td>{item.link} </td>
+                                <td>{user.id} </td>
+                                <td>{user.name} </td>
+                                <td>{user.email} </td>
                                 </TableRow >
                     })
                 }
@@ -63,4 +60,4 @@ class ProductTable extends React.Component {
 }
 }
    
-export default ProductTable;
+export default userTable;
