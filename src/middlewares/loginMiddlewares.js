@@ -17,6 +17,7 @@ let loginMiddlewares = {
     }
     next();
   },
+
   guestMiddleware: (req, res, next) => {
     if (req.session.usuarioLogueado == undefined) {
       next();
@@ -25,6 +26,7 @@ let loginMiddlewares = {
     }
     next();
   },
+
   authMiddleware: (req, res, next) => {
     if (req.session.usuarioLogueado != undefined) {
       next();

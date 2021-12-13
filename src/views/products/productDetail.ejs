@@ -47,22 +47,41 @@
                 <p style="color: green">En stock</p>
                 <label for="quantity">Cantidad:</label>
                 <select name="quantity" id="quantity">
+                  <% if (product.stock >= 5) { %>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
                   <option value="5">5</option>
+                  <% } else if (product.stock == 4) { %>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <% } else if (product.stock == 3) { %>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <% } else if (product.stock == 2) { %>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <% } else if (product.stock == 1) { %>
+                  <option value="1">1</option>
+                  <% } %>
                 </select>
-                <% } else { %>
-                <p style="color: red">Producto sin stock</p>
-                <% } %>
               </div>
               <div class="detail-cart">
                 <button type="submit" class="boton-ppal color-primario">
                   Agregar al carrito<i class="fas fa-cart-plus"></i>
                 </button>
               </div>
+                <% } else { %>
+                <p style="color: red">Producto sin stock</p>
+                </select>
+              </div>
+                <% } %>
             </form>
+            <% if (locals.usuarioLogueado && locals.usuarioLogueado.category == "admin") { %>
             <div class="edit-delete-container">
               <div class="edit-delete-form-container">
                 <form action="/admin/product/<%= product.id %>/edit" method="GET">
@@ -75,6 +94,7 @@
                 </form>
               </div>
             </div>
+            <% } %>
             <% } else { %>
             <p>Lo sentimos, este producto ya no está disponible.</p>
             <form action="/products" method="GET">

@@ -24,6 +24,9 @@ router.get('/cart/payment', productController.payment);
 // ---- GO TO CHECK OUT ----
 router.post('/cart/checkout', productController.checkout);
 
+// ---- DOWNLOAD ORDER ----
+router.get('/cart/download-order/:id', productController.download);
+
 // ---- NOT IN USE ----
 router.get('/fullpage', productController.fullpage);
 

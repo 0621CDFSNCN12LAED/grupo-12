@@ -68,10 +68,12 @@ CREATE TABLE products (
 
 CREATE TABLE orders (
   id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  order_number INT(10) UNSIGNED NOT NULL,
   user_id INT(10) UNSIGNED NOT NULL,
   purchase_date DATETIME NOT NULL,
   external_reference VARCHAR(200) NOT NULL,
   address_id INT(10) UNSIGNED NOT NULL,
+  total_amount INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (id),
   KEY fkey_user_id (user_id),
   KEY fkey_address_id (address_id),

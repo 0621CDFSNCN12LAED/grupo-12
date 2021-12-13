@@ -59,11 +59,10 @@ const productsController = {
   checkout: async (req, res) => {
     let usuarioLogueado = req.session.usuarioLogueado;
     if (usuarioLogueado) {
-      // Crear la OC en DB: user_id, purchase_date, external_reference, address_id
-      // Pasar la info de los productos a tabla intermedia order_product
+      // Create PO in 'orders' table, copy products information to 'order_product' table & update stock in 'products' table in DB
       const orderSuccess = await productServices.checkout(req.body, usuarioLogueado.id);
 
-      // Eliminar los items del stock
+      // Restore cart to zero and update stock in 'products' table in DB
       if (orderSuccess) {
         await productServices.restoreCart(usuarioLogueado.id);
         const msg = 'Compra exitosa!';
@@ -75,6 +74,10 @@ const productsController = {
     } else {
       res.redirect('/users/login');
     }
+  },
+
+  download: async (req, res) => {
+    productServices.createPDF(req.params.id, res);
   },
 
   fullpage: (req, res) => {

@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true,
     },
+    order_number: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+    },
     purchase_date: {
       allowNull: false,
       type: DataTypes.DATE,
@@ -14,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     address_id: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+    },
+    total_amount: {
       allowNull: false,
       type: DataTypes.INTEGER,
     },

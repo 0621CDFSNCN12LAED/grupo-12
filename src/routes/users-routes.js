@@ -48,13 +48,13 @@ router.get('/check', function (req, res) {
 });
 
 // User detail
-router.get('/userDetail', /*LoginMiddlewares.authMiddleware,*/ usersControllerDB.userDetail);
+router.get('/userDetail', LoginMiddlewares.authMiddleware, usersControllerDB.userDetail);
 
 // Logout
 router.get('/logout', usersControllerDB.logout);
 
 // User address
-router.get('/address', /*LoginMiddlewares.authMiddleware,*/ usersControllerDB.showAddress);
+router.get('/address', LoginMiddlewares.authMiddleware, usersControllerDB.showAddress);
 router.post('/address', usersControllerDB.createAddress);
 
 // ********* DB ROUTES *********
