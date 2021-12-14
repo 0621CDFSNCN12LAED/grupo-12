@@ -18,6 +18,13 @@
           <form action="/products/cart/checkout" method="POST" class="register-form">
             <div class="payment-div">
               <label class="form-label">Por favor elija la dirección de envío:</label>
+              <% if(addresses.length == 0) { %>
+                <div>
+                  <p>No tienes direcciones creadas en tu cuenta</p>
+                  <a href="/users/address" class="boton-ppal color-secundario">Crear dirección</a>
+
+                </div>
+              <% } else { %>
               <% for (const address of addresses) { %>
               <label class="form-sublabel" for="address">
                 <input type="radio" name="address" value="<%=address.id%>" />
@@ -26,7 +33,7 @@
                   address.province %>, <%= address.country %>
                 </span>
               </label>
-              <% } %>
+              <% }}  %>
             </div>
             <div class="payment-div">
               <label class="form-label" for="payment">Por favor elija su método de pago:</label>
@@ -50,7 +57,12 @@
         <div>
           <h3>Detalle de la orden</h3>
           <div class="container-cart">
-            <p>*** Lista de productos ***</p>
+            <ul>
+              <% for (product of products) { %>
+                <p><%= product.products.name %> x <%= product.quantity %> un.</p>
+            <% } %> 
+            </ul>
+           
           </div>
           <div class="subtotal-cart">
             <h3>Costo de envio:</h3>

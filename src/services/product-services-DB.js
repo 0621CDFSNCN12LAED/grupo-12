@@ -155,11 +155,20 @@ const productServices = {
     return addresses;
   },
 
-  async checkout(payload, user_id) {
+  async checkout(payload, user_id, cartInfo) {
     // Create PO in 'orders' table in DB
     const allOrders = await db.Order.findAll();
     const initialPO = 45002000;
     let PO;
+    
+    //obtain total amount of order
+    let total_amount = 0
+    for(product of cartInfo) {
+      let itemPrice = product.products.price * product.quantity
+      total_amount = total_amount + itemPrice
+    }
+    console.log("total_amount")
+    console.log(total_amount)
 
     if (allOrders.length == 0) {
       PO = initialPO;
@@ -173,12 +182,11 @@ const productServices = {
       purchase_date: Date.now(),
       external_reference: 'MercadoPago ref: xxxxxxx',
       address_id: payload.address,
-      total_amount: 1111, // CHEQUEAR!!!!!
+      total_amount: total_amount, // CHEQUEAR!!!!!
     });
 
-    const cartProducts = await this.getCartByUser(user_id);
+    for (const product of cartInfo) {
 
-    for (const product of cartProducts) {
       // Create 1 entry per product in 'order_product' table
       await db.OrderProduct.create({
         order_id: order.id,
@@ -188,7 +196,7 @@ const productServices = {
       // Update stock in 'products' table
       db.Product.update(
         {
-          stock: this.stock - product.quantity,
+          stock: product.products.stock - product.quantity,
         },
         {
           where: {

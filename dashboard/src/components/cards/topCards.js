@@ -28,7 +28,6 @@ class TopCards extends React.Component {
             .then((json) => {
                 this.setState({
                     usersQuantity: json.meta.count,
-                    DataisLoaded: true
                 });
             })
         fetch("http://localhost:3001/api/categories")

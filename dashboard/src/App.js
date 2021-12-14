@@ -18,20 +18,18 @@ function App() {
         <main>
           <NavBar />
           <Switch>
-          <Route path="/" exact>
-            <div className="container general-container">
-              <TopCards />
-            </div>
-            <div className="container general-container">
-              <ProductTable />
-              <UserTable />
-            </div>
-          </Route>
-          <Route path="/products" component={ProductTable}/>
-          <Route path="/users" component={UserTable}/>
-          <Route path="/category" component={CategoriesSection}>
-
-          </Route>
+            <Route path="/" exact>
+              <div className="container general-container">
+                <TopCards />
+              </div>
+              <div className="container general-container">
+                <ProductTable />
+                <UserTable />
+              </div>
+            </Route>
+            <Route path="/products" component={ProductTable}/>
+            <Route path="/users" component={UserTable}/>
+            <Route path="/category" component={CategoriesSection} />
           </Switch>
   
 

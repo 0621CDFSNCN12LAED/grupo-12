@@ -5,19 +5,19 @@ let loginMiddlewares = {
   userLoggedMiddleware: async (req, res, next) => {
     res.locals.isLogged = false;
 
-    let emailInCookie = req.cookies.userEmail;
-
-    const user = await db.User.findOne({
-      where: {
-        email: emailInCookie,
-      },
-    });
-    console.log(user);
-
-    if (user) {
-      res.locals.isLogged = true;
-      res.locals.userLogged = user;
+    if(req.cookies.userEmail){
+      let emailInCookie = req.cookies.userEmail;
+      const user = await db.User.findOne({
+        where: {
+          email: emailInCookie,
+        },
+      });
+      if (user) {
+        res.locals.isLogged = true;
+        res.locals.userLogged = user;
+      }
     }
+
 
     next();
   },

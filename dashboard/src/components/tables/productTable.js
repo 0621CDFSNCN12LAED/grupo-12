@@ -4,6 +4,7 @@ import TableRow from './tableRow';
 
 
 class ProductTable extends React.Component {
+    
    
     // Constructor 
     constructor(props) {
@@ -58,6 +59,7 @@ class ProductTable extends React.Component {
                 }
                 </tbody>
             </Table>
+            
         </div>
     );
 }

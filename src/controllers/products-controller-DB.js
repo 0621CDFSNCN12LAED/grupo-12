@@ -47,9 +47,8 @@ const productsController = {
     let usuarioLogueado = req.session.usuarioLogueado;
     if (usuarioLogueado) {
       const productsInCart = await productServices.getCartByUser(usuarioLogueado.id);
-
+ 
       const addresses = await productServices.getAddresses(usuarioLogueado.id);
-
       res.render('./products/payment', { products: productsInCart, addresses });
     } else {
       res.redirect('/users/login');
@@ -58,9 +57,11 @@ const productsController = {
 
   checkout: async (req, res) => {
     let usuarioLogueado = req.session.usuarioLogueado;
+    const productsInCart = await productServices.getCartByUser(usuarioLogueado.id);
+
     if (usuarioLogueado) {
       // Create PO in 'orders' table, copy products information to 'order_product' table & update stock in 'products' table in DB
-      const orderSuccess = await productServices.checkout(req.body, usuarioLogueado.id);
+      const orderSuccess = await productServices.checkout(req.body, usuarioLogueado.id, productsInCart);
 
       // Restore cart to zero and update stock in 'products' table in DB
       if (orderSuccess) {
