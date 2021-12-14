@@ -3,7 +3,20 @@
 <html lang="en">
   <head>
     <title>Home | DeCamping.com</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
     <%- include("./partials/head.ejs") %>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="/js/scripts/carousel.js"></script>
   </head>
 
   <body>
@@ -12,27 +25,14 @@
 
     <!-- Main section -->
     <main>
-      <!-- DIV DEL CAROUSEL, PENDING!!!
-
-            <div class="carousel">
-                <div class="item">
-                    <h3>Item 1 del Carousel</h3>
-                </div>
-                <div class="item">
-                    <h3>Item 2 del Carousel</h3>
-                </div>
-                <div class="item">
-                    <h3>Item 3 del Carousel</h3>
-                </div>
-                <div class="item">
-                    <h3>Item 4 del Carousel</h3>
-                </div>
-                <div class="item">
-                    <h3>Item 5 del Carousel</h3>
-                </div>
-            </div>
-    -->
-      <img class="carousel" src="/img/carousel-img.jpeg" alt="#" />
+      <div class="carousel">
+        <img class="carousel-img" src="/img/carousel-img.jpeg" alt="#" />
+        <img class="carousel-img" src="/img/carousel-img.jpeg" alt="#" />
+        <img class="carousel-img" src="/img/carousel-img.jpeg" alt="#" />
+        <img class="carousel-img" src="/img/carousel-img.jpeg" alt="#" />
+        <img class="carousel-img" src="/img/carousel-img.jpeg" alt="#" />
+      </div>
+      <div class="dot-container"></div>
       <section class="categories-section">
         <h2 class="text-titles">CATEGORIAS</h2>
         <div class="flex">

@@ -81,7 +81,7 @@
               </div>
                 <% } %>
             </form>
-            <% if (locals.usuarioLogueado && locals.usuarioLogueado.category == "admin") { %>
+            <% if (locals.isLogged && locals.userLogged.category == 'admin') { %>
             <div class="edit-delete-container">
               <div class="edit-delete-form-container">
                 <form action="/admin/product/<%= product.id %>/edit" method="GET">

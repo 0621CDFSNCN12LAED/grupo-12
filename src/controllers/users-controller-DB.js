@@ -25,7 +25,8 @@ const mainController = {
             //Logueo exitoso
             delete resultUser.password;
             req.session.usuarioLogueado = resultUser;
-            // console.log(resultUser);
+            res.locals.usuarioLogueado = resultUser;
+            console.log(res.locals.usuarioLogueado);
             if (req.body.remember_user) {
               res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 60 });
             }
@@ -73,7 +74,7 @@ const mainController = {
         category: 'viewer',
         image: req.file ? req.file.filename : 'template-image.png',
       };
-      console.log(user)
+      console.log(user);
 
       const userToRegister = await db.User.findOne({
         where: { email: req.body.email },

@@ -173,7 +173,7 @@ const productServices = {
       purchase_date: Date.now(),
       external_reference: 'MercadoPago ref: xxxxxxx',
       address_id: payload.address,
-      total_amount: 1111,
+      total_amount: 1111, // CHEQUEAR!!!!!
     });
 
     const cartProducts = await this.getCartByUser(user_id);

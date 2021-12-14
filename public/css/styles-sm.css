@@ -65,9 +65,23 @@ main {
   min-height: 400px;
 }
 
-.carousel {
+.carousel-img {
   width: 100%;
   padding: 15px;
+}
+
+.slick-dots {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-dots button {
+  background-image: url('/img/circle-solid.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
 }
 
 .text-titles {
