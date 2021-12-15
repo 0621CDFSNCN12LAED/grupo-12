@@ -66,7 +66,6 @@ const mainController = {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
       const user = {
-        //id: userServicesDB.generateId(),
         first_name: req.body.firstName,
         last_name: req.body.lastName,
         email: req.body.email,
@@ -74,7 +73,6 @@ const mainController = {
         category: 'viewer',
         image: req.file ? req.file.filename : 'template-image.png',
       };
-      console.log(user);
 
       const userToRegister = await db.User.findOne({
         where: { email: req.body.email },

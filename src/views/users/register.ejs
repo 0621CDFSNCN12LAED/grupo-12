@@ -9,70 +9,78 @@
   <body>
     <!-- Header section (fixed) -->
     <%- include("../partials/header.ejs") %>
-    <script defer src="/js/validations/register-validation.js" ></script>
-
+    <script defer src="/js/validations/register-validation.js"></script>
 
     <!-- Main section -->
     <main>
       <h1 class="text-titles login-register">CREAR CUENTA</h1>
       <div class="register-wrapper">
         <div class="content-wrapper-1">
-          <form class="register-form" action="/users/register" method="POST" enctype="multipart/form-data"
+          <form
+            class="register-form"
+            action="/users/register"
+            method="POST"
+            enctype="multipart/form-data"
           >
             <div class="form-div">
               <label class="form-label" for="firstName">Nombre *</label>
-              <input type="text" name="firstName" placeholder="Ingrese su nombre" id="register-firstName"
-              value="<%=locals.oldValues ? oldValues.firstName : "" %>" > 
+              <input type="text" name="firstName" placeholder="Ingrese su nombre"
+              id="register-firstName" value="<%=locals.oldValues ? oldValues.firstName : "" %>" >
               <div id="firstName-error-msg">
                 <% if (locals.errors && errors.firstName) { %>
-                    <p><%= errors.firstName.msg %></p>
-                  <% } %>
+                <p><%= errors.firstName.msg %></p>
+                <% } %>
               </div>
             </div>
             <div class="form-div">
               <label class="form-label" for="lastName">Apellido *</label>
-              <input type="text" name="lastName" placeholder="Ingrese su apellido" id="register-lastName"
-              value="<%=locals.oldValues ? oldValues.lastName : "" %>" > 
-             
+              <input type="text" name="lastName" placeholder="Ingrese su apellido"
+              id="register-lastName" value="<%=locals.oldValues ? oldValues.lastName : "" %>" >
+
               <div id="lastName-error-msg">
                 <% if (locals.errors && errors.lastName) { %>
-                  <p><%= errors.lastName.msg %></p>
-                  <% } %>
+                <p><%= errors.lastName.msg %></p>
+                <% } %>
               </div>
-            
             </div>
             <div class="form-div">
               <label class="form-label" for="email">E-mail *</label>
-              <input type="text" name="email" placeholder="Ej: ejemplo@gmail.com" id="register-email"
-              value="<%=locals.oldValues ? oldValues.email : "" %>" > 
+              <input type="text" name="email" placeholder="Ej: ejemplo@gmail.com"
+              id="register-email" value="<%=locals.oldValues ? oldValues.email : "" %>" >
               <div id="email-error-msg">
                 <% if (locals.errors && errors.email) { %>
-                    <p><%= errors.email.msg %></p>
-                  <% } %>
+                <p><%= errors.email.msg %></p>
+                <% } %>
               </div>
             </div>
             <div class="form-div">
               <label class="form-label" for="password1">Contraseña *</label>
-              <input type="password" name="password1" placeholder="Ingrese su contraseña"  id="register-password1"/>
+              <input
+                type="password"
+                name="password1"
+                placeholder="Ingrese su contraseña"
+                id="register-password1"
+              />
               <div id="password1-error-msg">
                 <% if (locals.errors && errors.password1) { %>
-                    <p><%= errors.password1.msg %></p>
+                <p><%= errors.password1.msg %></p>
                 <% } %>
               </div>
-
             </div>
             <div class="form-div">
               <label class="form-label" for="password2">Confirmar contraseña *</label>
-              <input type="password" name="password2" placeholder="Repita su contraseña" id="register-password2" />
-              <div id="password2-error-msg">
-              </div>
+              <input
+                type="password"
+                name="password2"
+                placeholder="Repita su contraseña"
+                id="register-password2"
+              />
+              <div id="password2-error-msg"></div>
             </div>
             <div class="form-div">
               <label for="image">Imagen</label>
               <input type="file" name="image" id="register-image" />
-              <div id="image-error-msg">
-
-              </div>
+              <div id="image-error-msg"></div>
             </div>
             <div class="form-div">
               <p class="form-bases">(*) Campos obligatorios.</p>

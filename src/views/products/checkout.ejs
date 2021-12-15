@@ -16,8 +16,11 @@
         <div class="">
           <h3><%= msg %></h3>
           <% if(orderSuccess) { %>
+          <p>Su orden fue procesada con el número:</p>
+          <h3><%= orderSuccess.order_number %></h3>
+
           <p>Puede descargar su orden de compra desde el siguiente enlace:</p>
-          <form method="GET" action="/products/cart/download-order/:<%=orderSuccess.id%>">
+          <form method="GET" action="/products/cart/download-order/<%=orderSuccess.id%>">
             <button class="boton-ppal color-primario" type="submit">DESCARGAR PDF</button>
             <i class="fa fa-file-pdf"></i>
           </form>

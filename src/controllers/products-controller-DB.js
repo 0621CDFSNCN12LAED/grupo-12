@@ -1,6 +1,9 @@
 // ***** Services require *****
 const productServices = require('../services/product-services-DB');
 
+// ******* Validation results ********
+const { validationResult } = require('express-validator');
+
 // ***** Controllers *****
 const productsController = {
   viewAll: async (req, res) => {
@@ -47,7 +50,7 @@ const productsController = {
     let usuarioLogueado = req.session.usuarioLogueado;
     if (usuarioLogueado) {
       const productsInCart = await productServices.getCartByUser(usuarioLogueado.id);
- 
+
       const addresses = await productServices.getAddresses(usuarioLogueado.id);
       res.render('./products/payment', { products: productsInCart, addresses });
     } else {
@@ -56,12 +59,21 @@ const productsController = {
   },
 
   checkout: async (req, res) => {
+    const errors = validationResult(req);
     let usuarioLogueado = req.session.usuarioLogueado;
-    const productsInCart = await productServices.getCartByUser(usuarioLogueado.id);
 
-    if (usuarioLogueado) {
+    if (!usuarioLogueado) {
+      res.redirect('/users/login');
+    } else if (usuarioLogueado && errors.isEmpty()) {
+      // Get products from cart to calculate total amount in productServices.checkout()
+      const productsInCart = await productServices.getCartByUser(usuarioLogueado.id);
+
       // Create PO in 'orders' table, copy products information to 'order_product' table & update stock in 'products' table in DB
-      const orderSuccess = await productServices.checkout(req.body, usuarioLogueado.id, productsInCart);
+      const orderSuccess = await productServices.checkout(
+        req.body,
+        usuarioLogueado.id,
+        productsInCart
+      );
 
       // Restore cart to zero and update stock in 'products' table in DB
       if (orderSuccess) {
@@ -73,7 +85,14 @@ const productsController = {
         res.render('products/checkout', { msg });
       }
     } else {
-      res.redirect('/users/login');
+      const productsInCart = await productServices.getCartByUser(usuarioLogueado.id);
+      const addresses = await productServices.getAddresses(usuarioLogueado.id);
+
+      res.render('products/payment', {
+        errors: errors.mapped(),
+        products: productsInCart,
+        addresses,
+      });
     }
   },
 

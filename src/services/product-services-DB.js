@@ -217,22 +217,58 @@ const productServices = {
   },
 
   async createPDF(params, response) {
-    /*
+    // Get order information
     const order = await db.Order.findOne({
       where: {
         id: params,
       },
     });
-    console.log(order);
 
+    // Get user information
     const user = await db.User.findOne({
       where: {
         id: order.user_id,
       },
     });
-    console.log(user);
-*/
 
+    // Get delivery address information
+    const address = await db.Address.findOne({
+      where: {
+        id: order.address_id,
+      },
+    });
+
+    const inputAddress = `${address.street_name} ${address.street_number}, ${address.city}, ${address.province}, ${address.country}`;
+
+    // Get corresponding items for the order
+    const productsInOrder = await db.OrderProduct.findAll({
+      include: [{ association: 'orders' }],
+      where: {
+        order_id: params,
+      },
+    });
+    // Get the detail of each item
+    // Map method returns a promise for each item
+    const promises = productsInOrder.map(async (item) => {
+      const product = await db.Product.findOne({
+        include: [{ association: 'orders' }],
+        where: {
+          id: item.product_id,
+        },
+      });
+      return {
+        name: product.name,
+        description: `${product.description.substr(0, 70)}...`,
+        price: product.price,
+        quantity: item.quantity,
+        total: item.quantity * product.price,
+      };
+    });
+
+    // Save products to be printed in PDF
+    const productsInTable = await Promise.all(promises);
+
+    // PDFKit page configuration
     const doc = new PDF({
       size: 'A4',
       margins: { top: 20, left: 40, right: 40, bottom: 30 },
@@ -275,72 +311,37 @@ const productServices = {
 
         doc.moveDown();
 
-        doc.text(`Nro: XXXXXXXX`, {
+        doc.text(`Nro: ${order.order_number}`, {
           align: 'left',
         });
 
-        doc.text(`Solicitada por: NOMBRE APELLIDO`, {
+        doc.text(`Solicitada por: ${user.first_name} ${user.last_name}`, {
           align: 'left',
         });
 
-        doc.text(`Dirección de envío: DIRECCION`, {
+        doc.text(`Dirección de envío: ${inputAddress}`, {
           align: 'left',
         });
 
-        doc.text('E-mail: E-MAIL DEL USUARIO', {
+        doc.text(`E-mail: ${user.email}`, {
           align: 'left',
         });
 
-        doc.text(`Fecha de compra: ${moment().format('LLL')}`, {
+        doc.text(`Fecha de compra: ${order.purchase_date}`, {
           align: 'left',
         });
       }
     );
 
-    // Purchased products table
-    const products = [
-      {
-        name: 'Un producto',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum porro, voluptatem in consectetur mollitia ullam asperiores harum magnam sed necessitatibus',
-        price: 1250,
-        quantity: 4,
-        total: 5000,
-      },
-      {
-        name: 'Otro producto',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-        price: 2000,
-        quantity: 1,
-        total: 2000,
-      },
-      {
-        name: 'Y el ultimo producto',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum porro, voluptatem in consectetur mollitia',
-        price: 12500,
-        quantity: 2,
-        total: 25000,
-      },
-      {
-        name: 'Ok uno mas',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum porro, voluptatem in consectetur mollitia',
-        price: 12500,
-        quantity: 2,
-        total: 25000,
-      },
-    ];
-
     doc.addTable(
       [
         { key: 'name', label: 'Nombre', align: 'left' },
-        { key: 'description', label: 'Descripción', align: 'left' },
+        { key: 'description', label: 'Descrición', align: 'left' },
         { key: 'price', label: 'Precio', align: 'left' },
-        { key: 'quantity', label: 'Cantidad', align: 'left' },
-        { key: 'total', label: 'TOTAL', align: 'right' },
+        { key: 'quantity', label: 'Un..', align: 'left' },
+        { key: 'total', label: 'Total', align: 'right' },
       ],
-      products,
+      productsInTable,
       {
         border: null,
         width: 'auto',
@@ -355,7 +356,7 @@ const productServices = {
         headFontSize: 12,
         headHeight: 12,
         cellsFontSize: 11,
-        cellsMaxWidth: 220,
+        cellsMaxWidth: 170,
       }
     );
 
@@ -363,7 +364,7 @@ const productServices = {
 
     doc.moveDown(2);
 
-    doc.fontSize(13).text('$XXXX,XX');
+    doc.fontSize(13).text(`$${order.total_amount}`);
 
     doc.fontSize(12).text('Términos y condiciones', 40, 690);
     doc.moveDown(0.5);

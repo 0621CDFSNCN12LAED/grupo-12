@@ -3,6 +3,9 @@ const router = express.Router();
 
 const productController = require('../controllers/products-controller-DB');
 
+// Validations
+const cartValidations = require('../validations/cart-validations');
+
 // ---- GET ALL PRODUCTS ----
 router.get('/', productController.viewAll);
 
@@ -22,7 +25,7 @@ router.post('/:id/cart', productController.addToCart);
 router.get('/cart/payment', productController.payment);
 
 // ---- GO TO CHECK OUT ----
-router.post('/cart/checkout', productController.checkout);
+router.post('/cart/checkout', cartValidations, productController.checkout);
 
 // ---- DOWNLOAD ORDER ----
 router.get('/cart/download-order/:id', productController.download);

@@ -772,8 +772,8 @@ footer {
   font-weight: normal;
 }
 
-error-msg {
-  font-size: 0.5rem;
+.error-msg {
+  font-size: 0.8rem;
   color: red;
 }
 
