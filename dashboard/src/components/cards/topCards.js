@@ -9,7 +9,7 @@ class TopCards extends React.Component {
         super(props);
         this.state = {
             productQuantity: "",
-            usersQuantity: "",
+            ordersQuantity: "",
             categoryQuantity: "",
             DataisLoaded: false
         };
@@ -23,11 +23,11 @@ class TopCards extends React.Component {
                     productQuantity: json.meta.count,
                 });
             })
-        fetch("http://localhost:3001/api/users")
+        fetch("http://localhost:3001/api/orders")
             .then((res) => res.json())
             .then((json) => {
                 this.setState({
-                    usersQuantity: json.meta.count,
+                    ordersQuantity: json.meta.count,
                 });
             })
         fetch("http://localhost:3001/api/categories")
@@ -41,7 +41,7 @@ class TopCards extends React.Component {
         
     }
     render() {
-        const { DataisLoaded, productQuantity, usersQuantity,categoryQuantity  } = this.state;
+        const { DataisLoaded, productQuantity, ordersQuantity,categoryQuantity  } = this.state;
         if (!DataisLoaded) return <div>
             <h1> Cargando tablero... </h1> </div> ;
    
@@ -52,10 +52,10 @@ class TopCards extends React.Component {
                         <SmallCard title={productQuantity} detail="Cantidad de productos" borderLeft="border-left-blue"/>
                     </Col>
                     <Col>
-                        <SmallCard title={usersQuantity} detail="Cantidad de usuarios" borderLeft="border-left-green"/>
+                        <SmallCard title={ordersQuantity} detail="Cantidad de ordenes" borderLeft="border-left-green"/>
                     </Col>
                     <Col>
-                        <SmallCard title={categoryQuantity} detail="Categorias" borderLeft="border-left-yellow"/>
+                        <SmallCard title={categoryQuantity} detail="Categorías" borderLeft="border-left-yellow"/>
                     </Col>
                 </Row>
             </Container>

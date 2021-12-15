@@ -1,10 +1,10 @@
 import React from 'react'
 import {Table} from 'react-bootstrap';
 import TableRow from './tableRow';
-import ProductModalButton from '../modals/productModalButton';
+import OrderModalButton from '../modals/orderModalButton';
 
 
-class ProductTable extends React.Component {
+class OrderTable extends React.Component {
     
    
     // Constructor 
@@ -20,41 +20,41 @@ class ProductTable extends React.Component {
     // execute the code 
     componentDidMount() {
         fetch(
-"http://localhost:3001/api/products")
+"http://localhost:3001/api/orders")
             .then((res) => res.json())
             .then((json) => {
                 this.setState({
-                    items: json.data,
+                    orders: json.data,
                     DataisLoaded: true
                 });
             })
     }
     render() {
-        const { DataisLoaded, items } = this.state;
+        const { DataisLoaded, orders } = this.state;
         if (!DataisLoaded) return <div>
-            <h1> Cargando productos.... </h1> </div> ;
+            <h1> Cargando ordenes.... </h1> </div> ;
    
         return (
 
         <div className="container general-container">
-            <h1>Tabla de productos </h1>
+            <h1>Tabla de Ordenes </h1>
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Categoría</th>
+                    <th>Nro Orden</th>
+                    <th>Fecha</th>
+                    <th>Monto total</th>
                     <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                 {
-                    items.map( ( item , i) => {
+                    orders.map( ( order , i) => {
                         return <TableRow  key={i}>
-                                <td>{item.id} </td>
-                                <td>{item.name} </td>
-                                <td>{item.category} </td>
-                                <td> <ProductModalButton id={item.id} /> </td>
+                                <td>{order.order_number} </td>
+                                <td>{order.purchase_date} </td>
+                                <td>$ {order.total_amount} </td>
+                                <td> <OrderModalButton id={order.id} /> </td>
                                 </TableRow >
                     })
                 }
@@ -66,4 +66,4 @@ class ProductTable extends React.Component {
 }
 }
    
-export default ProductTable;
+export default OrderTable;

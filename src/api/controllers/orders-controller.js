@@ -4,11 +4,13 @@ const moment = require('moment');
 module.exports = {
   list: async (req, res) => {
     const orders = await db.Order.findAll();
+    console.log(orders)
 
     const abbrOrders = orders.map((order) => {
       return {
+        id: order.id,
         order_number: order.order_number,
-        purchase_date: moment(order.purchase_date).format('LLL'),
+        purchase_date: order.purchase_date,
         total_amount: order.total_amount,
         link: `http://localhost:3001/api/orders/${order.id}`,
       };
@@ -59,6 +61,7 @@ module.exports = {
           },
         });
         return {
+          id: product.id,
           name: product.name,
           quantity: item.quantity,
           link: `http://localhost:3001/api/products/${product.id}`,

@@ -38,16 +38,17 @@ class ModalButton extends React.Component {
         return (
             <>
               <Button variant="primary" onClick={() => this.openModal()}>
-                Detalles
+                Ver producto
               </Button>
 
                  <Modal
                     show={this.state.show}
                     size="lg"
+                    onHide={() => this.closeModal()}
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                 >
-                    <Modal.Header>
+                    <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
                             {this.state.productInfo.name}
                         </Modal.Title>

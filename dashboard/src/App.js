@@ -9,6 +9,7 @@ import ProductTable from './components/tables/productTable';
 import UserTable from './components/tables/userTable';
 import React from 'react';
 import CategoriesSection from './components/categories/CategoriesSection';
+import OrderTable from './components/tables/orderTable';
 //import Test from './components/tables/test';
 
 function App() {
@@ -24,12 +25,14 @@ function App() {
               </div>
               <div className="container general-container">
                 <ProductTable />
-                <UserTable />
+                <OrderTable />
               </div>
             </Route>
             <Route path="/products" component={ProductTable}/>
             <Route path="/users" component={UserTable}/>
             <Route path="/category" component={CategoriesSection} />
+            <Route path="/orders" component={OrderTable} />
+
           </Switch>
   
 
