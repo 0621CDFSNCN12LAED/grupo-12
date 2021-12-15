@@ -96,7 +96,8 @@ header {
 /*--------------- Main ------------- */
 
 .product-wrapper {
-  width: 50%;
+  width: 330px;
+  margin: auto;
 }
 
 .categories-section {

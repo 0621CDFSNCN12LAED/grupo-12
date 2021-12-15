@@ -5,7 +5,7 @@
 /* -------------------- Globales ------------------ */
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
 }
 
@@ -13,9 +13,6 @@ header {
   background-color: #365946;
 }
 
-.prod-img {
-  width: 100%;
-}
 a {
   text-decoration: none;
 }
