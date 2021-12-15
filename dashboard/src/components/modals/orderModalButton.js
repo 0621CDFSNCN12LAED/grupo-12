@@ -13,7 +13,7 @@ class ModalButton extends React.Component {
             show:false,
             orderInfo: {},
             userInfo: {},
-            productsInfo: []
+            productsInfo: [],
         }
     }
     
@@ -27,14 +27,13 @@ class ModalButton extends React.Component {
                 orderInfo: json.data,
                 DataisLoaded: true,
                 userInfo: json.data.user,
-                productsInfo: json.data.products
+                productsInfo: json.data.products,
             });
         })
+        
         console.log(this.state.orderInfo)
         console.log(this.state.userInfo)
         console.log(this.state.productsInfo)
-
-
 
     }
 
@@ -45,7 +44,7 @@ class ModalButton extends React.Component {
 
         return (
             <>
-              <Button variant="primary" onClick={() => this.openModal()}>
+              <Button className="green-background" onClick={() => this.openModal()}>
                 Detalles
               </Button>
 
@@ -67,9 +66,11 @@ class ModalButton extends React.Component {
                         </div>
                         <div>
                             <h5>Productos comprados:</h5>
-                            {this.state.productsInfo.map((product) => {
+                            {this.state.productsInfo.map( (product) => {
                                 return(
-                                    <p key={this.state.id + "-" + product.id}>{product.name} x {product.quantity} un.</p>
+                                    <div key={this.state.id + "-" + product.id}>
+                                        <p >- {product.name} x {product.quantity} un.</p>
+                                    </div>
                                 )
                             })}
 
