@@ -1,0 +1,13 @@
+.modal-image {
+    height: 400px
+}
+.modal-container {
+    display: flex;
+}
+.modal-span {
+    font-weight:200;
+}
+.modal-span-price {
+    color:green;
+    font-weight: bolder;
+}

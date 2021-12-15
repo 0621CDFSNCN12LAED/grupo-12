@@ -6,6 +6,7 @@ import ListSubcategories from './ListSubcategories';
 import '../../App.css'
 
 
+//Esta seccion muestra las 3 filas. CategoryByProduct, Listado de categorias y listado de subcategorias
 class CategoriesSection extends React.Component {
    
     render() {

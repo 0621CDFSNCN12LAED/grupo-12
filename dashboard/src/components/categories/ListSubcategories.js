@@ -44,7 +44,6 @@ class ListSubcategories extends React.Component {
                                 <Card.Body>
                                     <Card.Title>{subcategory.name}</Card.Title>
                                     <Card.Text>{subcategory.description}</Card.Text>
-                                    <Card.Text>Cantidad de productos: {subcategory.productsCount}</Card.Text>
                                   
                                 </Card.Body>
                                 </Card>

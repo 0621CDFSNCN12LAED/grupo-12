@@ -25,7 +25,10 @@ class userTable extends React.Component {
                     DataisLoaded: true
                 });
             })
+   
     }
+                    
+    
     render() {
         const { DataisLoaded, users } = this.state;
         if (!DataisLoaded) return <div>
@@ -45,12 +48,16 @@ class userTable extends React.Component {
                 </thead>
                 <tbody>
                  {
-                    users.map( ( user , i) => {
+                    users.map( ( user , i) =>  {
+
                         return <TableRow  key={i}>
-                                <td>{user.id} </td>
-                                <td>{user.name} </td>
-                                <td>{user.email} </td>
-                                </TableRow >
+                            <td>{user.id} </td>
+                            <td>{user.name} </td>
+                            <td>{user.email} </td>
+
+                        </TableRow >        
+
+
                     })
                 }
                 </tbody>

@@ -45,7 +45,6 @@ class ListCategories extends React.Component {
                                 <Card.Body>
                                     <Card.Title>{category.name}</Card.Title>
                                     <Card.Text>{category.description}</Card.Text>
-                                    <Card.Text>Cantidad de productos: {category.productsCount}</Card.Text>
                                   
                                 </Card.Body>
                                 </Card>

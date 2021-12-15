@@ -1,6 +1,7 @@
 import React from 'react'
 import {Table} from 'react-bootstrap';
 import TableRow from './tableRow';
+import ModalButton from '../modals/modalButton';
 
 
 class ProductTable extends React.Component {
@@ -53,7 +54,7 @@ class ProductTable extends React.Component {
                                 <td>{item.id} </td>
                                 <td>{item.name} </td>
                                 <td>{item.category} </td>
-                                <td>{item.link} </td>
+                                <td> <ModalButton id={item.id} /> </td>
                                 </TableRow >
                     })
                 }
