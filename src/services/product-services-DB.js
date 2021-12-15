@@ -11,6 +11,7 @@ const productServices = {
         deleted: false,
       },
     });
+
     return filteredProducts;
   },
 
@@ -156,37 +157,34 @@ const productServices = {
   },
 
   async checkout(payload, user_id, cartInfo) {
-    // Create PO in 'orders' table in DB
-    const allOrders = await db.Order.findAll();
+    // Obtain PO
+    const totalOrders = await db.Order.max('id');
     const initialPO = 45002000;
     let PO;
-    
-    //obtain total amount of order
-    let total_amount = 0
-    for(product of cartInfo) {
-      let itemPrice = product.products.price * product.quantity
-      total_amount = total_amount + itemPrice
-    }
-    console.log("total_amount")
-    console.log(total_amount)
 
-    if (allOrders.length == 0) {
+    if (totalOrders == 0) {
       PO = initialPO;
     } else {
-      PO = initialPO + allOrders.length;
+      PO = initialPO + totalOrders;
     }
 
+    // Obtain total amount of order
+    let total_amount = 0;
+    for (product of cartInfo) {
+      let itemPrice = product.products.price * product.quantity;
+      total_amount = total_amount + itemPrice;
+    }
+    // Create Order in DB
     const order = await db.Order.create({
       user_id: user_id,
       order_number: PO,
       purchase_date: Date.now(),
       external_reference: 'MercadoPago ref: xxxxxxx',
       address_id: payload.address,
-      total_amount: total_amount, // CHEQUEAR!!!!!
+      total_amount: total_amount,
     });
 
     for (const product of cartInfo) {
-
       // Create 1 entry per product in 'order_product' table
       await db.OrderProduct.create({
         order_id: order.id,

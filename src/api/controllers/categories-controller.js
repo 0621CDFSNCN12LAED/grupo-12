@@ -9,7 +9,7 @@ module.exports = {
         id: category.id,
         name: category.name,
         description: category.description,
-        link: `http://localhost:3000/api/categories/${category.id}`,
+        link: `http://localhost:3001/api/categories/${category.id}`,
       };
     });
 
@@ -36,7 +36,7 @@ module.exports = {
       });
       // Build the unique link for each product
       const productsLinks = productsByCategory.map((product) => {
-        return `http://localhost:3000/api/products/${product.id}`;
+        return `http://localhost:3001/api/products/${product.id}`;
       });
 
       const abbrCategory = {
@@ -73,7 +73,7 @@ module.exports = {
         id: subcategory.id,
         name: subcategory.name,
         description: subcategory.description,
-        link: `http://localhost:3000/api/subcategories/${subcategory.id}`,
+        link: `http://localhost:3001/api/subcategories/${subcategory.id}`,
       };
     });
 
@@ -100,7 +100,7 @@ module.exports = {
       });
       // Build the unique link for each product
       const productsLinks = productsBySubcategory.map((product) => {
-        return `http://localhost:3000/api/products/${product.id}`;
+        return `http://localhost:3001/api/products/${product.id}`;
       });
 
       const abbrSubcategory = {

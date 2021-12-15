@@ -43,7 +43,7 @@ module.exports = {
         name: product.name,
         description: product.description,
         category: category.name,
-        link: `http://localhost:3000/api/products/${product.id}`,
+        link: `http://localhost:3001/api/products/${product.id}`,
       };
     });
 
@@ -75,7 +75,7 @@ module.exports = {
       const abbrProduct = {
         id: product.id,
         name: product.name,
-        image: `http://localhost:3000/img/products/${product.image}`,
+        image: `http://localhost:3001/img/products/${product.image}`,
         price: Number(product.price),
         description: product.description,
         discount: Number(product.discount),

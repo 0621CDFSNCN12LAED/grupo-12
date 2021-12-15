@@ -58,30 +58,113 @@
   display: none;
 }
 
-/*--------------- Main ------------- */
-
-main {
-  background: rgb(245, 245, 245);
-  min-height: 400px;
+/* -------------- CAROUSEL -------------- */
+.carousel-container {
+  width: 99%;
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
-.carousel-img {
-  width: 100%;
-  padding: 15px;
+.carousel {
+  border-radius: 2px;
+  height: 35vh;
+  position: relative;
+  overflow: hidden;
 }
 
-.slick-dots {
-  list-style-type: none;
+.carousel-slider {
+  height: 100%;
+  display: flex;
+  width: 400%;
+  transition: transform 0.5s;
+}
+
+.carousel-slider section {
+  flex-basis: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.slick-dots button {
-  background-image: url('/img/circle-solid.svg');
+.carousel-img-1 {
+  background-image: url('/img/carousel/carousel1.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: none;
+}
+
+.carousel-img-2 {
+  background-image: url('/img/carousel/carousel2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carousel-img-3 {
+  background-image: url('/img/carousel/carousel3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carousel-img-4 {
+  background-image: url('/img/carousel/carousel5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carousel-controls .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.carousel-controls .arrow i {
+  font-size: 30px;
+  color: #444;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.carousel-controls ul {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-controls ul li {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #444;
+  border-radius: 50px;
+  margin: 8px;
+  background-color: #444;
+  cursor: pointer;
+}
+
+.carousel-controls ul li.selected {
+  background-color: transparent;
+  transform: scale(1.4, 1.4);
+}
+
+/*--------------- Main ------------- */
+
+main {
+  background: rgb(245, 245, 245);
+  min-height: 400px;
 }
 
 .text-titles {

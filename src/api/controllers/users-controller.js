@@ -10,7 +10,7 @@ module.exports = {
         id: user.id,
         name: `${user.first_name} ${user.last_name}`,
         email: user.email,
-        link: `http://localhost:3000/api/users/${user.id}`,
+        link: `http://localhost:3001/api/users/${user.id}`,
       };
     });
 
@@ -28,14 +28,30 @@ module.exports = {
     const user = await db.User.findByPk(req.params.id);
 
     if (user) {
-      user.image = `http://localhost:3000/img/avatars/${user.image}`;
+      user.image = `http://localhost:3001/img/avatars/${user.image}`;
+
+      // Get corresponding orders for the user
+      const ordersByUser = await db.Order.findAll({
+        include: [{ association: 'users' }],
+        where: {
+          user_id: user.id,
+        },
+      });
+
+      const abbrOrders = ordersByUser.map((order) => {
+        return {
+          order_number: order.order_number,
+          link: `http://localhost:3001/api/orders/${order.id}`,
+        };
+      });
 
       abbrUser = {
         id: user.id,
         name: `${user.first_name} ${user.last_name}`,
         email: user.email,
         image: user.image,
-        'created-at': moment.utc(user.createdAt).format('MM/DD/YYYY'),
+        'user-since': moment.utc(user.createdAt).format('MM/DD/YYYY'),
+        orders: abbrOrders,
       };
       res.json({
         meta: {
