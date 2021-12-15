@@ -37,7 +37,7 @@ class ModalButton extends React.Component {
 
         return (
             <>
-              <Button variant="primary" onClick={() => this.openModal()}>
+              <Button className="green-background" onClick={() => this.openModal()}>
                 Ver producto
               </Button>
 
